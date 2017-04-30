@@ -5,6 +5,15 @@
 \usepackage[ngerman]{babel}
 \usepackage{lmodern}
 
+%===============================================================================
+% Global parameters, replace with actual values (remove < >)
+\newcommand{\thesisTitle}{<Titel>}
+\newcommand{\thesisType}{<X-Arbeit>} %Bachelorarbeit, Masterarbeit, Diplomarbeit
+\newcommand{\thesisDate}{\today}
+\newcommand{\studentName}{<Vorname Nachname>}
+\newcommand{\studentEmail}{example@mail.de}
+%===============================================================================
+
 %
 \usepackage{fancyref}
 \usepackage{fancyhdr}
@@ -15,8 +24,8 @@
 \usepackage[pdftex]{graphicx}
 \usepackage[%
     pdfstartview=FitH,
-    pdftitle={<Titel>},
-    pdfauthor={<Name>},
+    pdftitle={\thesisTitle},
+    pdfauthor={\studentName},
     colorlinks=true,
     linktocpage
 ]{hyperref}
@@ -25,7 +34,7 @@
 % Header and Footer Style
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{\slshape <Name>}
+\fancyhead[R]{\slshape \studentName}
 \fancyhead[L]{\slshape\nouppercase{\rightmark}}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
@@ -66,17 +75,17 @@
 %
 % Title and author
 \title{{\huge\bfseries Freie Universität Berlin}\\[2ex]
-{\normalsize <X-Arbeit> am Institut für Informatik der Freien Universität 
+{\normalsize \thesisType{} am Institut für Informatik der Freien Universität
 Berlin, Arbeitsgruppe Software Engineering}\\[6ex]
-<Titel>}
+\thesisTitle}
 
-\author{<Name>\\
+\author{\studentName\\
 {\normalsize Matrikelnummer: }\\
-{\normalsize \mailto{example@mail.de}}\\\\
+{\normalsize \mailto{\studentEmail}}\\\\
 {\normalsize Betreuer: }\\
 {\normalsize Eingereicht bei: }}
 
-\date{Berlin, <Datum>}
+\date{Berlin, \thesisDate}
 
 
 \begin{document}
