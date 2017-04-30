@@ -8,16 +8,19 @@
 %
 \usepackage{fancyref}
 \usepackage{fancyhdr}
-\usepackage{xcolor}
 \usepackage{url}
 \usepackage{makeidx}
-\usepackage{listings}
 %
 % PDF settings
 \usepackage[pdftex]{graphicx}
-\usepackage[pdfstartview=FitH,pdftitle={<Titel>},pdfauthor={<Name>}, 
-colorlinks=true, linktocpage]{hyperref}
-% colorlinks=false, pdfborder={0 0 0} = keine farbigen Links
+\usepackage[%
+    pdfstartview=FitH,
+    pdftitle={<Titel>},
+    pdfauthor={<Name>},
+    colorlinks=true,
+    linktocpage
+]{hyperref}
+% colorlinks=false, pdfborder={0 0 0} % = keine farbigen Links
 %
 % Header and Footer Style
 \pagestyle{fancy}
@@ -41,15 +44,25 @@ colorlinks=true, linktocpage]{hyperref}
 \newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
 %
 % Java Code Listing Style
+\usepackage{xcolor}
+\usepackage{listings}
 \definecolor{darkblue}{rgb}{0,0,.6}
 \definecolor{darkgreen}{rgb}{0,0.5,0}
 \definecolor{darkred}{rgb}{0.5,0,0}
-\lstset{language=Java, basicstyle=\ttfamily\small\upshape, 
-commentstyle=\color{darkgreen}\sffamily, 
-keywordstyle=\color{darkblue}\rmfamily\bfseries, 
-breaklines=true,tabsize=2,xleftmargin=3mm, 
-xrightmargin=3mm,numbers=none,frame=single,stringstyle=\color{darkred},
-showstringspaces=false}
+\lstset{%
+    language=Java,
+    basicstyle=\ttfamily\small\upshape,
+    commentstyle=\color{darkgreen}\sffamily,
+    keywordstyle=\color{darkblue}\rmfamily\bfseries,
+    breaklines=true,
+    tabsize=2,
+    xleftmargin=3mm,
+    xrightmargin=3mm,
+    numbers=none,
+    frame=single,
+    stringstyle=\color{darkred},
+    showstringspaces=false
+}
 %
 % Title and author
 \title{{\huge\bfseries Freie Universität Berlin}\\[2ex]
