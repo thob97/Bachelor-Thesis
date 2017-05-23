@@ -1,132 +1,66 @@
 % !TeX encoding = UTF-8
-\documentclass[11pt,a4paper,ngerman]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{lmodern}
 
 %===============================================================================
-% Global parameters, replace with actual values (remove < >)
-\newcommand{\thesisTitle}{<Titel>}
-\newcommand{\thesisType}{<X-Arbeit>} %Bachelorarbeit, Masterarbeit, Diplomarbeit
-\newcommand{\thesisDate}{\today}
-\newcommand{\instituteName}{Institut für Informatik}
-\newcommand{\groupName}{Arbeitsgruppe Software Engineering}
-\newcommand{\studentName}{<Vorname Nachname>}
-\newcommand{\studentEmail}{example@mail.de}
+% Font options are:
+%   plain (default), serif (uses Palladio), sans-serif (uses Paratype Sans)
+% Layout options are:
+%   article (default, no chapters), book (for longer texts, offers \chapter)
+% Paragraph options are:
+%   noparskip (default, no spacing between paragraphs), parskip (spaced)
+\documentclass[serif,article,noparskip]{agse-thesis}
+
+% Global parameters, replace with actual values.
+\newcommand{\thesisTitle}{Über den Sinn des Lebens}
+% -> You may use \par (but not \\) to format the title. If you do so, you'll
+%    need to manually set the 'pdftitle' attribute below.
+\newcommand{\studentName}{Hugo Schlupps}
 %===============================================================================
 
-%
-\usepackage{fancyref}
-\usepackage{fancyhdr}
-\usepackage{url}
-\usepackage{makeidx}
-%
-% PDF settings
-\usepackage[pdftex]{graphicx}
-\usepackage[%
-    pdfstartview=FitH,
-    pdftitle={\thesisTitle},
-    pdfauthor={\studentName},
-    colorlinks=true,
-    linktocpage
-]{hyperref}
-% colorlinks=false, pdfborder={0 0 0} % = keine farbigen Links
-%
-% Header and Footer Style
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[R]{\slshape \studentName}
-\fancyhead[L]{\slshape\nouppercase{\rightmark}}
-\fancyfoot{}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-%
-% No identation
-\setlength\headheight{15pt}
-\setlength\parindent{0pt}
-%
-% Custom commands
-\newcommand\zb{z.\,B.\ }
-\renewcommand\dh{d.\,h.\ }
-\newcommand\parbig{\par\bigskip}
-\newcommand\parmed{\par\medskip}
-\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
-%
-% Java Code Listing Style
-\usepackage{xcolor}
-\usepackage{listings}
-\definecolor{darkblue}{rgb}{0,0,.6}
-\definecolor{darkgreen}{rgb}{0,0.5,0}
-\definecolor{darkred}{rgb}{0.5,0,0}
-\lstset{%
-    language=Java,
-    basicstyle=\ttfamily\small\upshape,
-    commentstyle=\color{darkgreen}\sffamily,
-    keywordstyle=\color{darkblue}\rmfamily\bfseries,
-    breaklines=true,
-    tabsize=2,
-    xleftmargin=3mm,
-    xrightmargin=3mm,
-    numbers=none,
-    frame=single,
-    stringstyle=\color{darkred},
-    showstringspaces=false
-}
-%
-% Title and author
-\title{{\huge\bfseries Freie Universität Berlin}\\[2ex]
-{\normalsize \thesisType{} am \instituteName{} der Freien Universität Berlin,
-\groupName}\\[6ex]
-\thesisTitle}
+\hypersetup{pdftitle={\thesisTitle}}
+\hypersetup{pdfauthor={\studentName}}
 
-\author{\studentName\\
-{\normalsize Matrikelnummer: }\\
-{\normalsize \mailto{\studentEmail}}\\\\
-{\normalsize Betreuer: }\\
-{\normalsize Eingereicht bei: }}
-
-\date{Berlin, \thesisDate}
-
+% Blind texts, for demonstration only, not part of the actual template
+\usepackage{lipsum}
 
 \begin{document}
 
-\begin{titlepage}
+\coverpage[
+    student/id=1234567,
+    student/mail=email@inf.fu-berlin.de,
+    thesis/type=Bachelorarbeit,            % optional, default: Bachelorarbeit
+    thesis/group={Arbeitsgruppe Software Engineering},
+                                           % optional, default: AGSE
+    thesis/advisor={Matt Visor},           % optional
+    thesis/examiner={Prof. Dr. Mia Maus},
+    thesis/examiner/2={Prof. Dr. Bob Bär}, % optional
+    thesis/date=\today,                    % optional, default: \today
+   %title/size=\LARGE,      % set this value to overwrite automatic font size
+   %abstract/separate       % toggle this to move the abstract to its own page
+]
+{ % Your abstract here:
+    \lipsum[1]
+}
 
-\pagenumbering{alph}
-\maketitle
-\thispagestyle{empty}
-
-\vfill{}
-
-\begin{abstract}
-Abstract
-\end{abstract}
-
-\vfill{}
-
-\end{titlepage}
-
-\pagestyle{empty}
-\clearpage\pagenumbering{roman}
+\cleardoublepage
 
 \include{declaration}
 
+\cleardoublepage
+
 \tableofcontents
 
-\clearpage\pagenumbering{arabic}
-\pagestyle{fancy}
-\setcounter{page}{1}
-\include{1_introduction}
-\include{2_fundamentals}
-\include{3_main}
-\include{4_conclusion}
+\cleardoublepage
+
+\mainmatter
+
+\input{1_introduction}
+\input{2_fundamentals}
+\input{3_main}
+\input{4_conclusion}
+
+\bibliography{bibliography}
 
 \appendix
 \include{5_appendix}
-
-\bibliographystyle{IEEEtran}
-\bibliography{bibliography}
 
 \end{document}
