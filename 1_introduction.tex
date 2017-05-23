@@ -8,8 +8,9 @@ Die restlichen Kapitel dienen lediglich zu Demonstrationszwecken.
 
 \subsection{Zur Abschlussarbeit als solche}
 
-Neben der jeweiligen Studien- und Prüfungsordnung, die förmlichen Eigenschaften
-der Durchführung einer Abschlussarbeit regelt, sind folgende Quellen hilfreich:
+Neben der jeweiligen Studien- und Prüfungsordnung, die die förmlichen
+Eigenschaften der Durchführung einer Abschlussarbeit regelt, sind folgende
+Quellen hilfreich:
 \begin{itemize}
     \item Studien- und Prüfungsordnungen der Informatikstudiengänge
     (\url{http://www.imp.fu-berlin.de/fbv/pruefungsbuero/Studien--und-Pruefungsordnungen/index.html})
@@ -22,7 +23,7 @@ der Durchführung einer Abschlussarbeit regelt, sind folgende Quellen hilfreich:
     \item "`Technisches Schreiben"'
     (\url{http://www.mi.fu-berlin.de/wiki/pub/SE/SeminarRegeln/Technisches_Schreiben.pdf}):
 
-    Ein von Lutz Prechelt verfasstes Dokumente mit vielen praktischen
+    Ein von Lutz Prechelt verfasstes Dokument mit vielen praktischen
     Hinweisen zum Schreibteil (nicht nur) einer Abschlussarbeit.
 \end{itemize}
 
@@ -57,9 +58,9 @@ Die Buch-Option \texttt{book} bietet darüber hinaus noch Kapitel
 \documentclass[book]{agse-thesis}
 \end{lstlisting}
 
-Ob zwischen den Absätzen im Text Abstände angezeigt werden sollen, oder ob die
-erste Zeile eines Absatzes eingerückt werden soll, kann mit \texttt{parskip}
-bzw. \texttt{noparskip} eingestellt werden.
+Ob zwischen den Absätzen im Text Abstände angezeigt werden sollen, oder ob
+stattdessen die erste Zeile eines Absatzes eingerückt werden soll, kann mit
+\texttt{parskip} bzw. \texttt{noparskip} eingestellt werden.
 \begin{lstlisting}[language={[LaTeX]TeX}]
 % Absaetze deutlich trennen
 \documentclass[parskip]{agse-thesis}
@@ -68,7 +69,7 @@ bzw. \texttt{noparskip} eingestellt werden.
 \documentclass[noparskip]{agse-thesis}
 \end{lstlisting}
 
-Die Werte dieser drei Optionen können beliebig kombiniert werden:
+Die Werte der drei o.g. Optionen können beliebig kombiniert werden:
 \begin{lstlisting}[language={[LaTeX]TeX}]
 % Einstellung des Beispieldokuments
 \documentclass[serif,article,noparskip]{agse-thesis}
@@ -107,16 +108,18 @@ Dessen Ausgabe wird über eine Reihe von Schlüssel-Wert-Paaren konfiguriert
         \texttt{thesis/type} & Art der Abschlussarbeit & "`Bachelorarbeit"' \\
         \texttt{thesis/group} & Arbeitsgruppe in der die Arbeit geschrieben
         wurde & "`Arbeitsgruppe Software Engineering"' \\
-        \texttt{thesis/advisor} & optional: Betreuer der Abschlussarbeit & -- \\
+        \texttt{thesis/advisor} & \emph{optional:} Betreuer der Abschlussarbeit
+        & -- \\
         \texttt{thesis/examiner} & Erstgutachter der Arbeit & -- \\
-        \texttt{thesis/examiner/2} & optional: Zweitgutachter der Arbeit & -- \\
-        \texttt{thesis/date} & Datum der Abgabe & aktuelles Datum\\
-        \texttt{title/size} & optional: \LaTeX-Schriftgröße für den Titel (\zb
-        \texttt{\textbackslash{}LARGE}) &
-        wird automatisch gesetzt \\
-        \texttt{abstract/separate} & Schlüssel ohne Wert: falls gesetzt, wird
-        der Abstract auf eine eigene Seite gesetzt und die Titelseite ist
-        luftiger & -- \\
+        \texttt{thesis/examiner/2} & \emph{optional:} Zweitgutachter der Arbeit
+        & -- \\
+        \texttt{thesis/date} & \emph{optional:} Datum der Abgabe & aktuelles
+        Datum\\
+        \texttt{title/size} & \emph{optional:} \LaTeX-Schriftgröße für den
+        Titel (\zb \texttt{\textbackslash{}LARGE}) & wird automatisch gesetzt \\
+        \texttt{abstract/separate} & \emph{optional:} Schlüssel ohne Wert;
+        falls gesetzt, wird der Abstract auf eine eigene Seite gesetzt und die
+        Titelseite ist "`luftiger"' & -- \\
         \hline
     \end{tabular}
     \caption{Schlüssel-Wert-Konfiguration des
