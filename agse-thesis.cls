@@ -95,6 +95,10 @@
     %pdfborder={0 0 0},
 ]{hyperref}
 
+% Tables
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 % Misc
 \RequirePackage{fancyref}
 \RequirePackage{url}
