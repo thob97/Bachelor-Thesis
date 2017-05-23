@@ -241,5 +241,6 @@
     \begin{abstract}
         #2
     \end{abstract}
+    \cleardoublepage
     \ifcsdef{separateAbstract}{}{\frontmatter}
 }
