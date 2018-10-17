@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{agse-thesis}[2017/05/23 v0.1 AGSE Thesis]
+\ProvidesClass{agse-thesis}[2018/10/17 v0.1.1 AGSE Thesis]
 
 %%% Read options
 % Language: Default is German
@@ -166,32 +166,6 @@
         {\endquotation}%
     }{}
 
-% (Re)define frontmatter and mainmatter
-\ifthenelse{\equal{\baseClass}{book}}{
-    \let\frontmatterOrig\frontmatter
-    \renewcommand{\frontmatter}{
-        \frontmatterOrig
-        \pagestyle{plain}
-    }
-    \let\mainmatterOrig\mainmatter
-    \renewcommand{\mainmatter}{
-        \mainmatterOrig
-        \pagestyle{fancy}
-        \setcounter{page}{1}
-    }
-}{
-    \newcommand{\frontmatter}{
-        \pagestyle{plain}
-        \pagenumbering{roman}
-        \setcounter{page}{1}
-    }
-    \newcommand{\mainmatter}{
-        \pagestyle{fancy}
-        \pagenumbering{arabic}
-        \setcounter{page}{1}
-    }
-}
-
 \RequirePackage{xstring}
 \RequirePackage{etoolbox}
 \newcommand{\coverpage}[2][]{
@@ -246,10 +220,19 @@
         Berlin, \thesisDate
     \end{center}
 
-    \ifcsdef{separateAbstract}{\cleardoublepage\frontmatter}{\vfill}
-    \begin{abstract}
-        #2
-    \end{abstract}
-    \cleardoublepage
-    \ifcsdef{separateAbstract}{}{\frontmatter}
+    \ifcsdef{separateAbstract}{% abstract on separate page
+        \cleardoublepage
+        \pagestyle{plain}
+        \begin{abstract}
+            #2
+        \end{abstract}
+        \cleardoublepage
+    }{% abstract on title page
+        \vfill
+        \begin{abstract}
+            #2
+        \end{abstract}
+        \cleardoublepage
+        \pagestyle{plain}
+    }
 }
