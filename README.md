@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-You want to have the following things installed if you want to use this template:
+You want to have the following things installed if you intend to use this
+template:
  * A LaTeX backend (e.g. [TeX Live](https://www.tug.org/texlive) or [MikTeX](https://miktex.org))
  * A comfortable text editor (e.g. [Notepad++](https://notepad-plus-plus.org)) or a LaTeX frontend (e.g. [TeXstudio](http://www.texstudio.org))
  * A BibTeX manager (e.g. [JabRef](http://www.jabref.org))

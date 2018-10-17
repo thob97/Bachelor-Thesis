@@ -69,10 +69,22 @@ stattdessen die erste Zeile eines Absatzes eingerückt werden soll, kann mit
 \documentclass[noparskip]{agse-thesis}
 \end{lstlisting}
 
-Die Werte der drei o.g. Optionen können beliebig kombiniert werden:
+Die Dokumentensprache kann Deutsch oder Englisch sein (bitte mit Betreuer/in
+absprechen). Die Angabe der Sprache ist wichtig, damit \LaTeX\ u.a. die
+Silbentrennung und die Benennung von Überschriften und Bezeichnungen
+(für Abbildungen und Tabellen) richtig behandeln kann.
+\begin{lstlisting}[language={[LaTeX]TeX}]
+% Deutsch
+\documentclass[de]{agse-thesis}
+
+% Englisch
+\documentclass[en]{agse-thesis}
+\end{lstlisting}
+
+Die Werte der vier o.g. Optionen können beliebig kombiniert werden:
 \begin{lstlisting}[language={[LaTeX]TeX}]
 % Einstellung des Beispieldokuments
-\documentclass[serif,article,noparskip]{agse-thesis}
+\documentclass[serif,article,noparskip,de]{agse-thesis}
 \end{lstlisting}
 
 \subsubsection{Befehl \texttt{\textbackslash{}thesisTitle}}
@@ -97,7 +109,7 @@ Die Titelseite der Abschlussarbeit wird mit dem
 \texttt{\textbackslash{}coverpage}-Befehl erzeugt.
 Dessen Ausgabe wird über eine Reihe von Schlüssel-Wert-Paaren konfiguriert
 (siehe \autoref{tab:coverpage-config}).
-\begin{table}[h]
+\begin{table}[ht]
 \begin{center}
     \begin{tabular}{|l|L{5.5cm}|L{4cm}|}
         \hline

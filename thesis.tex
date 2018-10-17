@@ -3,11 +3,19 @@
 %===============================================================================
 % Font options are:
 %   plain (default), serif (uses Palladio), sans-serif (uses Paratype Sans)
+%
 % Layout options are:
 %   article (default, no chapters), book (for longer texts, offers \chapter)
+%   Changing this value between LaTeX runs may require deleting the .aux files
+%
 % Paragraph options are:
 %   noparskip (default, no spacing between paragraphs), parskip (spaced)
-\documentclass[serif,article,noparskip]{agse-thesis}
+%
+% Language options are:
+%   de (default), en
+%   Changing this value between LaTeX runs may require deleting the .aux files
+%
+\documentclass[serif,article,noparskip,de]{agse-thesis}
 
 % Global parameters, replace with actual values.
 \newcommand{\thesisTitle}{Über den Sinn des Lebens}
@@ -56,6 +64,7 @@
 \input{3_main}
 \input{4_conclusion}
 
+% Refers to file `bibliography.bib`
 \bibliography{bibliography}
 
 \appendix

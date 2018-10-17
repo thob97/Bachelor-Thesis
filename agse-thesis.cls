@@ -72,6 +72,7 @@
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
 
 % Display Chapter and Section for book class
 \ifthenelse{\equal{\baseClass}{book}}{
@@ -87,10 +88,10 @@
 \usepackage[%
     pdfstartview=FitH,
     linktocpage,
-% two lines below = color links
+% two lines below = do color links
     colorlinks=true,
     citecolor=blue!20!black!30!green,
-% two lines below = don't color links
+% two lines below = don't color links at all
     %colorlinks=false,
     %pdfborder={0 0 0},
 ]{hyperref}
@@ -98,6 +99,10 @@
 % Tables
 \usepackage{tabularx}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize,1]{label=$\bullet$} % avoid font warning by ensuring math mode
 
 % Misc
 \RequirePackage{fancyref}
