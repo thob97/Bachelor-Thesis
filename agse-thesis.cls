@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{agse-thesis}[2018/10/17 v0.1.1 AGSE Thesis]
+\ProvidesClass{agse-thesis}[2021/03/31 v0.2 AGSE Thesis]
 
 %%% Read options
 % Language: Default is German
@@ -111,10 +111,8 @@
 
 \RequirePackage[pdftex]{graphicx}
 
-%%% BibTeX
-\RequirePackage[numbers,sort&compress]{natbib}
-\RequirePackage[nottoc]{tocbibind}
-\bibliographystyle{plain}
+%%% BibLaTeX
+\RequirePackage[sorting=nyt]{biblatex}
 
 % Java Code Listing Style
 \RequirePackage{xcolor}
@@ -210,9 +208,9 @@
         \vspace{4mm}
 
         \begin{tabular}{rl}
-            \ifcsdef{advisor}{Betreuer: & \advisor\\}{}
+            \ifcsdef{advisor}{Betreuer/in: & \advisor\\}{}
             Eingereicht bei: & \firstExaminer \\
-            \ifcsdef{secondExaminer}{Zweitgutachter: & \secondExaminer\\}{}
+            \ifcsdef{secondExaminer}{Zweitgutachter/in: & \secondExaminer\\}{}
         \end{tabular}
 
         \vspace{4mm}
