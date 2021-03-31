@@ -1,6 +1,6 @@
 image: danteev/texlive
 
-compile thesis:
+compile-thesis:
   stage: build
   script:
     - latexmk -pdf thesis
