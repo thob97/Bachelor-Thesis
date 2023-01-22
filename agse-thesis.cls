@@ -73,6 +73,7 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}} %so that footmark has the same color red
 
 % Display Chapter and Section for book class
 \ifthenelse{\equal{\baseClass}{book}}{
@@ -109,10 +110,12 @@
 \RequirePackage{url}
 \RequirePackage{makeidx}
 
-\RequirePackage[pdftex]{graphicx}
+%\RequirePackage[pdftex]{graphicx}
+\usepackage{graphicx}
 
 %%% BibLaTeX
-\RequirePackage[sorting=nyt]{biblatex}
+%\RequirePackage[sorting=nyt]{biblatex}
+\usepackage[backend=bibtex, sorting=nyt]{biblatex}
 
 % Java Code Listing Style
 \RequirePackage{xcolor}
