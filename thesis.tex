@@ -1,57 +1,60 @@
 % !TeX encoding = UTF-8
 
-%===============================================================================
-% Font options are:
-%   plain (default), serif (uses Palladio), sans-serif (uses Paratype Sans)
-%
-% Layout options are:
-%   article (default, no chapters), book (for longer texts, offers \chapter)
-%   Changing this value between LaTeX runs may require deleting the .aux files
-%
-% Paragraph options are:
-%   noparskip (default, no spacing between paragraphs), parskip (spaced)
-%
-% Language options are:
-%   de (default), en
-%   Changing this value between LaTeX runs may require deleting the .aux files
-%
-\documentclass[serif,article,noparskip,de]{agse-thesis}
+\documentclass[serif,article,noparskip,de]{config-agse-thesis}
 
-% Global parameters, replace with actual values.
-\newcommand{\thesisTitle}{Über den Sinn des Lebens}
+\newcommand{\thesisTitle}{Entwicklung einer Kalender-App für Geeks: Ein Versuch wie man die Lücke zwischen Terminal und Smartphone überbrücken könnte}
 % -> You may use \par (but not \\) to format the title. If you do so, you'll
-%    need to manually set the 'pdftitle' attribute below.
-\newcommand{\studentName}{Hugo Schlupps}
+
+\newcommand{\studentName}{Thore Brehmer}
 %===============================================================================
 
 \hypersetup{pdftitle={\thesisTitle}}
 \hypersetup{pdfauthor={\studentName}}
 
-\addbibresource{bibliography.bib}
+\addbibresource{quellen.bib}
 
-% Blind texts, for demonstration only, not part of the actual template
+%%% multiline comment
+\newcommand{\myComment}[1]{}
+\newcommand{\myNewSection}[0]{\ \\}
+
+%TODO Remove later after refactoring demonstration texts
 \usepackage{lipsum}
+
+%TODO remove after removing all stichpunkte
+%Für farbige Checkmarks
+\usepackage{tikz}
+\newcommand{\myCheckmark}{}%
+\DeclareRobustCommand{\myCheckmark}{%
+  \tikz\fill[scale=0.7, color=red]
+  (0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;%
+}
+
+%für farbige rote circles
+\newcommand{\myTodo}{}%
+\DeclareRobustCommand{\myTodo}{
+	\tikz\draw[red,fill=red] (0,0) circle (.5ex);
+}
 
 \begin{document}
 
 \coverpage[
-    student/id=1234567,
-    student/mail=email@inf.fu-berlin.de,
+    student/id=5216879,
+    student/mail=thob97@zedat.fu-berlin.de,
     thesis/type=Bachelorarbeit,            % optional, default: Bachelorarbeit
-    thesis/group={Arbeitsgruppe Software Engineering},
+    thesis/group={Arbeitsgruppe Software Engineering}, % TODO
                                            % optional, default: AGSE
-    thesis/advisor={Matt Visor},           % optional
-    thesis/examiner={Prof. Dr. Mia Maus},
-    thesis/examiner/2={Prof. Dr. Bob Bär}, % optional
+    thesis/advisor={Matt Visor},           % optional TODO
+    thesis/examiner={Prof. Dr. Mia Maus},  % TODO
+    thesis/examiner/2={Prof. Dr. Bob Bär}, % optional TODO
     thesis/date=\today,                    % optional, default: \today
    %title/size=\LARGE,      % set this value to overwrite automatic font size
    %abstract/separate       % toggle this to move the abstract to its own page
 ]
-{ % Your abstract here:
-    \lipsum[1]
+{ % Your abstract/Zusammenfassung here:
+    \input{0_zusammenfassung.tex}
 }
 
-\include{declaration}
+\include{eidesstattlicheErklaerung}
 
 \cleardoublepage
 
@@ -63,14 +66,18 @@
 
 % Actual content starts here
 
-\input{1_introduction}
-\input{2_fundamentals}
-\input{3_main}
-\input{4_conclusion}
+\include{1_einleitung/1_einleitung}
+\include{2_anforderungen/2_anforderungen}
+\include{3_technologischeUeberlegungen/3_technologischeUeberlegungen}
+\include{4_design/4_design}
+\include{5_implementierung/5_implementierung}
+\include{6_validierung/6_validierung}
+\include{7_fazitUndAusblick/7_fazitUndAusblick}
+%\include{9_latex-beispiele} %TODO remove later
 
-\printbibliography
+\printbibliography[notkeyword={anhang}]
 
 \appendix
-\include{5_appendix}
+\include{8_anhang}
 
 \end{document}

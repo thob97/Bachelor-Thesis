@@ -1,0 +1,69 @@
+% !TeX encoding = UTF-8
+ 
+\section{Beispiele} 
+ 
+%sections
+\subsection{Zu dieser \LaTeX{}-Vorlage}
+\subsubsection{Optionen der Dokumentenklasse}
+\subsubsection{Tabelle}
+
+%cite
+Siehe \zb \cite{Dje06, DjeOezSal07, CocWil00}.
+
+%tabelle
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|L{5.5cm}|L{4cm}|}
+        \hline
+        \textbf{Schlüssel} & \textbf{Funktion} & \textbf{Default-Wert} \\
+        \hline
+        \texttt{student/id} & Matrikel-Nummer & -- \\
+        \texttt{student/mail} & E-Mail-Adresse & -- \\
+        \texttt{thesis/type} & Art der Abschlussarbeit & "`Bachelorarbeit"' \\
+        \texttt{thesis/group} & Arbeitsgruppe in der die Arbeit geschrieben
+        wurde & "`Arbeitsgruppe Software Engineering"' \\
+        \texttt{thesis/advisor} & \emph{optional:} Betreuer der Abschlussarbeit
+        & -- \\
+        \texttt{thesis/examiner} & Erstgutachter der Arbeit & -- \\
+        \texttt{thesis/examiner/2} & \emph{optional:} Zweitgutachter der Arbeit
+        & -- \\
+        \texttt{thesis/date} & \emph{optional:} Datum der Abgabe & aktuelles
+        Datum\\
+        \texttt{title/size} & \emph{optional:} \LaTeX-Schriftgröße für den
+        Titel (\zb \texttt{\textbackslash{}LARGE}) & wird automatisch gesetzt \\
+        \texttt{abstract/separate} & \emph{optional:} Schlüssel ohne Wert;
+        falls gesetzt, wird der Abstract auf eine eigene Seite gesetzt und die
+        Titelseite ist "`luftiger"' & -- \\
+        \hline
+    \end{tabular}
+    \caption{Schlüssel-Wert-Konfiguration des
+    \texttt{\textbackslash{}coverpage}-Kommandos.}
+    \label{tab:coverpage-config}
+\end{center}
+\end{table}
+
+
+
+
+%codeabschnitt %morekeywords makiert
+\begin{lstlisting}[language={[LaTeX]TeX}, morekeywords={coverpage}] 
+\coverpage[
+    student/id=1234567,
+    student/mail=email@inf.fu-berlin.de,
+    thesis/type=Masterarbeit,
+    thesis/examiner={Prof. Dr. Mia Maus}
+]
+{
+    Prokrastination ist ein gut verstandenes Verhalten,
+    das auch vor Abschlussarbeitern mit Informatik-Hintergrund
+    nicht halt macht.
+    % ...
+}
+\end{lstlisting}
+
+%Klassen Schrift
+%Footnote
+Quellcode der Klasse \texttt{agse-thesis}:\footnote{Es ist nicht üblich,
+den gesamten produzierten Quellcode bei einer Abschlussarbeit in Textform
+abzugeben.}
+
