@@ -1,15 +1,41 @@
-\subsubsection{Prozess}
-Eine wichtige Annahme ist, dass man in der Regel genau dann hohe Qualität erhalt, wenn man geeignete/sinnvolle Arbeitsweisen verwendet und diese sorgfältig/gezielt durchführt. Zum Beispiel was für Themen betrachtet werden sollen, wie Umfangreich man diese betrachtet und wann man zum nächsten Thema übergeht.
-Da dies ein sehr großer und somit auch wichtiger Teil für die Arbeit ist, sollte man diese Gesamt-Vorgehensweise nicht neu erfinden, sondern sich stattdessen auf vorhandene Erfahrungen halten.
-Das erste Modell was wir dazu betrachten ist das Wasserfall-Modell. Dies hätte den Vorteil, dass man Schritte zum Bau der Software, genau wie in dieser Arbeit, voneinander trennen und nacheinander lösen kann. Dadurch würde die Zeitplanung auch einfacher ausfallen, was sich sehr gut bei einer vorgegebenen Zeitangabe, wie bei dieser Arbeit, macht.
-Jedoch wurde sich doch dagegen entschieden. Die Annahme "alle Aufgaben lassen sich getrennt voneinander lösen", ist bei dieser Arbeit nicht Sinnvoll. Es ist sehr Wahrscheinlichkeit, dass sich während der Implementierung und dem Design neue Erkenntnisse zu den Anforderungen ergeben. Man stelle sich zum Beispiel vor, dass sich erst bei der eigentlichen Implementierung bewusst wird, dass eine Funktion, aus Schwierigkeit und Zeitgründen, nicht umzusetzen ist. Es wird also stattdessen davon ausgegangen, dass sich die Schritte in diesem Softwareprojekt nicht nacheinander und getrennt voneinander lösen lassen, sondern das zwischen Ihnen ein fließender Übergang herrscht.
-Auch die Zeitplanung lässt sich nicht, wie im Wasserfall-Modell vorgesehen, einhalten. Dafür benötigt es ein wohldefiniertes Resultat. In dieser Arbeit herrscht aber große Unsicherheit. Anforderungen, Design sowie die Art der Implementierung müssen alle zuerst überlegt/erhoben werden.
+\subsubsection{Prozess} \myCheckmark
+%Was: Arbeitsweise
+Eine Annahme aus der Softwaretechnik ist, \glqq dass man in der Regel genau dann hohe Qualität erhält, wenn man geeignete Arbeitsweisen verwendet und diese sorgfältig durchführt\grqq. Dazu zählt zum Beispiel was für Themen betrachtet werden sollen, wie Umfangreich man diese betrachtet und wann man zum nächsten Schritt übergeht. 
+	%Warum: Großer Teil dieser Arbeit
+	Da dies ein großer Teil der Arbeit einnimmt wird sich gründlich Gedanken um eine geeignete Arbeitsweise machen.\newline%
+%Was + Warum: Modelle
+Passend dazu gibt es in der Softwaretechnik Modelle, welche eine Gesamt-Vorgehensweise vorgeben und sich aus Erfahrungen als nützlich herausgestellt haben.\newline%
+%Was + Warum: konventionellen und agile
+Die zusammen wahrscheinlich meist betrachteten Prozesse sind die konventionellen und die agilen. Möglicherweise liegt das gerade daran, dass die beiden Prozesse so verschieden sind.\newline%
+	%Wasserfall
+	Daher betrachten wir zuerst das Wasserfall-Modell. 
+		%Warum / Vorteil: Aufgaben Trennung -> Zeit
+		Mit ihm lassen sich die Schritte zum Bau der Software, genau wie in dieser Arbeit, voneinander trennen und nacheinander lösen. Dadurch würde die Zeitplanung einfacher ausfallen, was sich sehr gut bei einer vorgegebenen Zeitangabe, wie bei dieser Arbeit, macht.\newline%
+		%Warum: Nachteil -	Schlechte Annahme
+		Jedoch wurde sich doch dagegen entschieden. Die Annahme \glqq alle Aufgaben lassen sich getrennt voneinander lösen\grqq, ist bei dieser Arbeit nicht Sinnvoll. Es ist sehr Wahrscheinlichkeit, dass sich während der Implementierung und dem Design neue Erkenntnisse zu den Anforderungen ergeben. So ist zum Beispiel Vorstellbar, dass  einen erst bei der eigentlichen Implementierung bewusst wird das Funktionen aus Schwierigkeit oder Zeitgründen nicht umzusetzen sind.\newline%
+			%Sinnvolleren Annahme
+			Es wird also stattdessen davon ausgegangen, dass sich die Schritte in diesem Softwareprojekt nicht nacheinander und getrennt voneinander lösen lassen, sondern das zwischen Ihnen ein fließender Übergang herrscht.\newline%
+		%Warum: Nachteil - Zeitplanung
+		Auch die strikte Zeitplanung lässt sich nicht wie im Wasserfall-Modell vorgesehen einhalten. Um einen Zeitplan genau abschätzen zu können benötigt es ein wohldefiniertes Resultat. In dieser Arbeit herrscht aber große Unsicherheit. Anforderungen, Design sowie die Art der Implementierung müssen alle zuerst überlegt und erhoben werden.\newline%
 
+%Was: Agile-Arbeitsweise 
 \myNewSection
-Stattdessen wurde sich dann doch für eine Agile-Arbeitsweise entschieden. Und zwar unteranderem wegen den Folgenden, eng miteinander verbundenen, Prinzipien:
+Stattdessen wurde sich für eine Agile-Arbeitsweise entschieden. Und zwar unteranderem wegen den folgenden eng miteinander verbundenen Prinzipien:
 	\begin{enumerate}
-		\item Das erste ist dabei die Arbeit in \textbf{Iterationen}. Es wird sich also in vielen kleinen Schritten zum Ziel herangetastet. Einerseits hat man dadurch steht's ein Evaluierbares Produkt, was sehr nützlich für die Evaluierung ist. Außerdem die Arbeit in kleinen überschaubaren Schritten auch bei der zuvor erwähnten Anforderungsunsicherheiten dieser Arbeit. Jedoch gibt es auch Nachteile bei der Arbeit in Iterationen. So könnte diese bei schlechter Planung oder sehr großer Unsicherheit zu Doppelarbeit führen. Zum Beispiel weil das zuletzt erst erstellte und für richtig gehaltene Produkt nun doch nicht benötigt wird.
-		\item Das zweite Prinzip ist der Kurzer \textbf{Planungshorizont}. Auch dies würde dabei helfen, dass Änderungen weniger verheerend sind, weil sich nicht strikt an einen Plan gehalten werden muss.
-		\item Das letzte Prinzip sind die \textbf{Korrekturen}. Dabei geht das Prinzip sinnvoll davon aus, das man während eines Projektes Fehler machen wird. Deswegen wird der Prozess so gestaltet, dass Auftretende Fehler gut behoben werden können. Offensichtlich erfüllen die beiden zuvor genannten Prinzipien bereits diese "Regel".
-		\item Prozessmodelle passen verschieden gut zu Projekten. So könnte das Wasserfall-Modell gut zu einem bereits sehr definierten Projekt passen und Agile zu einer Revolutionären Idee. Auch das einhalten der Prinzipien und Regeln kann misslingen. Von daher ist es wichtig das Prinzip \textbf{ständige reflektion} zu erwähnen. Dabei werden zum Beispiel wöchentlich, also nach je einer Iteration, Überlegungen über den Prozess gemacht. Diese Reflexion helfen einen dabei, schrittweise, da wo es hapert oder wo es sehr gut läuft, den Prozess zu Verbessern und Ursache von Mängeln zu beseitigen.
+		%Was;
+		\item Das erste Prinzip die Arbeit in \textbf{Iterationen}. Es besagt, dass sich in vielen kleinen Schritten zum Ziel herangetastet wird. 
+			%Warum/Vorteil:
+			Einerseits hat man dadurch steht's ein Produkt zum evaluieren, was sehr nützlich für die Evaluierung ist. Andererseits kann, die Arbeit in kleinen überschaubaren Schritten aufzuteilen, auch bei der zuvor erwähnten Anforderungsunsicherheiten dieser Arbeit, helfen. \newline%
+			%Warum/Nachteil + Beispiel:
+			Jedoch hat das Arbeiten in Iterationen auch Nachteile. So könnte es bei schlechter Planung oder sehr großer Unsicherheit zu Doppelarbeit führen. Zum Beispiel weil das zuletzt erst erstellte und für richtig gehaltene Produkt nun doch nicht benötigt wird.
+		%Was + Warum
+		\item Das zweite Prinzip ist der \textbf{kurze Planungshorizont}. Auch dieses Prinzip würde dabei helfen, dass Änderungen weniger verheerend sind, denn es muss sich nicht strikt an einen Plan gehalten werden.
+		%Was + Warum + Beispiel
+		\item Das letzte Prinzip sind die \textbf{Korrekturen}. Dabei ist die Annahme dieses Prinzips das man während eines Projektes Fehler macht. Deshalb wird der Prozess so gestaltet, dass Auftretende Fehler gut behoben werden können. So erfüllen die beiden zuvor genannten Prinzipien bereits diese \dq Regel\dq.
+		%Warum: Prozessmodelle -> Regeln passen verschieden gut 
+		\item Prozessmodelle passen verschieden gut zu Projekten. So könnte das Wasserfall-Modell mit seinem detaillierten Planungshorizont gut zu einem bereits sehr definierten Projekt passen und Agile-Methoden mit ihrer Akzeptanz zu Veränderungen zu einer revolutionären Idee. Daraus flogt, dass auch die Regeln und Prinzipien der Prozessmodelle verschieden gut zu Projekten passen. Daher sollte sich also nicht blind an Regeln gehalten werden. \newline%
+			%Warum: Regeln misslingen weil nicht richtig einhalten
+			Des Weiteren können die Prinzipien und Regeln auch misslingen, weil man sie nicht richtig einhält oder falsch anwendet. \newline%
+			%Was: Deshalb ständige Reflexion
+			Aus diesen beiden Gründen wird auch das Prinzip \textbf{ständige Reflexion} betrachtet. Dabei werden zum Beispiel wöchentlich, also nach je einer Iteration, Überlegungen über den Prozess gemacht. Diese Reflexion helfen einen dabei, schrittweise, da wo es hapert oder wo es sehr gut läuft, den Prozess zu Verbessern und dadurch Ursache von Mängeln zu beseitigen.
 	\end{enumerate}
