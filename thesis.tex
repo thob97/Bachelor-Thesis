@@ -2,6 +2,8 @@
 
 \documentclass[serif,article,noparskip,de]{config-agse-thesis}
 
+%Todo: Maybe Titel anpassen:
+%Entwicklung einer Kalender-App für Geeks: Ein Versuch die Lücke zwischen Terminal und Smartphone zu überbrücken
 \newcommand{\thesisTitle}{Entwicklung einer Kalender-App für Geeks: Ein Versuch wie man die Lücke zwischen Terminal und Smartphone überbrücken könnte}
 % -> You may use \par (but not \\) to format the title. If you do so, you'll
 
@@ -35,6 +37,13 @@
 	\tikz\draw[red,fill=red] (0,0) circle (.5ex);
 }
 
+%für roten Text
+\newcommand{\myTextTodo}[1]{\textcolor{red}{#1}}%
+
+%für nameref
+\usepackage{hyperref}
+\newcommand{\secref}[1]{\autoref{#1}. \nameref{#1}}
+
 \begin{document}
 
 \coverpage[
@@ -67,6 +76,7 @@
 % Actual content starts here
 
 \include{1_einleitung/1_einleitung}
+\include{_pcVsPhone/_pcVsPhone}
 \include{2_anforderungen/2_anforderungen}
 \include{3_technologischeUeberlegungen/3_technologischeUeberlegungen}
 \include{4_design/4_design}
@@ -74,8 +84,7 @@
 \include{6_validierung/6_validierung}
 \include{7_fazitUndAusblick/7_fazitUndAusblick}
 %\include{9_latex-beispiele} %TODO remove later
-
-\printbibliography[notkeyword={anhang}]
+\printbibliography
 
 \appendix
 \include{8_anhang}

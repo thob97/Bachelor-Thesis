@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{agse-thesis}[2021/03/31 v0.2 AGSE Thesis]
+\ProvidesClass{config-agse-thesis}[2021/03/31 v0.2 AGSE Thesis]
 
 %%% Read options
 % Language: Default is German
