@@ -1,1 +1,163 @@
-\subsection{Anforderungsvalidierung}
+\subsection{Anforderungsverifizierung}%
+%
+%Einleitung
+In diesem Abschnitt werden noch einmal alle Anforderungen aus \secref{section:anforderungen} aufgelistet, um sie einzeln mit dem Endprodukt vergleichen und so verifizieren zu können. %
+%Funktionalen
+Dabei werden die funktionalen Anforderungen darauf überprüft, ob sie vollständig oder teilweise umgesetzt wurden, oder lediglich in der Konzeptionsphase verblieben sind. %
+%Nicht funktionalen
+Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu bewerten, ob sie wie gewünscht umgesetzt wurden. Daher können bei diesen Anforderungen ausschließlich Vermutungen [getroffen/angestellt] werden. %
+	%Nutzertest
+	Es wäre wahrscheinlich besser gewesen, einen Nutzertest durchzuführen, um aussagekräftigere Schlüsse ziehen zu können. Insbesondere hätten die Nützlichkeit und Benutzerfreundlichkeit besser eingeschätzt werden können. Aber auch die Wartbarkeit und Leistung hätten mithilfe einer Änderungsfreundlichkeitsanalyse und Benchmarks besser beurteilt werden können. Leider blieb dafür jedoch keine Zeit mehr übrig.%
+\newline%
+\myNewSection%
+\textbf{Funktionale Anforderungen:}%
+\begin{enumerate}%
+	\item \textbf{M Verbindung mit Backend:} %
+		Vollständig implementiert. Alle benötigten Datenbankfunktionen stehen zur Verfügung.%
+		%
+	\item \textbf{M (+C) Übersetzer für CLI-Terminkalender:} %
+		Teilweise implementiert. Wie in \ref{subsection:imp:parser} erwähnt versteht der Übersetzer derzeit nicht alle Operanden und setzt vorerst Klammersetzung voraus. Des Weiteren werden drei Terminaloptionen\footnote{when Terminal Optionen: monday\_first, ampm, auto\_pm\cite{cli_when}}, die \glqq when\grqq{} bietet und die Interpretation von Terminen verändert, noch nicht unterstützt.%
+		%
+	\item \textbf{M (+C) Kalender Darstellung:} %
+		Vollständig implementiert. Alle benötigten Kalenderansichten stehen zur Verfügung. %Weitere könnten jedoch noch hinzugefügt werden.%
+		%
+	\item \textbf{S Einträge erstellen, bearbeiten, löschen:} %
+		%Was
+		Teilweise Implementiert. Erinnerungseinträge können erstellt, bearbeitet und abgeschlossen werden.\newline
+		%Was nicht
+		Es wurde sich jedoch gegen das Löschen entschieden, da die Abschließen-Funktion bereits eine ähnliche Funktionalität bietet und daher angenommen wird, dass die Darstellung der Löschaktion die App nur unübersichtlicher machen würde.
+		%
+	\item \textbf{S Einschränkungen:} %
+		%Was
+		Vollständig implementiert. Die Anwendung hat mehrere Einschränkungen, die darauf abzielen, die Nutzung auf die Stärke des Handys zu lenken, wie etwa die kurzweiligen und einfachen Aufgaben. %
+		%Beispiele
+		So werden unter anderem bei der Erstellung neuer Erinnerungen die Länge des Titels und der Beschreibung sowie die Anzahl der Dateien begrenzt. Zudem ist auch die Anzahl der in der App darstellbaren Erinnerungen begrenzt.%
+		%
+	\item \textbf{S Benachrichtigungen:} %
+		Vollständig implementiert. Erinnerungen zu Terminen werden automatisch erstellt.%
+		%
+	\item \textbf{S Konfiguration auf dem Pc:}
+		%Was
+		Vollständig implementiert. Für die Anwendung existiert eine Konfigurationsdatei welche über den Pc angepasst werden kann. %
+		%Was nicht
+		Jedoch könnte diese noch weiter verbessert werden, indem das Dateiformat auf das Textformat umgewandelt wird und gegebenenfalls weitere Optionen hinzugefügt werden.%
+		% 
+	\item \textbf{C Suchfunktion:} %
+		Nicht implementiert.%
+		%
+	\item \textbf{C Weitere Kalender Abonnieren \& Teilen:} %
+		%Was nicht
+		Nicht implementiert. Zurzeit kann nur ein Kalender gleichzeitig Angezeigt werden. %
+		%Was schon
+		Jedoch sollte es möglich sein, dadurch dass GitHub als Datenbank verwendet wird, diese zum teilen von Terminkalendern zu nutzen.%
+		%
+	\item \textbf{C Offline Funktionen:} %
+		Nicht implementiert.%
+		%
+	\item \textbf{W Anleitung:} %
+		%Was nicht
+		Teilweise implementiert. Wie zuvor geplant wurde keine Anleitung implementiert, da es stattdessen besser wäre eine Anwendung zu erstellen, die so intuitiv ist, dass keine Anleitung benötigt wird. %
+		%Was schon
+		Jedoch würde sich für das erste aufsetzen des Repositories mit Kalendar sowie Konfigurationsdatei eine Anleitung lohnen, da dies ein relatives komplexes und aufwändiges Unterfangen darstellt. Statt jedoch eine Anleitung zu entwerfen, wurde beschlossen, eine Funktion bereitzustellen, welche dem Benutzer diesen Aufwand abnimmt. Daher verfügt die App über eine Auto-Setup-Taste, die automatisch ein Repository, eine Konfigurationsdatei und Beispieleinträge erstellt.%
+		%
+	\item \textbf{W Commit-History:}
+		Nicht implementiert.%
+\end{enumerate}%
+%
+\myNewSection
+\textbf{Nicht funktionale Anforderungen:}
+\begin{enumerate}
+	\item \textit{M Stärken von Pcs und Handys:}\newline%
+		%Was:
+		Umgesetzt. Da die Anwendung nach den Stärken des PCs und Handys aus \secref{section:pcVsPhone} erstellt wurde. %
+			%Hauptaufgaben
+			So sind für diese Anwendung die Hauptaufgaben des PCs das Erstellen von Terminen und das Vollenden von Erinnerungen sowie die Konfiguration der Anwendung und des Repositories. Im Gegensatz dazu sind die primären Aufgaben des Handys das Anzeigen von Terminen, Benachrichtigungen und Erinnerungen sowie das Erstellen von Erinnerungen.\newline%
+			%Auflistung
+			Im Folgenden werden die Stärken des PCs und Handys erneut aufgelistet, um diese so einzeln [im Hinblick] auf die erstellte Anwendung zu bewerten.\newline%
+		%PC
+		\myNewSection
+		Die Aufgaben des PCs:%
+  		\begin{enumerate}[label*={\arabic*}]
+			\item benötigen viel Leistung.\newline%
+				Nicht umgesetzt. Die Anwendung beinhaltet grundsätzlich keine Aufgaben oder Funktionen, die viel Leistung benötigen.%
+				%
+			\item erfordern schnelle, präzise oder vielfältige Eingaben.\newline%
+				Umgesetzt. Die Erstellung von Terminen über das Terminal profitiert von schneller und präziser Eingabe. Außerdem benötigt der CLI-Terminkalender spezielle Symbole, und dementsprechend erfordert diese Aufgabe auch eine vielfältige Eingabe.%
+				%
+			\item stellen viele Informationen dar oder benötigen viele Informationen.\newline%
+				Umgesetzt. Es wird angenommen, dass es beim Erstellen von Termineinträgen durchaus hilfreich sein kann, Informationen aus anderen Quellen zu beziehen. Eine solche Informationsquelle wird beispielsweise durch die Erinnerungen bereitgestellt, die von dieser Anwendung erstellt werden.
+				%
+			\item bieten viele Optionen und Konfigurationen an.\newline%
+				Umgesetzt. Es besteht die Möglichkeit, die Anwendung, das Repository und gegebenenfalls den CLI-Terminkalender zu konfigurieren.%
+				%
+			\item sind langwierig oder benötigen viel Zeit.\newline%
+				Teilweise Umgesetzt. Der Zeitaufwand für das Erstellen und Organisieren von Terminen auf dem Terminal ist nutzerabhängig. Einige Nutzer benötigen möglicherweise viel Zeit, da sie ihre Termine sorgfältig organisieren und komplexe Syntax für neue Termine verwenden, während andere Nutzer dafür nur den minimalen Aufwand aufbringen. Es wird jedoch vermutet, dass die Erstellung und Organisation von Terminen auf dem Terminal eher eine zeitaufwändige Aufgabe ist.%
+				%
+		\end{enumerate}
+		%
+		%HANDY
+		\myNewSection%
+		Die Aufgaben des Handys:%
+		\begin{enumerate}[label*={\arabic*}]
+		 	%RESSOURCEN
+			\item sind Ressourcen schonend und benötigen nicht viel Leistung.\newline%
+				Teilweise Umgesetzt. Weder das Einsehen von Terminen und Benachrichtigungen noch das Erstellen von Erinnerungen sind leistungsaufwändige Aufgaben. Weiteres siehe: 5. C Performance.
+				%
+			%EINGABE
+			\item erfordern keine schnelle, präzise oder vielfältige Eingaben.\newline%
+				Umgesetzt. Lediglich das Erstellen von Erinnerungen erfordert wiederholte Eingaben und für diese werden alternative Eingabemöglichkeiten angeboten, um den Aufwand dabei zu verringern. 
+				%
+			%INFORMATIONEN
+			\item stellen weder viele Informationen dar noch benötigen sie viele.\newline%
+				Umgesetzt. Das [Einsehen/Ansehen] von Terminen und Benachrichtigungen benötigt keine weiteren Informationen. Auch das Erstellen von Erinnerungen sollte hingegen nur wenig weiteren Informationen benötigen, wie zum Beispiel Bilder, Videos, Text, Sprachnachrichten oder andere Dateien auf dem Handy. Darüberhinaus wurde bei der Gestaltung der grafischen Oberfläche darauf geachtet, dass die Anwendung generell übersichtlich ist und keine überflüssigen Informationen enthält.%
+				%
+			%OPTIONEN
+			\item kommen ohne viel Optionen und Konfigurationen aus.\newline%
+				Umgesetzt. Für das Handy wurden bereits passende Voreinstellungen getroffen. Für jene Einstellungen, bei denen angenommen wurde, dass Nutzer sie gegebenenfalls selbstständig anpassen möchten, wurden die Option zum Konfigurieren auf den PC verlegt.
+				%
+			%KURZWEILIG
+			\item sind kurzweilig oder benötigen wenig Zeit.\newline%
+				Umgesetzt. Einerseits wird eingeschätzt, dass die Aufgaben des Einsehens von Terminen und Benachrichtigungen sowie das Erstellen von Erinnerungen relativ kurzweilig sind. Darüber hinaus wurde der Zeitaufwand für die Erstellung von Erinnerungen durch die Bereitstellung alternativer Eingabemethoden und die Begrenzung der Textlänge und maximalen Anzahl von Erinnerungen reduziert. Andererseits erfordert die Anwendung wenig bis keinen Einstiegsaufwand, da sie schnell geladen wird (siehe Punkt 5. C Performance) und keine initiale Konfiguration erforderlich ist, um die Anwendung anzusehen. Um [jedoch] die Funktionen der Anwendung zu nutzen, sind nur wenige Konfigurationsschritte in Form von drei Feldern erforderlich. Diese wurde durch die Funktion des \glqq Automatischen Setups\grqq{} noch weiter vereinfacht.
+				%
+			%UNTERWEGS
+			\item sind lohnenswert Unterwegs zu lösen.\newline%
+				Umgesetzt. Die Funktionen der Anwendung (Anzeigen von Terminen und Benachrichtigungen sowie Erstellen von Erinnerungen) wurden im \secref{section:anforderungen} ausgewählt, da unter anderem davon ausgegangen wurde, dass es sich lohnt, diese Funktionen auch unterwegs nutzen zu können.
+				%%%
+			%INTUITIV
+			\item sind einfach und intuitiv.\newline%
+				Überwiegend Umgesetzt. Siehe: 2. M Benutzbarkeit. 
+				%
+		\end{enumerate}
+	
+	\item \textit{M Benutzbarkeit:}\newline%
+		%Was
+		Überwiegend Umgesetzt. Es wird angenommen, dass die App einfach, intuitiv und effektiv zu nutzen ist, da sich beim Design an die Regeln und Erkenntnisse der von Apple gegebenen Richtlinien gehalten wurde.% und andererseits  sich bei den Anforderungen an die Stärken des Handys und Pc gehalten wurde.%
+		%Was nicht
+		\newline%
+		Jedoch gibt es beim Design noch einige wenige Entscheidungen, wie zum Beispiel die Navigationsleisten, welche noch ähnlicher zur iOS-Plattform aussehen könnten und daher verbesserungswürdig sind.%
+		%
+	\item \textit{S Wartbarkeit, Erweiterbarkeit, Verständlichkeit:}\newline%
+		%Was
+		Wie im \secref{section:implementierung} erwähnt, sind ausreichend Rückfalltests und Dokumentation für die grundlegenden Komponenten vorhanden. Weiter steht eine Mocked-Datenbank zur Verfügung, mit der die Funktionalität unabhängig von der GitHub-API getestet werden kann. Darüber hinaus wurde versucht, möglichst so modular zu programmieren und an geeigneten Stellen wurden Entwurfsmuster verwendet. All dies sollte sich positiv auf die Wartbarkeit, Erweiterbarkeit und Verständlichkeit auswirken.%
+		%Was nicht
+		Jedoch konnte dieser Qualitätsstandard nicht auf den gesamten Programmcode angewendet werden. Denn zum Ende der Bearbeitungszeit wurde der der Schwerpunkt eher darauf gelegt, alle erforderlichen Funktionen zu in die Benutzeroberfläche zu integrieren, um so ein möglichst validierbares Produkt zu erhalten. Dadurch litt jedoch die Modularität und Dokumentation des Programmcodes etwas.%
+		%
+	\item \textit{S Qualität \& Korrektheit:}\newline%
+		Umgesetzt. Es wird mit großer Sicherheit vermutet, dass die Anwendung sich so verhält, wie zuvor spezifiziert wurde. Dies liegt daran, dass es, wie im \secref{section:qualitaetssicherung} erwähnt, für die Grundkomponenten der Anwendung reichlich Rückfalltests gibt und die grafische Oberfläche ausgiebig manuell getestet wurde.%
+		%
+	\item \textit{C Leistung:}\newline%
+		Teilweise umgesetzt: %
+		%Flüssigkeit/CPu
+		So lief die App während des Tests flüssig und es konnte keine hohe CPU-Auslastung festgestellt werden. %
+		%Größe + Neztwerkauslastung & Ladezeit (Proxy, Nachlade Kalender)
+		Außerdem ist die App mit rund 73 MB relativ klein, und durch Funktionen wie den dynamisch nachladenden Kalender und den Proxy wurden Ladezeiten sowie Netzwerkauslastung reduziert. %
+		%Jedoch: CLI Parser Dateigröße
+		Die Ladezeit der Terminkalenderseite hängt jedoch von der Bearbeitungszeit des Parsers ab. Dieser ist wiederum abhängig vom Inhalt der CLI-Terminkalenderdatei und folglich auch vom Nutzer. Aus diesem Grund sollte der Parser zunächst einem Last-, Stress- und Leistungstest unterzogen werden, bevor die Ladezeit endgültig eingeschätzt werden kann. Es wird jedoch [erwartet/geschätzt], dass der Rechenaufwand des Parsers vernachlässigbar ist.%
+		%
+	\item \textit{C Reichweite:}\newline%
+		Teilweise Umgesetzt: %
+		%OS Version + Performance
+		Die App sollte einerseits auf recht alten Handys nutzbar sein, da sie verhältnismäßig alte Betriebssystemversionen wie iOS 11.0 (von 2017) und Android 5.0 (von 2014) unterstützt. Außerdem benötigt sie, wie zuvor erwähnt, relativ wenig Leistung. %
+		%Flutter/Vorerst nur Android
+		Jedoch lässt sich die Anwendung vorerst trotz der Verwendung des Cross-Frameworks Flutter nur auf iOS installieren. Aufgrund von zeitlichen Beschränkungen wurde sich zunächst eher auf eine Plattform konzentriert, in diesem Fall iOS. Dabei wurden einige Darstellungskomponenten verwendet die inkompatibel mit Android sind. Jedoch wird der Aufwand, die Anwendung auch für Android zu ermöglichen, als relativ gering eingeschätzt. Es müssen lediglich die Komponenten durch eine Abfrage gegen die Android-Kompliment ersetzt werden.%
+\end{enumerate}

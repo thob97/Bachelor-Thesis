@@ -1,48 +1,64 @@
-\subsection{Auswahl der Pakete}\myCheckmark
+\subsection{Auswahl der Pakete}\label{subsection:auswahlDerPakete}\myCheckmark
 %Einleitung
-In diesem Abschnitt wird sich mit der Auswahl der Pakete auseinandergesetzt. Dabei wird zuerst erklärt warum und nach welchen Kriterien generell die Pakete ausgesucht wurden. Anschließend werden die wichtigsten Pakete aufgelistet und ihre Daseinsberechtigung/Benutzung/Verwendung begründet.
-
+In diesem Abschnitt wird sich mit der Auswahl der Pakete auseinandergesetzt. Dabei wird zuerst erklärt warum und nach welchen Kriterien generell die Pakete ausgesucht wurden. Anschließend werden die wichtigsten Pakete aufgelistet und ihre [Daseinsberechtigung/Benutzung/Verwendung] begründet.\newline%
 %Generelle Kriterien
-\myNewSection
 	%Was
-	Die Pakete wurden nach einem ähnlichen Verfahren wie auch in \secref{subsection:auswahlDesFrameworks} ausgesucht. So wurden bei Ihnen generell auf ihr Alter, ihre Beliebtheit und den Verlauf ihrer Aktualisierungen geachtet. 
+	Die Pakete wurden nach einem ähnlichen Verfahren wie auch in \secref{subsection:auswahlDesFrameworks} ausgesucht. So wurden auf ihr Alter, ihre Beliebtheit und den Verlauf ihrer Aktualisierungen geachtet. % 
 	%Warum -> long time support
-	Dabei wird nämlich angenommen, dass bei einer starken Ausprägung dieser drei Kriterien, es wahrscheinlicher ist, dass ein Paket noch für lange Zeit weitere Unterstützung und Aktualisierungen erhält. Und das ist wiederum nützlich wenn die zu erstellende Anwendung auch in der Zukunft noch bestehen soll. 
+	Dabei wird nämlich angenommen, dass bei einer starken Ausprägung dieser drei Kriterien, es wahrscheinlicher ist, dass ein Paket noch für lange Zeit weitere Unterstützung und Aktualisierungen erhält. [Und] das ist wiederum nützlich wenn die zu erstellende Anwendung auch in der Zukunft noch bestehen soll. %
 	%Warum -> 
-	Außerdem kann es die Verständlichkeit, einer unserer nicht funktionalen Anforderungen, erleichtern, wenn die gewählten Pakete guten Support haben und etabliert/bereits bekannt sind. 
+	Außerdem kann es die Verständlichkeit erleichtern, wenn die gewählten Pakete eine gute Dokumentation haben und bereits bekannt sind. % 
 	%Auswirkung
-	Aus diesem Grund wurde, falls mehrere Pakete mit ähnlichen Funktionen zur verfügung stehen, [stets] das ausgewählt, welches in diesem drei Punkten am besten abschneidet.
+	Dementsprechend wurde, falls mehrere Pakete mit ähnlichen Funktionen zur verfügung stehen, stets das ausgewählt, welches in diesem drei Punkten am besten abschneidet.%
 
 %Packages
 \myNewSection
 Pakete:
 \begin{itemize}
-	%Was
-	\item json\_serializable\cite{tech_packageJson}: Dieses Package erstellt Json-Klassen automatisch, welche für die Übersetzung von Daten zu Json-Objekten und umgekehrt benötigt werden. 
-		%Warum: Zeit
-		Einerseits wird durch die automatische Erstellung etwas Zeit gespart. 
-		%Warum: Einheitlich + Popularität -> Weiterentwickelbarkeit
-		Andererseits haben die automatisch erstellten Klassen alle das selbe Muster. Dadurch wird der Code und das Projekt einheitlicher, wodurch eine bessere Struktur und Überblick geschaffen wird.
-		Außerdem ist das Package mit 2550 Likes und 99\% Popularität\footnote{eine eigene Kategorie auf dart.dev} das beliebteste Paket dieser Liste. Durch diese beiden Punkte wird erwartet, das es andere Programmierer leichter fällt diese Klassen erkennen und verstehen. Im Endeffekt sollte das also die Verständlichkeit erleichtern.
-		 
-	%Was
-	\item tests\cite{tech_packageTest}: Aus dem gleichen Grund wurde das Test Package für Flutter gewählt. Es legt ein einheitliches Muster für das Schreiben von Tests vor, was zu einer übersichtlichen Struktur führt. 
-		%Warum: Popularität -> Weiterentwickelbarkeit
-		So wird bei diesem Paket, genau wie beim vorherigen, aus der Beliebtheit und des einheitlichen Musters daraus geschlossen, dass die Nutzung davon die Verständlichkeit verbessert.
-	%Was
-	\item flutter\_lints\cite{tech_packageLints}: Das Package flutter\_lints legt eine Reihe von Regeln für nützliche  Programmierpraktiken vor. So zum Beispiel das eine Textzeile nicht länger als 80 Zeichen lang sein darf oder das die Benennung von Variablen stets mit einem kleinen Buchstaben anfangen.
-		%Warum: Zeitsparen
-		Durch die Nutzung dieses Paketes wird etwas Zeit gespart, da man sich weniger Gedanken um den Code-Style machen muss. Stattdessen kann man die vordefinierten Regeln vom Ersteller des Paketes benutzen. Beim Ersteller dieses Paketes handelt es sich dabei um \glqq flutter.dev\grqq. Daher wird auch angenommen, dass die ausgewählten Style Entscheidungen und Programmierpraktiken gut durchdacht und passend zum Framework und der Programmiersprache sind. 
-		%Warum: Einheitlich
-		Außerdem macht es den Quellcode generell übersichtlicher, da durch das Paket in jeder Datei eine einheitliche Formatierung und Style genutzt wird.
-		%Warum: Beliebtheit
-		Des Weiteren erfreut sich auch dieses Paket erneut großer Beliebtheit. Daher wird auch hier erneut davon ausgegangen, dass durch die Beliebtheit und einheitlichen Muster, auch dieses Package die Leserlichkeit für andere Personen erleichtern.
 	
-	%Warum: Zeit + Tests
-	\item github\cite{tech_packageGithub}: Um mit dem Backend kommunizieren zu können benötigt es einer Schnittstelle von der Programmiersprache zum Backend. Eine solche Schnittstelle zu erstellen ist eine umfangreiche und zeitaufwändiges Umfangen. Es würde also nicht nur den Rahmen sondern auch die Zeit dieser Arbeit sprengen, wenn versucht würde diese Aufgabe eigenständig zu bewältigen. Daher wird stattdessen das Paket \glqq github\grqq benutzt, welche sich genau dieser Aufgabe widmet. 
+	\item json\_serializable\cite{tech_packageJson}: %
 		%Was
-		So stellt das Package \dq github\dq eine API bereit, damit über dart mit GitHub interagiert werden kann. 
-		%Alternative
-		Dieses Paket ist dabei das einzige, welches eine solche Schnittstelle zur verfügung stellt. Das heißt also, dass es für dieses Package keine alternativen gibt. Das könnte sich als Nachteil herausstellen, da bei Komplikationen, Fehler oder keiner weiteren Unterstützung das Paket nicht gewechselt werden kann. 
+		Dieses Package erstellt automatisch Json-Klassen, welche für die Übersetzung von Daten zu Json-Objekten und umgekehrt benötigt werden. % 
+		%Warum: Zeit
+		Einerseits wird durch die automatische Erstellung etwas Zeit gespart. % 
+		%Warum: Einheitlich
+		Andererseits haben die automatisch erstellten Klassen alle das selbe Muster. Dadurch wird der Code und das Projekt einheitlicher, wodurch eine bessere Struktur und Überblick geschaffen wird. %
+		%Warum: Popularität
+		Außerdem ist das Package mit 2550 Likes und 99\% Popularität\footnote{eine eigene Kategorie auf dart.dev} das beliebteste Paket dieser Liste. %
+		%Auswirkung: Weiterentwickelbarkeit
+		Durch diese beiden Punkte wird erwartet, das es andere Programmierer leichter fällt diese Klassen erkennen und verstehen. Im Endeffekt sollte das also die Verständlichkeit erleichtern.%
+		 
 
+	\item tests\cite{tech_packageTest}: %
+		%Was
+		Aus dem gleichen Grund wurde das Test Package für Flutter gewählt. Es legt ein einheitliches Muster für das Schreiben von Tests vor, was zu einer übersichtlichen Struktur führt. %
+		%Warum: Popularität -> Weiterentwickelbarkeit
+		%[Dementsprechend wird bei diesem Paket, genau wie beim vorherigen, aus der Beliebtheit und des einheitlichen Musters daraus geschlossen, dass die Nutzung davon die Verständlichkeit verbessert.]%
+		
+	\item lint\cite{tech_packageLints}: %
+		%Was
+		Linter legen eine Reihe von Regeln für Programmierpraktiken vor. So zum Beispiel das eine Textzeile nicht länger als 80 Zeichen lang sein dürfen oder das die Benennung von Variablen stets mit einem kleinen Buchstaben anfangen. %
+		%Warum: Zeitsparen
+		Durch die Nutzung solch eines Paketes wird einerseits Zeit gespart, da sich weniger Gedanken um den Code-Style gemacht werden muss. Stattdessen können die vordefinierten Regeln vom Ersteller des Paketes benutzen werden. %
+		%Warum: Einheitlich
+		Andererseits macht es den Quellcode generell übersichtlicher, da durch das Paket in jeder Datei eine einheitliche Formatierung und Style genutzt wird. %
+		%Warum: Nützliche Regeln
+		%Damit es zu diesen Vorteilen kommt, sollten die Regeln [gut durchdacht] und passend zur Programmiersprache und Framework sein. Da es sich beim Erstelle des Pakets um \glqq flutter.dev\grqq{} handelt, [wird genau das angenommen.] %
+		Vorerst wurde sich dabei für das Paket flutter\_lints\cite{tech_packageFlutterLints} entschieden. Denn bei diesem wurde angenommen, dass die Regeln gut durchdacht und passend zur Programmiersprache und Framework sind, da es sich bei den Erstellern des Paketes um \glqq flutter.dev\grqq{} handelt. Jedoch stellte sich beim Programmieren heraus, dass das Paket zwar viele solcher Regeln anbietet, die meisten davon aber standardmäßig deaktiviert sind. Die Regeleinstellungen des Paketes sind also dazu gedacht vom Entwickler angepasst zu werden. Das Ziel war es jedoch einen Linter mit vordefinierten Regeln zu nutzen. Dementsprechend wurde auf das Paket lint gewechselt. Dieses bietet eine Reihe von vordefinierten Regeln an, sowie folgt es dabei dem Dart Style Guide\cite{tech_packageDartStyle}. Dementsprechend sollten die gleichen Vorteile wie flutter\_lints folgen.
+		
+		%Warum: Beliebtheit
+		%Des Weiteren erfreut sich auch dieses Paket erneut großer Beliebtheit. Daher wird auch hier erneut davon ausgegangen, dass durch die Beliebtheit und einheitlichen Muster, auch dieses Package die Leserlichkeit für andere Personen erleichtern.%
+	
+
+	\item github\cite{tech_packageGithub}: 
+		%Warum: umfangreiche und zeitaufwändiges Umfangen
+		Um mit dem Backend kommunizieren zu können benötigt es einer Schnittstelle von der Programmiersprache zum Backend. Eine solche Schnittstelle zu erstellen ist eine umfangreiche und zeitaufwändiges Umfangen. Es würde also nicht nur den Rahmen sondern auch die Zeit dieser Arbeit sprengen, wenn versucht würde diese Aufgabe eigenständig zu bewältigen. %
+		%Was: github package
+		Daher wird stattdessen das Paket \glqq github\grqq{} benutzt, welche sich genau dieser Aufgabe widmet. Es stellt eine Verbindung zur GitHub API bereit, damit über die Programmiersprache mit GitHub interagiert werden kann. %
+		%Nachteil: Alternative
+		Dieses Paket ist dabei das einzige, welches eine solche Schnittstelle für Flutter zur verfügung stellt. Das könnte sich als Nachteil herausstellen, da bei Komplikationen, Fehler oder keiner weiteren Unterstützung das Paket, [angesichts/wegen] fehlenden Alternativen, nicht gewechselt werden kann.%
+		
+	%\item shared\_preferences \& path\_provider um persistente und temporäre daten auf dem Handy speichern zu können.
+	\item syncfusion\_flutter\_calendar\cite{tech_packageCalendar}: Um Zeit zu sparen und sicherzustellen, dass es geschafft wird während der Bearbeitungszeit ein evaluierbares Produkt zu erstellen, wird für die Terminansichten vorerst ein Package benutzt. Nach der Evaluierung kann dieses immer noch durch ein eigenes Design ersetzt werden.  
+	%\item flutter\_local\_notifications Um eine simple Schnittstelle zu Notificationen für Android und iOS zu haben.
 \end{itemize}

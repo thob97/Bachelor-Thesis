@@ -1,47 +1,53 @@
-\subsection{Auswahl des Frameworks}\label{subsection:auswahlDesFrameworks}
+\subsection{Auswahl des Frameworks}\label{subsection:auswahlDesFrameworks}\myCheckmark%
 %Einleitung
-In diesem Abschnitt wird die Frage behandelt, wie die Anwendung erstellt werden soll.
+In diesem Abschnitt wird die Frage behandelt, wie die Anwendung erstellt werden soll. %
 %Was: App vs Web.
-Dabei gibt es zuerst zwei grundlegende Auswahlmöglichkeiten. Soll die Anwendung über eine Webseite oder als Applikation des Nutzer zugänglich sein.
-	%Warum
-	Zwar bietet eine Webseiten einige Vorteile über Applikationen, zum Beispiel, dass sie Platformunabhänig sind. Wie zuvor in \secref{section:pcVsPhone} scheinen Nutzer jedoch generell eher Apps zu präferieren\cite{pcVsphone_mobileAppVsWebTimeSpent}.
-	%Auswirkung
-	Daher soll die Anwendung als Applikation entwickelt werden.
+Dabei bestehen die Optionen die Anwendung als eine Webseite oder als Applikation zu erstellen. %
+	%Warum: Plattformunabhängig VS UserPreference, Gesten, Design Richtlinien
+	Zwar bietet eine Webseiten einige Vorteile über Applikationen, zum Beispiel, dass sie Plattformunabhängig sind. Wie zuvor in \secref{section:pcVsPhone} erwähnt, können Apps durch Richtlinien und Gesten aber um einiges intuitiver sein. Außerdem, vielleicht genau deswegen, scheinen Nutzer auch generell eher Apps zu präferieren\cite{pcVsphone_mobileAppVsWebTimeSpent}. %
+	%Auswirkung: -> App
+	Daher soll die Anwendung als Applikation entwickelt werden. %
 
 \myNewSection
 %Was: Framework
-Nun folgt die Frage über welches Framework die App erstellt werden soll.
-%Was: Native vs Crossplatform
-Auch hier gibt es zuerst zwei grundlegende Entscheidungsmöglichkeiten. Soll die App über Native-Frameworks oder Cross-Platform-Frameworks erstellt werden. Dabei sind Native-Frameworks diejenigen, welche die für die Platform spezifischen tools benutzt. Während Cross-Platform-Frameworks ihre eigenen tools anbieten.\newline
-	%Warum: Native: Performance
-	Generell bieten Native-Frameworks eine bessere Performance als Cross-Platform-Frameworks \cite{tech_performanceReactNativeVsFlutter1, tech_performanceReactNativeVsFlutter2}.
-	%Warum: Native: Aussehen
-	Außerdem sehen und fühlen sich die nativ erstellte Apps einheitlich mit der Platform an. Dies liegt daran, dass für diese Apps plattformspezifischen Funktionen und Komponenten benutze werden, so zum Beispiel die Schieberegler von iOS welche in allen Apple eigenen Apps benutzt werden. Das würde wahrscheinlich zu einer intuitiveren Benutzung für den Nutzer führen, da dies für ihm bereits bekannte Muster und Funktionen wären.\newline
-		%Auswirkung:
-		Da Performance und Benutzbarkeit zwei Anforderungen für diese Arbeit sind scheinen native-SDKs eine gute Wahl für diese Arbeit zu sein.\newline
-	%Warum: Crossplatform: Relativierung
-	Jedoch wurde sich für eine Cross-Platform-Framework entschieden. 
+Nun kann sich für ein Framework entschieden werden. %
+%Was+Def: Native vs Crossplatform
+Hier [bestehen] die Optionen ein Native-Frameworks oder Cross-Platform-Frameworks zu wählen.\newline% 
+	%Todo: remove useless beispiel:
+		%Dabei sind Native-Frameworks diejenigen, welche die für die Platform spezifischen tools benutzt. Während Cross-Platform-Frameworks ihre eigenen tools anbieten.
+		%Warum: Native: Performance
+	Generell bieten Native-Frameworks eine bessere Performance als Cross-Platform-Frameworks \cite{tech_performanceReactNativeVsFlutter1, tech_performanceReactNativeVsFlutter2}. %
+	%Was: Native: Aussehen
+	Außerdem sehen und fühlen sich die nativ erstellte Apps einheitlich mit der Platform an, da für diese Apps plattformspezifischen Funktionen und Komponenten benutze werden.
+		%Todo: remove useless beispiel:
+			%, wie zum Beispiel die Schieberegler von iOS [\ref{pic:schieberegler}]. 
+		%Warum: intuitive
+		Das würde wahrscheinlich zu einer intuitiveren Benutzung für den Nutzer führen, da dies für ihm bereits bekannte Muster und Funktionen wären. %
+		%Auswirkung: 
+		Da Performance und Benutzbarkeit zwei Anforderungen für diese Arbeit sind scheinen native-SDKs eine gute Wahl für diese Arbeit zu sein.\newline%
+	%Was: Crossplatform: Relativierung
+	Jedoch wurde sich für eine Cross-Platform-Framework entschieden. %
 		%Performance
-		Einerseits wird der Performanceverlust als marginal eingeschätzt. Bei der zu erstellenden App wird es sich wahrscheinlich um eine simple Anwendung ohne schwierige Berechnungen oder aufwändigen Animationen handeln. 
+		Einerseits wird der Performance-Verlust als marginal eingeschätzt, da es sich bei der zu erstellenden App wahrscheinlich um eine simple Anwendung ohne schwierige Berechnungen oder aufwändigen Animationen handeln wird. 
 		%Aussehen
 		Andererseits kann die grafische Oberfläche auch versucht werden mit Cross-Platform-Frameworks passend für das System zu erstellen. Zwar wäre das ein größerer Aufwand als wie bei Native-Frameworks,
 		%Warum: Zeit + Crossplatform
-		aber dafür sind die Anwendung von Cross-Platform-Frameworks mit iOS und Android kompatible. Wie in \nameref{section:anforderungen} besprochen, ist dies der wichtigste Punkt, um eine große Reichweite zu ermöglichen. Zwar wäre dies auch möglich, indem für iOS und Android jeweils eine eigene Codebasis über native-SDKs erstellt werden, jedoch müssten dementsprechend dann auch zwei Codebasen gepflegt werden. Durch die kurze und begrenzte Bearbeitungszeit dieser Arbeit ist diese Idee also nicht sinnvoll. Stattdessen wird versucht mithilfe Cross-Platform-Frameworks ein MVP für beide Plattformen zu entwickeln. Falls sich die App später als Nützlich und beliebt herausstellen, kann immer noch eine Native-Entwicklung angefangen werden.
+		aber dafür sind die Anwendung von Cross-Platform-Frameworks mit iOS und Android kompatible. Wie in \nameref{section:anforderungen} besprochen, ist dies der wichtigste Punkt, um eine große Reichweite zu ermöglichen. Zwar wäre dies auch möglich, indem für iOS und Android jeweils eine eigene Codebasis über native-SDKs erstellt werden, jedoch müssten dementsprechend dann auch zwei Codebasen gepflegt werden. Durch die relativ kurze Bearbeitungszeit dieser Arbeit scheint diese Idee also weniger sinnvoll. Stattdessen wird versucht mithilfe Cross-Platform-Frameworks möglichst schnell und Zeiteffizient eine evaluierbare Anwendung für beide Plattformen zu entwickeln. Falls sich die App später als Nützlich und beliebt herausstellen, kann immer noch eine Native-Entwicklung angefangen werden.
 	
 \myNewSection
 %Was: Flutter vs React Native
-Zu guterletzt muss sich für ein Framework entschieden werden.\newline
+Zu leztz muss sich für ein konkretes Framework entschieden werden. %
 	%Warum: Weiterentwickelbarkeit
-	Wie in \nameref{section:anforderungen} erwähnt, ist eine Anforderung die Weiterentwickelbarkeit. Daher ist es einerseits wichtig ein Framework zu wählen, welches möglichst lang unterstützt wird, damit eine Weiterentwicklung in der Zukunft überhaupt möglich ist.\newline
+	Wie in \nameref{section:anforderungen} erwähnt, ist eine Anforderung die Weiterentwickelbarkeit. Daher ist es einerseits wichtig ein Framework zu wählen, welches möglichst lang unterstützt wird, damit eine Weiterentwicklung in der Zukunft überhaupt möglich ist.\newline%
 	%%Warum: Beliebtheit
-	Andererseits muss auch beachtet werden, dass das Framework beliebt ist und von vielen Personen benutzt wird, damit überhaupt die Möglichkeit besteht, dass sich ein Interessent findet.\newline
+	Andererseits muss auch beachtet werden, dass das Framework beliebt ist und von vielen Personen benutzt wird, damit überhaupt die Möglichkeit besteht, dass sich ein Interessent findet.\newline%
 	%Quelle:
-	Laut der Update-History und der Sternbewertung von Github sind React-Native mit Flutter die beiden beliebtesten Frameworks für die Cross-Platform-Appentwicklung\cite{tech_flutterStars, tech_reactNativStars}.\newline
+	Laut der Update-History und der Sternbewertung von Github sind React-Native mit Flutter die beiden beliebtesten Frameworks für die Cross-Platform-Appentwicklung\cite{tech_flutterStars, tech_reactNativStars}.\newline%
 %Warum: Beliebtheit
-Wenn man die beiden Frameworks dementsprechend gegeneinander vergleicht, scheint Flutter beliebter zu sein. So hat Flutter mit 150k Sternen auf Github rund 38\% mehr als React-Native\cite{tech_flutterStars, tech_reactNativStars}. Ein ähnliches Anzeichen zeigt auch Google-Trends. So hat Futter fast doppelt soviel Suchanfragen auf Google wie React-Native\cite{tech_googleTrendsFlutterVsReactNative}.\newline
+Wenn man die beiden Frameworks dementsprechend miteinander vergleicht, scheint Flutter beliebter zu sein. So hat Flutter mit 150k Sternen auf GitHub rund 38\% mehr als React-Native\cite{tech_flutterStars, tech_reactNativStars}. Ein ähnliches Anzeichen zeigt auch Google-Trends. So hat Futter fast doppelt soviel Suchanfragen auf Google wie React-Native\cite{tech_googleTrendsFlutterVsReactNative}.\newline%
 %Warum: performance
-Im Bereich Performance sieht es ähnlich aus. Laut zwei Analysen von inVerita scheint Flutter Ressourcen sparender und schneller als React Native zu sein\cite{tech_performanceReactNativeVsFlutter1, tech_performanceReactNativeVsFlutter2}.\newline
+Im Bereich Performance verhält es sich ähnlich. Laut zwei Analysen von inVerita scheint Flutter Ressourcen sparender und schneller als React Native zu sein\cite{tech_performanceReactNativeVsFlutter1, tech_performanceReactNativeVsFlutter2}.\newline%
 %Warum: UI
-Dafür bietet React Native den Vorteil Plattformspezifische Komponenten und Funktionen zu nutzen. Wie zuvor erwähnt könnte dass zu einer besseren Benutzbarkeit führen.\newline
+Dafür bietet React Native den Vorteil Plattformspezifische Komponenten und Funktionen zu nutzen. Wie zuvor erwähnt könnte dass zu einer besseren Benutzbarkeit führen.\newline%
 %Warum: vordefinierte features
-Ein weiterer Vorteil von Flutter, und weshalb sich dementsprechend auch für dieses Framework entschieden wurde, ist, dass es anders als React-Native viele vordefinierte Komponenten und Features bietet. So hat React-Native lediglich 25 Core-Komponenten, während Flutter allein für Animationen bereits 22 Komponenten besitzt\cite{tech_componentsFlutter, tech_componentsReactNative}.  Diese bereits existierenden und von Google gepflegten Funktionen und Komponenten, kann dabei helfen einiges an Zeit zu sparen, da sonst alles selbst und neu definiert werden müsste.
+Flutter bietet hingegen, und weshalb sich letztendlich auch für dieses Framework entschieden wurde, viele vordefinierte Komponenten und Features an. So hat React-Native lediglich 25 Core-Komponenten, während Flutter allein für Animationen bereits 22 Komponenten besitzt\cite{tech_componentsFlutter, tech_componentsReactNative}. Diese bereits existierenden Komponenten, können dabei helfen an Zeit zu sparen, da diese sonst [selbst und neu/eigenständig] definiert werden müssten.%

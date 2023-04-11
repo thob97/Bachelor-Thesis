@@ -1,1 +1,60 @@
-\subsection{Qualitätssicherung}
+\subsection{Qualitätssicherung}\label{section:qualitaetssicherung}
+%
+%
+%Zusammenfassung: Um die stabilität der Anwendung sicherzustellen wurde für den Parser und die Datenbankverbindung automatische Rückfalltests benutzt, während die grafische Oberfläche manuell getestet wurde.
+%Um eine gute Lesbarkeit des Quellcodes zu ermöglichen wurde modularizierung angewendet, Zugriffsmodifikatoren gesetzt und in einem einheitlichen Format kommentare geschrieben.
+%
+%
+\subsubsection{Tests}
+%Einleitung:
+Um sicherzustellen, dass die Anwendung stabil läuft und keine Defekte enthält, werden mehrere Tests durchgeführt. %
+%Was + Warum: Parser+Db viel getestet -> wichtig
+Dabei wird der Parsers und die Verbindung zur Datenbank am ausgiebigsten getestet, da sie die Grundfunktionen der Anwendung darstellen und somit als kritische Bereiche angesehen werden. %
+%Warum+Was: ManuellesTesten
+Da diese beiden Funktionen viele Komponenten enthalten, die oft geändert werden, wäre das manuelle Testen zu zeitaufwendig und müsste nach jeder kleinen Änderung erneut durchgeführt werden. %
+	%Auswirkung: Rückfalltests
+	Deshalb wurde stattdessen beschlossen, automatisierte Rückfalltests durchzuführen. %
+		%Pro/Con:
+		Obwohl die Erstellung von automatisierten Rückfalltests anfangs mehr Aufwand erfordert, lohnt es sich, sobald die Komponenten häufiger getestet werden müssen. Außerdem bieten die Tests eine Art von Dokumentation, da sie zeigen, wie die Komponenten funktionieren sollten. Deshalb werden die Rückfalltests auch als nützlich für die Weiterentwicklung der Anwendung eingeschätzt.\newline%
+%Was+Warum: Bottom-Up-Integrationstests
+Um sicherzustellen, dass die Tests zeigen, ob ein Defekt von der getesteten Komponente oder von einer von ihr aufgerufenen Funktion verursacht wird, werden die Tests nach dem Schema der Bottom-Up-Integrationstests geschrieben. Das bedeutet, dass zuerst die Module und Komponenten getestet werden, für die alles, was sie aufrufen, bereits getestet wurde.\newline%
+%Was:Eingabe
+Damit die Tests die Komponenten möglichst vollständig auf Defekte prüft, wurde bei der Erstellung der Tests versucht durch die Eingaben das Abdeckungskriterium der Bedingungsüberdeckung zu erreichen. Außerdem wurden stets Randfälle wie leere Eingaben oder völlig unsinnige Eingaben getestet, da dies aus Erfahrung oft zu Defekten führt.\newline%
+%Coverage
+Die Ausführung der Tests mit Code-Coverage-Analyse ergab, dass im Parser 70\% und bei der Datenbankverbindung 90\% aller Codezeilen getestet werden.\newline%
+%Grafische Oberfläche
+Die Funktionen der grafischen Oberfläche wurden hingegen manuell getestet, da sich diese besser für manuelle Tests eignen und somit zeiteffektiver sind als automatisierte Tests.%
+%
+%
+%
+%
+%
+\subsubsection{Lesbarkeit}
+%Einleitung
+%Was: Trennung von Belangen und Modularität
+Um den Quelltext möglichst verständlich zu gestalten, wurde generell versucht, Komponenten möglichst modular zu gestalten und so aufzuteilen, dass jede Komponente immer genau eine einzige einzigartige Aufgabe hat. %
+%Visability
+Des Weiteren wurden Zugriffsmodifikatoren für Methoden gesetzt. Dadurch soll deutlich werden, welche Methoden der Komponente ausschließlich für interne Funktionen genutzt werden und welche dem Klienten zur Verfügung stehen.%
+%Was: Kommentare
+Außerdem wurden für wichtige Funktionen, wie beispielsweise alle Funktionen aus der Datenbankverbindung und dem Parser, Kommentare verfasst. %
+	%Nachteile + Vorteil:
+	Kommentare haben zwar den Nachteil, dass sie bei Änderungen des betreffenden Codes aktualisiert werden müssen, jedoch können sie die Verständlichkeit verbessern. Ein kurzer Satz kann beispielsweise die Funktion einer ansonsten großen und schwer lesbaren Methode erläutern. %
+	%Warum + Was: Format
+	Um genau solche nützliche Kommentare zu schreiben, wurde ein selbst vorgegebenes Format verwendet, das sich während der Programmierung als hilfreich erwiesen hat. Das Format besteht aus den Feldern \glqq def\grqq{}, \glqq purpose\grqq{}, \glqq assert\grqq{}, \glqq expect\grqq{}, \glqq return\grqq{} und \glqq example\grqq{}.\glqq Def\grqq{} beschreibt die Funktion, \glqq purpose\grqq{} gibt an, wofür die Funktion benötigt wird, \glqq assert\grqq{} zeigt was die Funktion voraussetzt, \glqq expect\grqq{} gibt an, was die Funktion erwartet, aber nicht unbedingt voraussetzt und \glqq example\grqq{} enthält ein Beispiel. Die Felder werden nicht immer alle benutzt, sondern nur dann, wenn es als nützlich erscheint.\newline%
+		%assert (meistens preconditions?)
+		%Da mit dem kommentar assert preconditions gegeben sind, wurde dies gleichzeitig auch mit der mithilfe der Flutter gegebenen assert Funktion während der laufzeit zugesichert. %
+
+\myComment{
+
+%\subsubsection{Exceptions}
+%Um dem Endbenutzer eine gute Qualität 
+%exceptions & errors: für die verbindung mit der api wurde versucht möglichst alle möglichen errors/exceptions abzufangen. dies wurde durch ausgiebieges testen versucht zu bestätigen. wenn es nämlich während des handy nutzens zu einen error kommen würde, würde dass die benutzung der app behindern / große fehler abbilden. z.b. würde die api nach 1000 abrufen fehler werfen, bis eine neue verbindung/ip hergestellt würde/ softcap (link). lieber sollten diese fehler geplant im handy angezeigt werden anstatt dass diese abstürzt oder einen flutter code error angezeigt bekommt. dementsprechend werden alle api calls exeptions mit try()catch() abgefangen. Jedoch sollte die möglichkeit für eine solche exception ziemlich niedrig sein, da beim testen sehr viele dieser calls gemacht wurden, es aber insgesamt während der test und programmieren nur einmal dazu kam (art von stresstest). zum beispiel würde die github api bei ... eine exception werfen, dabei sollte die app aber nicht abstürzen, dementsprechend gibt die implementierte verbindung zur datenbank einfach einen bool false aus anstatt die expection zu werfen. ratelimit: the rate limit is 1,000: https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28
+%
+
+
+%%Repo
+%Auch das Repository wurde versucht Lesbar zu gestalten, damit auch dieses von anderen gelesen und nachvollzogen werden kann. Dafür wurde einerseits für die Darstellung der Commit-History die Lineare Option eingestellt und befolgt und andererseits für die Commit-Nachrichten ein einheitliches format gehalten\cite{}.
+%%pipeline+linting
+%Des Weiteren wurde wie in \nameref{subsection:anforderung:nichtFunktionaleAnforderungen} erwähnt ein Linter benutzt um den Quellcode in ein einheitliches Format zu bringen. Damit die Regeln auch durchgängig eingehalten werden und nichts ausversehen auf das Repository gelangt, wurde eine Pipeline zu GitLab hinzugefügt, welches [gepushte] Neuerungen überprüft und ablehnt wenn Regeln vom linter nicht befolgt werden. %
+}
+

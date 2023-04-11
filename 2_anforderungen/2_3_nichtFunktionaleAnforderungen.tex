@@ -1,69 +1,115 @@
-\subsection{Nicht Funktionale Anforderungen} \myCheckmark
-Dieser Abschnitt handelt von den nicht funktionalen Anforderungen. Das sind all jene Eigenschaften welche die App besitzen soll. Dabei werden die Anforderungen nicht nur erläutert sondern auch durch eine Aufzählung nach der Wichtigkeit bewertet.\newline%
-Einerseits hilft diese Priorisierung nämlich dabei zu erkennen welche Anforderungen für diese Arbeit am wichtigsten sind, und andererseits lässt es die begrenzte Arbeitszeit nicht zu alle Anforderungen gleich intensive Beachtung zu schenken.
-
-\myNewSection %todo remove
-\myTextTodo{LEITFADEN: 1.Was ist die Eigenschaft, 2.Warum ist es wichtig, 3.Wie wird es umgesetzt?} %%%
-
-\myTextTodo{\textbf{PcVsPhone Leistung -> n.f.A:} Deshalb wird darauf geachtet, dass die App nicht zu Ressourcen-Aufwändig wird, wie bereits in den nicht funktionalen Anforderungen erwähnt. Da es sich bei der App um einen Kalender und nicht um komplizierte 3D-Darstellungen oder Algorithmen handelt, wird aber davon ausgegangen, dass es zu keinen Performance-Problemen kommen sollte.}
-
-\myNewSection
-\myTextTodo{\textbf{PcVsPhone Internet -> n.f.A}: Deshalb wollen wir bei der App eine schnelle Ladezeit sicherstellen. Um das zu erreichen wird es wichtig sein beim Abtausch von Daten über das Internet diese möglichst brandbreiten-effizient zu übertragen, sowie die App zur Leistung zur optimieren}
-
-\myNewSection
-\myTextTodo{\textbf{PcVsPhone Speicher -> nfA}: Es wird zwar davon ausgegangen, dass die App keine absurde Menge von Daten benötigen wird. Trotzdem wird darauf geachtet, dass die App keine große Menge an Speicher annimmt, um auch Geräte mit kleineren Kapazität zu unterstützen. Besonders sollten nicht zuviele Daten geladen werden, damit es zu keiner langen Ladezeit kommt.\newline
-Pc als Speicherablage/was man irgendwann mal braucht. Handy nur für wichtigstes/was man unterwegs/immer baucht. Pc sehr große Anwendungen (200gb) alleine. Auf Handy muss nach speichere eher optimiert werden.}
+\subsection{Nicht Funktionale Anforderungen}\label{subsection:anforderung:nichtFunktionaleAnforderungen}\myCheckmark
+%Was: nfA Erläutern + Aufzählung/Bewertung
+In diesem Abschnitt werden die nicht funktionalen Anforderungen, das sind all jene Eigenschaften welche die App besitzen soll, erläutert und durch eine Aufzählung der Wichtigkeit nach bewertet.\newline%
+%Warum: priorisierung + zeit
+Solch eine Priorisierung hilft zu erkennen welche Anforderungen für diese Arbeit am wichtigsten sind. Dies ist hilfreich, da es die begrenzte Arbeitszeit nicht zu lässt alle Anforderungen gleich intensive Beachtung zu schenken.\newline%
+%Was
+Dafür wird die MoSCoW Priorisierung verwendet. Dabei werden [Objekte, Items] zu den Kategorien \glqq must-have\grqq{}(essential für das Projekt), \glqq should-have\grqq{}(wichtig aber nicht essential), \glqq could-have\grqq{}(wäre schön zu haben), und \glqq won't-have\grqq{}(auch erwähnenswert aber nicht bedient benötigt) zugeordnet. Im folgenden werden diese Kategorien mit M, S, C und W abgekürzt.
 
 \begin{itemize}
+	%-----------------------------Stärken von Pcs und Handys-----------------------------
+	\item \textbf{M Stärken von Pcs und Handys}: %
+		%Was+Warum+ref
+		Die wohl wichtigste Eigenschaft, weil dies eine Hauptaufgabe dieser Arbeit ist, ist die Vorzüge von Pc's und Handy's in der App zu nutzen. Dabei wird versucht alle die in \secref{section:pcVsPhone} gesammelten Erkenntnisse während der Entwicklung zu beachten.
+		%Da aber bereits viele davon ausgiebig im diesem Abschnitt behandelt wurden, werden nur jene dieser Erkenntnisse, [zu welchen noch was hinzugefügt werden kann], erneut hier erwähnt. %
+		%Wie/Auswirkung/wichtigkeit	
+		\myComment{
+		Viele dieser Eigenschaften sind emergent und entstehen erst durch die Zusammenwirkung von den nicht funktionalen und funktionalen Anforderungen. Dementsprechend werden einige dieser Eigenschaften in  erwähnt.
+		}
 
-	\item \textbf{Stärken von Pcs und Handys}: die wohl wichtigste Eigenschaft und auch eine Hauptaufgabe dieser Arbeit ist es, die Vorzüge von Pc's und Handy's in der App zu nutzen. Funktionen welche auf einen Endgerät besser Funktionieren als auf den anderen, sollten vielleicht überdacht oder Verlagert werden. So sollte zum Beispiel die Tastatureingabe auf dem Handy wahrscheinlich versucht werden zu überdenken. Entweder könnte man alternative Eingabe nutzen, wie zum Beispiel VoiceToSpeech, oder falls möglich wird die Texteingabe auf dem Pc verlegt. \newline%
-	Diese Eigenschaft hat große Auswirkungen auf die funktionalen Anforderung haben, da jede Funktion mit dieser Eigenschaft überdenken werden muss. \newline%
-	Wie sich die beiden Systeme in Ihren Stärken überhaupt unterscheiden, wurde im Kapitel ... behandelt.
-		
-	\item \textbf{Wartbarkeit, Erweiterbarkeit, Verständlichkeit}: Da die Bachelorarbeit, wie bereits erwähnt, nur eine kurze Bearbeitungszeit zulässt, muss man damit rechnen, dass nicht alle Funktionen bis zur Abgabeschluss umgesetzt werden können. Daher soll der Quellcode möglichst gut für in der Zukunft liegende und Fremde Weiterentwicklung ausgelegt sein. Um das zu erreichen muss der Quellcode möglichst Wartbar sein, was anders ausgedrückt bedeutet, dass der Quellcode verständlich und erweiterbar sein muss.\newline%
-		Des Weiteren sollten späte Änderungen in den Anforderungen nicht allzu umständlich umzusetzen sein, da wir in dieser Arbeit und durch unsere Agile-Arbeitsweise genau diese Veränderungen erwarten. \newline%
-		Deswegen werden die die drei stark miteinander verbundenen Anforderungen Wartbarkeit, Erweiterbarkeit und Verständlichkeit als wichtig eingeschätzt. \newline%
-		Wie versucht wird diese Anforderung zu ermöglichen wird im Kapitel ... besprochen.
-		
-	\item \textbf{Benutzbarkeit}: Unter Benutzbarkeit verstehen wir, dass die App intuitiv, einfach und effektiv zu nutzen ist. \newline%
-	Die App soll nicht nur nützliches im Konzept, sonder auch nützlich für den Endnutzer sein. Daher soll die App möglichst effektiv zu nutzen sein. Wichtige und oft genutzt Funktionen sollten also zum Beispiel leicht zugänglich sein, anstatt diese hinter mehreren Seiten zu verstecken und damit die Nutzung zu erschweren. \newline%
-	Des Weiteren sollen möglichst viele Personen auch ohne große Einarbeitung und Vorwissen die App nutzen können. Dafür muss die App intuitiv und einfach sein. Ein Beispiel wie man das umsetzen könnte ist, das alle Funktionen haben eine klare Bedeutung haben und sind genau dort aufzufinden wo man sie auch erwartet. \newline%
-	Die wahrscheinlich wichtigste Variabel um eine gute Benutzbarkeit zu ermöglichen ist das Design, denn sie ist das einzige mit welchem der Nutzer interagiert.\newline%
-	Im Kaptitel ... wurde bereits festgestellt, dass das Design sowie Richtlinien dazu sehr wichtig scheinen. So wurde unter anderem Begründet, dass Handynutzer Apps präferieren\cite{pcVsphone_mobileAppVsWebTimeSpent}, da diese passende Richtlinien befolgen, während Websites auch für Pc's ausgelegt sind und daher weniger auf für Handys passende Konventionen achten. Außerdem scheint es, dass wenn eine Anwendung intuitiv und leicht zu nutzen ist, Benutzer eher dazu geneigt sind die Anwendung weiter zu nutzen\cite{pcVsphone_peopleWillRevisitMobileIfEasyToUse}.\newline%
-	Daher sind wir ziemlich sicher, dass die Benutzbarkeit eine wichtige Anforderung für diese App darstellt. Deshalb wird sich dem Design ein eigenen Abschnitt im Kapitel ... gewidmet.
+		%Beispiel-hidden
+		\myComment{Funktionen welche auf einen Endgerät besser Funktionieren als auf den anderen, sollten vielleicht überdacht oder Verlagert werden. So sollte zum Beispiel die Tastatureingabe auf dem Handy wahrscheinlich versucht werden zu überdenken. Entweder könnte man alternative Eingabe nutzen, wie zum Beispiel VoiceToSpeech, oder falls möglich wird die Texteingabe auf dem Pc verlegt. \newline}
 
-%todo remove
+	%-----------------------------Benutzbarkeit-----------------------------
+	\item \textbf{M Benutzbarkeit}: %
+		%Was: Benutzbarkeit
+		Unter Benutzbarkeit wird in dieser Arbeit verstanden, dass eine Anwendung intuitiv, einfach und effektiv zu nutzen ist.\newline%
+		%Warum: PcVsPhone Stärke
+		Eine Erkenntnis aus \secref{section:pcVsPhone} ist, dass genau das eine Stärke der Handys ist. Dementsprechend soll diese Eigenschaft auch in der zu erstellenden App [ersichtlich/erkennbar] werden.\newline%
+			%Warum: nützlich + intuitiv
+			So kann die Benutzbarkeit dabei helfen, dass die App nicht nur nützliches im Konzept, sonder auch nützlich für den Endnutzer ist sowie das möglichst viele Personen auch ohne große Einarbeitung und Vorwissen die App nutzen können.
+		%Wie: Design
+		Um die Benutzbarkeit zu beeinflussen scheint eine wichtige Variabel das Design dar App zu sein, denn sie ist das einzige mit welchem der Nutzer interagiert. 
+			%Warum: in PcVsPhone erwähnt
+			Diese Erkenntnis und das Richtlinien dazu wichtig sind wurde in \secref{section:pcVsPhone} bereits festgestellt. So wurde unter anderem Begründet, dass Handy-Nutzer Apps präferieren\cite{pcVsphone_mobileAppVsWebTimeSpent}, da diese passende Richtlinien befolgen, während Websites auch für Pc's ausgelegt sind und daher weniger auf für Handys passende Konventionen achten. 
+			%Warum: quelle
+			Eine weitere Statistik welche die Nützlichkeit von einer guten Benutzbarkeit andeutet ist, dass wenn eine Anwendung intuitiv und leicht zu nutzen ist, Benutzer eher dazu geneigt sind die Anwendung weiter zu nutzen\cite{pcVsphone_peopleWillRevisitMobileIfEasyToUse}.\newline%
+	%Wie/Auswirkung: ref
+	Dementsprechend wird die Benutzbarkeit als eine wichtige Anforderung bewertet.% und der Sicherstellung davon wird deshalb auch einen eigenen \secref{section:design} gewidmet.
+		
+		
+	%-----------------------------Wartbarkeit-----------------------------
+	\item \textbf{S Wartbarkeit, Erweiterbarkeit, Verständlichkeit}: %
+		%Warum
+		Da, wie bereits erwähnt, die Bachelorarbeit nur eine kurze Bearbeitungszeit zulässt, muss damit gerechnet werden, dass nicht alle Funktionen bis zur Abgabeschluss umgesetzt werden können. %
+		%Was
+		Daher soll der Quellcode möglichst gut für in der Zukunft liegende und Fremde Weiterentwicklung ausgelegt sein. %
+		%Wie
+		Um das zu erreichen muss der Programmcode möglichst Wartbar sein, was anders ausgedrückt bedeutet, dass dieser verständlich und erweiterbar sein muss.\newline%
+		%hidden-agile-arbeitsweise
+		\myComment{
+			Außerdem sollten späte Änderungen in den Anforderungen nicht allzu umständlich umzusetzen sein, da wir in dieser Arbeit und durch unsere Agile-Arbeitsweise genau diese Veränderungen erwarten. \newline
+			Deswegen werden die die drei stark miteinander verbundenen Anforderungen Wartbarkeit, Erweiterbarkeit und Verständlichkeit als wichtig eingeschätzt. \newline
+			}
+		%ref
+		%Wie versucht wird diese Anforderung zu ermöglichen wird im \secref{section:implementierung} besprochen.
+		
+
+	%-----------------------------Qualität \& Korrektheit-----------------------------
+	\item \textbf{S Qualität \& Korrektheit}: %
+		%Was:
+		Mit dieser Anforderung soll sichergestellt werden, dass die App sich genau so zu verhalten hat wie zuvor Spezifiziert. Anders beschrieben soll es zu keinen unerwarteten Situationen wie Fehler oder Abstürzen kommen. %
+		%Warum:
+		Falls doch würden das nicht nur die Benutzbarkeit einschränken, sondern auch die Nutzer irritieren und möglicherweise dazu bewegen die App nicht weiter zu nutzen. %
+			%Quellen:
+			So würden laut einer Umfrage 88\% von Nutzern die App bei einem Fehler verlassen\cite{nfA_bugsAbandon}. Daten von Google bekräftigen diese Aussage. So handeln 54\% aller 1-Sterne-Bewertungen im Play Store von Fehlern oder Stabilitätsproblemen\cite{nfA_bugsReview}. %
+			%Auswirkung: -> wichtig
+			Deshalb wird diese Anforderung auch als durchaus wichtig eingeschätzt.\newline%
+		%Wie
+		Um die Qualität sicherzustellen darf man entweder beim Programmieren keine Fehler machen, was aus Erfahrung keine Sinnvolle Annahme ist, oder man testet die Software ausgiebig genug, sodass man nachweisen kann, dass die Software keine Defekte besitzt. 
+		%Auswirkung + ref
+		Daher wird die zu erstellende Anwendung ausgiebig getestet. %Wie genau das vonstatten geht im \secref{section:implementierung} erwähnt.
+	
+	%-----------------------------Performance-----------------------------
+	\item \textbf{C Performance}: %
+		%Warum: Erkenntnis PcVsPhone
+		Eine Erkenntnis aus \secref{section:pcVsPhone} ist, dass Anwendungen für das Handy nicht zu viel Leistung und Ressourcen benötigen sollten. %
+		%Was:
+		Dementsprechend wird versucht auf den Speicher-, Prozessor- und Netzwerkverbrauch zu achten. %
+		%Warum: 
+			%Speicherbedarf-> Löschen
+			So könnte zum Beispiel ein zu großer Speicherbedarf dazu führen, dass die App aus begrenzten Speicherkapazität nicht genutzt oder entfernt wird. %
+			%CPU Aufwand -> rucklern + batterie -> Benutzbarkeit und Benutzererfahrung
+			Weiter könnte eine zu Aufwändige App zu ruckeln auf der grafischen Oberfläche und einer schneller entleerenden Batterie führen. Bei beidem wird davon ausgegangen, dass dies die Benutzbarkeit und Benutzererfahrung einschränken könnte. %
+			%Was: Ladezeit
+			Der aber als am wichtigsten betrachteter Grund, warum es Sinnvoll ist die Performance zu betrachten, ist, dass eine Netzwerk oder Prozessor aufwändige App zu langen Ladezeiten führen kann. %
+				%Warum: Stärke PcVsPhone
+				Diese langen Ladezeiten würden gegen die Stärke, dass das Handy gut für kurzweilige Aufgaben ist, wirken. %
+				%Quelle:
+				Eine Messung von Google bekräftigt diese Annahme. So werden laut ihr 53\% aller Webseiten verlassen wann das Laden länger als drei Sekunden dauert\cite{pcVsphone_threeSeconds}.
+	
+	%-----------------------------Reichweite-----------------------------
+	\item \textbf{C Reichweite}: %
+		%Was
+		Auch wichtig aber im Vergleich zu den anderen Anforderungen eher zweitrangig ist die Reichweite. %
+			%Warum
+			Zwar sollen möglichst vielen Handy-Nutzern ermöglicht werden die zu erstellende App zu benutzen, jedoch wird es sich der App wahrscheinlich eher um eine Nischenanwendung handeln. Denn bei den bereits existierenden CLI-Terminkalender, auf welche die App aufbauen soll, scheint es sich, durch Betrachtung der GitHub Sterne, auch bereits um Nischenanwendungen zu handeln\cite{cli_calcurseGitHub, cli_khal}. % 
+			%Auswirkung:
+			Daher soll nicht zu viel Aufwand in diese Eigenschaft fließen.\newline%
+		%Wie: crossplatform
+		Am wichtigsten für die Reichweite ist es, dass die App für Android und iOS Systemen verfügbar ist, da dies die beliebtesten Systeme für Handys sind\cite{pcVsphone_mobileOperatingSystem}. %
+		%Wie: Alter von Handys
+		Aber auch das alter könnte dafür wichtig sein. Wenn die zu erstellende App eine zu hohe Android oder Apple Version voraussetzt, können ältere Handys diese nicht verwenden.
+
+
+
+%hidden-useless nfA
 \myComment{
-	Dass das Design sowie die Richtlinien dafür nicht nur wichtig für uns erscheint sondern es dafür auch Andeutungen gibt, haben wir im Kapitel ... festgestellt. So wurde unter anderem Begründet, dass Handynutzer Apps präferieren\cite{}, da diese passende Richtlinien befolgen, während Websites auch für Pc's ausgelegt sind und daher weniger auf für Handys passende Konventionen achten. Außerdem scheint es, dass wenn eine Anwendung intuitiv und leicht zu nutzen ist, Benutzer eher dazu geneigt sind die Anwendung weiter zu nutzen\cite{pcVsphone_peopleWillRevisitMobileIfEasyToUse}.\newline%
-	Wegen diesen Gründen betrachten wir die Benuztbarkeit als eine wichtige Eigenschaft. Deshalb gibt es in ... einen eigenen Abschnitt, welcher sich mit dem Design auseinander setzt.
-	
-	Für die Benutzbarkeit in Apps ist das Design entscheidend, da dies das einzige ist womit der Nutzer interagiert. Dass das Design sowie Richtlinien für jenes wichtig für Apps sind haben wir im Kapitel ... festgestellt. So wurde unter anderem Begründet, dass Handynutzer Apps präferieren\cite{}, da diese passende Richtlinien befolgen, während Websites auch für Pc's ausgelegt sind und daher weniger auf für Handys passende Konventionen achten. \newline%
-	Ein weiteres Indiz was die Wichtigkeit dieser Eigenschaft untermauert ist, dass wenn eine Anwendung intuitiv und leicht zu nutzen ist, die Benutzer eher dazu geneigt sind die Anwendung weiter zu nutzen\cite{pcVsphone_peopleWillRevisitMobileIfEasyToUse}.\newline%
-	Daher schätzen wir die Benutzbarkeit als eine wichtige Eigenschaft für die App ein. Die App soll immerhin nicht nur nützliches im Konzept sein, sonder auch nützlich für den Endnutzer sein.
-	
-	Die App soll nicht nur nützliches im Konzept sein, sonder auch nützlich für den Endnutzer sein. Dafür sollte sie also möglichst effektiv und intuitiv zu benutzen sein.\newline%
-	Für die Benutzbarkeit in Apps ist dafür das Design entscheidend, da dies das einzige ist womit der Nutzer interagiert. Dass das Design sowie Richtlinien für jenes wichtig für Apps sind haben wir im Kapitel ... festgestellt. So wurde unter anderem Begründet, dass Handynutzer Apps präferieren\cite{}, da diese passende Richtlinien befolgen, während Websites auch für Pc's ausgelegt sind und daher weniger auf für Handys passende Konventionen achten. \newline%
-	Ein weiteres Indiz was die Wichtigkeit dieser Eigenschaft untermauert ist, dass wenn eine Anwendung intuitiv und leicht zu nutzen ist, die Benutzer eher dazu geneigt sind die Anwendung weiter zu nutzen\cite{pcVsphone_peopleWillRevisitMobileIfEasyToUse}.\newline%
-	Deshalb gibt es in ... einen eigenen Abschnitt, welcher sich mit dem Design und Richtlinien auseinander setzt. 
-	
-	 Ein Beispiel dafür: wichtig Funktionen sollten leicht zugänglich sein, anstatt diese hinter mehreren Seiten zu verstecken und damit die Nutzung zu erschweren.\newline%
-		Um möglichst viele Personen unserer Zielgruppe auch ohne große Einarbeitung und Vorwissen den Zugang zu ermöglichen, soll die App außerdem möglichst intuitiv sein. Also alle Funktionen haben eine klare Bedeutung und sind genau dort aufzufinden wo man sie auch erwartet.\newline% 
-		Diese Anforderungen hängen am meisten von der Grafischenoberfläche der App ab, da dass das einzige ist mit was der Nutzer interagiert. Deswegen gibt es in ... einen eigenen Abschnitt, welcher sich mit dem Design auseinander setzt.
-}%%%
-
-		
-	\item \textbf{Qualität/Korrektheit}: Mit der Anforderung Qualität soll sichergestellt werden, dass die App sich genau so zu verhalten hat wie zuvor Spezifiziert. Es soll also zu keinen unerwarteten Situationen wie Fehler und Abstürzen kommen.\newline%
-	Falls doch würden das nicht nur die Benutzbarkeit einschränken, sondern auch die Nutzer irritieren und möglicherweise dazu bewegen die App nicht weiter zu nutzen. So würden laut einer Umfrage 88\% von Nutzern die App bei einem "Bug" verlassen\cite{nfA_bugsAbandon}. Daten von Google bekräftigen diese Aussage. So handeln 54\% aller 1-Sterne-Bewertungen im Play Store von "Bugs" oder "Stability"\cite{nfA_bugsReview}. Deshalb sehen wir die Anforderung Qualität auch als durchaus wichtig an.\newline%
-	Um die Qualität sicherzustellen darf man entweder beim Programmieren keine Fehler machen, was keine Sinnvolle Annahme ist, da Agilen-Arbeitsweisen Fehler erwartet werden, oder man testet die Software ausgiebig genug, sodass man nachweisen kann, dass die Software keine Defekte besitzt. Daher werden wir unsere App testen. Wie genau das vonstatten geht im Kapitel ... erwähnt.
-	
-	\item \textbf{Reichweite}: Auch wichtig aber im Vergleich zu den anderen Anforderungen eher zweitrangig ist die Reichweite. Zwar sollen möglichst vielen Handy-Nutzern ermöglicht werden die App zu benutzen, jedoch handelt es sich bei um eine nischen-Anwendung und daher sollte nicht zuviel Aufwand in diese Eigenschaft fließen.\newline%
-	Am wichtigsten für die Reichweite ist es, dass die App von Android und iOS genutzt werden können, da dies die weitverbeitesten Systeme im Handymarkt sind\cite{}. Andererseits kann auch das Alter von Handys kann hierzu betrachtet werden. Wenn unsere App zu viel Ressourcen benötigt oder eine zu hohe Android oder Apple Version beanspruchen, könnte Sie von älteren Handys nicht benutzt werden.
-	%todo Verteilung der Handy os-verionen %mabye doch eher unwichtig, da quelle: viele leute kaufen oft neue handys
-	
 	\item \textbf{Sicherheit}: Die Anforderung Sicherheit steht dafür, dass die in der App verwendeten Daten\footnote{Zum Beispiel die Kalendereinträge} nicht von dritten mitgelesen werden können. \newline%
 	Für dieses Projekt gibt es drei verschiedene Standort-Möglichkeiten der zu schützenden Daten und somit auch drei verschiedene Angriffsflächen für einen Dritten die Daten zu stehlen.\newline%
 	Erstens die Situation, dass sich die Daten auf dem Handy befinden. Die Sicherheit hierzu wird jedoch vom Betriebsystem sichergestellt. So bietet Appel zum Beispiel für jede App eine Sandbox, welche verhindert, dass andere Apps auf die zu schützenden Daten zugreifen könnten \cite{nfA_sandbox}.\newline%
 	Die zweite und dritte Situation wären einmal, dass sich die Daten auf dem Backend befinden oder während der Kommunikation von Endgerät zu Backend. Beide dieser Situationen werden meist Framework und Datenbank geschützt, da aktuelle Software oft standardmäßig bereits starke Verschlüsselung benutzen. \newline%
 	Diese Anforderung wird also nicht als niedrigstes eingestuft, weil sie am unwichtigsten betrachten wird, sonder weil wir für dieses Projekt nur wenig Einfluss darauf ausüben können. Es ist lediglich wichtig ein Backend und Framework zu finden, welche Verschlüsselung anbieten.
+}
 
 \end{itemize}

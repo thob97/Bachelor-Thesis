@@ -1,6 +1,127 @@
-\subsection{Funktionale Anforderungen}
-Was sind Funktionale Anforderungen \newline
-Aufzählung, Alternativen, Entscheidungen, durch welche Erhehbung ...
+\subsection{Funktionale Anforderungen}\label{subsection:anforderung:funktionaleAnforderungen}\myCheckmark
+%Was
+Dieser Abschnitt handelt von den funktionalen Anforderungen[; also das was das System können soll]. Wie bereits im \secref{subsection:anforderung:nichtFunktionaleAnforderungen} wird dazu auch hier aus den gleichen Gründen die MoSCoW Priorisierung verwendet.
 
-\myNewSection
-Trotzdem wollen wir solch eine App entwickeln. Nur wird die Idee dabei nicht sein die Anwendung eins zu eins vom Pc zum Handy zu Portieren. Stattdessen soll die App als Erweiterung der bereits bestehenden CLI-Kalender dienen. Durch diese Variante kann dann von den Stärken des Handys sowie des Pc's profitiert werden. 
+
+
+
+
+%Wiederholung
+\myComment{
+
+	\textbf{Vorab/Kurze wiederholung:} In der \nameref{section:zielsetzung} wurde das Ziel mit \glqq das Erstellen einer App welche die Stärken des Pc's und Handys nutzt\grqq beschrieben. Um auch die Vorzüge des Pc's benutzen zu können, wird keine Standalone App entwickelt. Stattdessen baut die zu erstellende App auf die bereits existierenden CLI-Terminkalender auf und kommuniziert mit dem Pc. \myTextTodo{-> beliebtheit+bekanntheit+es muss nur eine App für das Handy entworfen werden, da für den Pc schon alles verfügbar/existiert - damit erste beide fA Sinnvoller/weniger überfüllt}
+
+}
+
+
+\begin{itemize}
+%Must haves
+	\item \textbf{M Verbindung mit Backend:} %
+		%Was
+		Damit das Handy und der Pc zusammen genutzt werden können, müssen sich diese miteinander verbinden können. Dafür soll ein Backend benutzt werden. Die Wahl fiel dabei auf GitHub, da es mehrere Vorteile für diese Arbeit bietet. %
+		%Warum: 
+			%Funktionen
+			So bringt es einerseits viele interessanten Funktionen welche in die App eingebaut werden könnten, wie zum Beispiel die Versionsverwaltung, Zugriffskontrolle und Möglichkeit von Entwicklungszweigen. %
+			%Beliebt
+			Außerdem wird vermutet, dass CLI-Terminkalender Nutzer auch gerne git nutzen, da es sich dabei um eine beliebte CLI Anwendung handelt\footnote{so ist git zum Beispiel bereits standardmäßig in Ubuntu vorinstalliert\cite{nfA_ubuntuManifestGIT}}. Dementsprechend müssten viele Nutzer keine weitere neue Anwendung für die Benutzung der App lernen.%
+		
+	\item \textbf{M [+ C] Übersetzer für CLI-Terminkalender:} %
+		%Was
+		Damit Daten verarbeitet und ausgetauscht werden können, benötigt es neben der Verbindung der Geräte auch einer Kommunikation. %
+			%Parser vs neue CLI Anwendung
+			Um eine solche Kommunikation zu ermöglichen bieten sich zwei Optionen an. Entweder die Erstellung eines neuen CLI-Terminkalenders welcher sich mit der App verständigen kann oder die Erstellung eines Parsers beziehungsweise eines Übersetzers für bereits existierende CLI-Terminkalender.
+				%Entscheidung+Warum:
+				Es wurde sich für zweite Option Entschieden, da sich einerseits dadurch auf die App konzentriert werden kann und andererseits so mehrere verschiedene CLI-Terminkalender mit der App funktionieren können. Dadurch würde sich wiederum die Zielgruppe und Nutzen der App erhöhen.\newline%
+		%Was + Warum: fokus auf einen -> zeit
+		Vorerst wird sich jedoch nur um die Übersetzung für einen CLI-Terminkalender konzentriert, da einer reicht um die restlichen Funktionen der zu testen [und vorzuzeigen].%
+		%Was+Warum: Später weitere -> reichweite
+		Weitere CLI-Terminkalender können auch noch zu einen späteren Zeitpunkt hinzugefügt werden, um die Zielgruppe zu erweitern.%
+		
+	\item \textbf{M [+ C] Kalender Darstellung:} %
+		%Was+Warum: simpel+kurz+unterwegs -> ansehen von Terminen 
+		Eine Aufgabe welche gut zum Handy passt, da es eine kurzweilig und simpel Aufgabe ist welche man durchaus unterwegs lösen möchte, ist das Ansehen von anstehenden Terminen. Dafür benötigt es eine Darstellung für den Kalender. %
+		%Was+Warum: Design
+		Dabei wurde sich von bereits existierenden und konventionellen Darstellungen inspiriert, um dadurch eine möglichst einfach und intuitive Benutzung zu ermöglichen. In den Verglichenen Apps wurden dabei oft mehrere verschiedene Darstellungen angeboten. %
+		%Was+Warum: Monatsansicht -> Zeit + benötigt
+		Jedoch wird sich um Zeit zu sparen und da zum benutzen der App nicht alle Darstellungen benötigt werden, vorerst nur auf zwei fokussiert. Dabei wurde sich für die Monats- und Tagesansicht entschieden, denn zusammen bietet sie einen guten Ausgleich zwischen Details und Übersicht.\newline%
+		%Was+Warum:  Weitere später -> Details+Übersicht
+		Um verschiedene Ansichten an Details und Übersicht zu ermöglichen können nachwirkend noch weitere Darstellung wie eine Listen-, Wochen- oder Jahresansicht hinzugefügt werden.%
+
+%should haves
+	\item \textbf{S Einträge erstellen, bearbeiten, löschen:} %
+		%Was+Warum: simpel+kurz+unterwegs -> Einträge hinzufügen, bearbeiten, löschen
+		Eine weitere Aufgabe welche gut zum Handy passt, da es eine kurzweilig und simpel Aufgabe ist welche man durchaus unterwegs lösen möchte, ist das Erstellen, Bearbeiten und Löschen von Terminen. %
+		%Was+Warum: nicht 1zu1 -> da Syntax mit vielen Sonderzeichen
+		Da das Erstellen von CLI-Terminkalender Einträgen eine eigene Syntax mit vielen Sonderzeichen benötigt, sollte diese Funktion aber nicht genau wie auf dem Pc über ein Terminal und Texteingabe gelöst werden. %
+		%Was: Todoliste
+		Stattdessen sollen neue Einträge in einer separaten Erinnerungsliste auf dem Handy erstellt werden. Für den Pc sollen die Erinnerungen mithilfe von GitHub ersichtlich sein. %
+			%Nachteil: Doppelarbeit
+			Zwar hat das den Nachteil, dass eine Gewisse Doppelarbeit entsteht, da die Einträge auf dem Handy nur als Erinnerung dazu dienen, diese zu einem späteren Zeitpunkt auf dem Pc zu vervollständigen. %
+			%Vorteil: Sinnvolle Aufteilung
+			Jedoch hat es den Vorteil, dass dadurch die Aufgabe passend der Stärken der Geräte aufgeteilt wird. So wird das Handy nur für kleine Einträge beziehungsweise Erinnerungen genutzt, während auf dem Pc die Einträge fortgesetzt werden um ausführliche Beschreibung mit Komplexen Zeichen und Syntax zu erstellen.%
+			%Warum: Einfachheit -> weniger komplexe Gedanken
+			%Außerdem ist ein weiterer Vorteil die Einfachheit dieser Lösung. So muss sich dadurch zum Beispiel keine [komplexen] Gedanken über wie mit Push-Konflikten umgegangen wird [gemacht werden].%
+			
+	\item \textbf{S Einschränkungen:}	%
+		%Einleitung
+		Im \secref{section:pcVsPhone} wurden des öfteren Einschränkungen erwähnt welche dem Handy absichtlich gegeben wurden, wodurch es an anderen positiven Eigenschaften, wie zum Beispiel der Einfachheit, gewann. %
+		%Was+Warum: Begrenzen -> zu kurzweilige und einfache Aufgaben lenken 
+		Eine ähnliche Idee wird auch hier verfolgt. So sollen einige Funktionen begrenzt werden, um die Nutzung der App auf die Stärke des Handys, [etwa die kurzweiligen und einfachen Aufgaben], zu lenken. %
+		%Beispiele:
+		So könnten zum Beispiel eine maximale Textlänge von neuen Einträgen auf dem Handy festgelegt werden, damit nicht zu viel auf dem Handy geschrieben wird. Des Weiteren könnten auch die maximale Anzahl der Erinnerungseinträge begrenzt werden, damit keine unübersichtlich langen Liste auf dem Handy entsteht.%
+
+
+	\item \textbf{S Benachrichtigungen:} %
+		%Was
+		Eine Aufgabe welche sich eher auf dem Handy lohnt als auf dem Pc, sind Erinnerungsbenachrichtungen für Termine. 
+			%Warum:Handy
+			So kann das Handy den Nutzer fast immer benachrichtigen, da wie in \secref{section:pcVsPhone} erwähnt davon ausgegangen wird, dass das Handy fast immer beim Nutzer angeschaltet ist. Der Pc ist hingegen stationär und ausgeschalten und hat dementsprechend weniger Möglichkeiten und einen größeren Aufwand den Nutzer zu benachrichtigen.\newline%
+		%Auswirkungen
+		Deshalb soll es in der App die Möglichkeit für Benachrichtigungen von Terminen geben.% 
+		Jedoch wurde sich dagegen entschieden diese Funktion auch für die Erinnerungseinträgen anzubieten. Denn dadurch könnten Erinnerungen als Termine genutzt werden. Und das würde wiederum gegen das zuvor festgelegte Design sprechen, das Handy für kurze Aufgaben wie die Erinnerungen zu benutzen, während auf dem Pc diese Aufgaben beendet werden.%
+		
+		
+	\item \textbf{S Konfiguration auf dem Pc:} %
+		%Was
+		Für Optionen welche von Nutzern [geändert werden wollen könnten], soll es eine Möglichkeit zur Konfiguration geben. %
+			%Beispiel
+			So zum Beispiel die Standardzeit für Erinnerungen oder Einstellungen zu den zuvor erwähnten Einschränkungen. %
+		%Was+ Warum
+		Die meisten dieser Funktionen werden auf dem Pc zur verfügung gestellt, da im \secref{section:pcVsPhone} festgestellt wurde, dass sich solche Aufgaben eher zum Pc passen.%
+	
+%could haves
+	\item \textbf{C Suchfunktion:} %
+		%Was
+		Um Unterwegs schnell gezielte Informationen zu Terminen abrufen zu können, soll eine Suchfunktion ermöglicht werden. %
+		%Warum
+		Da die Informationen aber auch über die grafische Oberfläche sowie über den Pc erlangt werden können, wird diese Aufgabe vorerst als zweitrangig eingeschätzt.%
+
+	\item \textbf{C Weitere Kalender Abonnieren \& Teilen:} %
+		%Was + Warum:
+		Die Funktionen mehrere Terminkalender als einen Darzustellen, sowie eigene Terminkalender zu teilen und variabel Zugriffsrechte zu bestimmen, sind in allen drei getesteten Apps eine wiederkehrende Funktion und scheinen dementsprechend Standardmäßige Funktionen in Kalendern zu sein. %Falls die CLI-Terminkalender diese Funktion nicht bereits unterstützen, kann diese mithilfe dieser Anwendung ermöglicht werden.%
+		
+	\item \textbf{C Offline Funktionen:} % 
+		%Was
+		Da die App lediglich für das Herunterladen wie das Hochladen von Dateien Internet benötigt, muss die Internetverbindung nicht zwingend immer vorausgesetzt sein. %
+		%Warum
+		Da das Handy jedoch fast immer Internetzugriff besitzt, wird dieser Funktion aus Zeitgründen vorerst [weniger Beachtung geschenkt].%
+
+%wont haves
+	\item \textbf{W Anleitung:} %
+		%Was
+		Um die Nutzung der App zu vereinfachen könnte es beim ersten Start eine Einführung mittels Anleitung geben. %
+		%Warum:
+		Da die App aber möglichst simpel und intuitiv werden soll, sollte es im besten Fall keiner Anleitung benötigen.%
+
+
+	\item \textbf{W Commit-History:} %
+		%Was
+		Eine möglicherweise interessante Funktion welche durch GitHub ermöglicht wird, wäre die Darstellung der Commit-History als Graph in der App. Dadurch könnten die letzen Veränderungen und Versionen betrachtet werden. %
+		%Warum
+		Da unter anderem die Darstellung dafür lange Listen und viele Details benötigt, wird diese Funktion jedoch nicht als eine Aufgabe, welche davon profitiert auf dem Handy verfügbar zu sein, eingeschätzt. %
+		%Auswirkung:
+		Dementsprechend wird diese Funktion [auch] vorerst nicht implementiert.%
+
+
+
+\end{itemize}

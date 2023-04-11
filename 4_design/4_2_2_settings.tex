@@ -1,0 +1,18 @@
+\subsubsection{Einstellungsseite}%
+%Was
+Die Hauptmerkmale dieser Seite sind die Textfelder zum Einstellen der Login-Optione. %
+	%Konsistenz
+	Dabei wurde versucht, sie so zu gestalten, dass sie möglichst konsistent mit den iOS-Plattformtextfeldern sind.\newline%
+%Intuitiv
+Um die Benutzerfreundlichkeit zu erhöhen, werden Abhängigkeiten zwischen den Textfeldern durch Farben und Fehlermeldungen und Hinweise zur Eingabe indirekt angezeigt. Zudem wird eine Ladeanimation eingeblendet, um den Fortschritt bei der Überprüfung der Eingaben zu signalisieren.
+	%Deaktiviert, Hints, Error
+	%Um möglichst intuitiv zu sein, wird durch Farbe indirekt angedeutet welche Felder voneinander abhängig sind. Weiter wird gezeigt welche Art von Eingaben erwartet werden und warum Eingaben gegebenenfalls nicht funktionieren indem Tipps zur Eingabe sowie Fehlermeldungen angezeigt werden.\newline%
+	%Laden
+	%Au Während die Eingaben von der Datenbank überprüft werden, wird dem Nutzer eine Ladeanimation angezeigt, um ihn über den Fortschritt zu informieren.\newline%
+%automatisches überprüfen
+Um Nutzern Arbeit abzunehmen, werden bei der Änderung eines Textfelds die davon abhängigen Textfelder automatisch überprüft. Andernfalls müsste der Benutzer beispielsweise nach der Änderung des Tokens auch das Repository und den Pfad zur Konfigurationsdatei neu festlegen.\newline% Da diese jedoch automatisch mit getestet werden, spart sich der Nutzer mehrere Aktionen.
+%AutoSetup
+Die Hauptaktion dieser Seite ist die \glqq autoSetup-Aktion\grqq{} und ersetzt dementsprechend die Hauptaktion eine neue Erinnerung zu erstellen. Diese Aktion erstellt ein neues Repository mit der benötigten Konfigurationsdatei sowie Vorschaueinträgen und stellt die entsprechenden Optionen in der App automatisch ein. Um die Funktion dieser Aktion zu erläutern und da davon ausgegangen wird, dass diese Aktion durchaus aus Versehen betätigt werden kann, wird vorher mithilfe eines \glqq Alerts\grqq{} die Aktion erklärt und nach Bestätigung gefragt.\newline%
+%Informationen
+Außerdem werden am Ende der Seite einige für den Nutzer möglicherweise interessante Informationen angezeigt.%
+%pic{full,error,greyed out} pic{alert}

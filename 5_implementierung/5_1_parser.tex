@@ -1,0 +1,74 @@
+\subsection{Parser}\label{subsection:imp:parser}
+%%
+%%Einleitung: Generell versucht sich möglichst immer an die Vorgaben der Doku zu halten, damit When nutzer ihre bereits bestehenden calendarfiles nicht anpassen müssen.
+%Ziel war es ^, inwiefern dies gelang wird in folgenden Kapitel behandelt
+%%Zusammenfassung:
+%%
+%%
+\subsubsection{Modell}
+%Einleitung
+Um einen Parser für den WhenKalendar zu erstellen, musste dieser zunächst verstanden werden. Dafür wurde die Dokumentation ausführlich [gelesen/studiert] und intensiv manuell getestet.\newline%
+%Was: WhenAppointment Erklärung 
+Dabei wurde festgestellt, dass ein Termin in When aus drei Teilen besteht: dem Datum, einer optionalen Zeitangabe und einer Beschreibung.%
+%Was: WhenDates
+Die Herausforderung beim Parsen der Termine liegt insbesondere im Datum. Während die Beschreibung sowie die Zeitangabe fast eins zu eins übernommen werden können, kann das Datum in variabler Darstellung vorliegen. So würde zum Beispiel \glqq m=2\grqq{} bedeuten, dass der Termin jeden Tag im Februar stattfindet.
+%Kombinationen
+Darüber hinaus können diese variablen Datumsangaben miteinander über Operationen kombiniert werden. Der Termin \glqq m=2\&(d=1|d=25)\grqq{} würde zum Beispiel immer am ersten und am 25. Februar stattfinden.
+\newline
+\myNewSection
+%Vorraussetzung
+Um diese Daten zu parsen, wird vorerst angenommen, dass Daten immer in Klammern eingeschlossen sind. Dadurch wird der Aufwand für die Implementierung des Parsers reduziert, da die verschiedenen Bindungsstärken der Operationen nicht berücksichtigt werden müssen. %
+%Reruksiv
+Anschließend wird das Datum rekursiv durchgegangen, bis ein einzelner Ausdruck ohne Operation gefunden wird. Aus diesem Ausdruck wird ein modelliertes WhenDate-Objekt erstellt. Dieses Objekt kann mit anderen Objekten seiner Art über die When-Operationen kombiniert werden. Dadurch kann die Rekursion schlussendlich ein Ergebnis liefern. %
+\newline
+\myNewSection
+%Lösung
+Nun verfügt der Parser über ein WhenDate-Objekt. Dieses kann jedoch immer noch variabel sein. Um Termine im Kalender anzuzeigen, benötigt es jedoch konkrete Daten. Dazu wird von einem gewählten Startdatum bis zu einem Enddatum überprüft, welche konkreten Daten das variable WhenDate-Objekt annehmen kann. Diese Funktion wird auch nützlich sein, um Termine dynamisch im Kalender nachzuladen. So werden zunächst nur wenige Monate im Voraus und in der Vergangenheit berechnet, um so eine möglichst schnelle Ladezeit zu gewährleisten. Wenn der Benutzer Termine über die initial geladenen Einträge hinaus ansehen möchte, werden diese automatisch nachgeladen und angezeigt.\newline%
+%Kalender dynamisch laden
+Diese Funktion ist auch nützlich, um Termine dynamisch im Kalender nachzuladen und wird dementsprechend in der Kalenderimplementierung genutzt. So werden zunächst nur wenige Monate im Voraus und in der Vergangenheit berechnet, um eine möglichst schnelle Ladezeit zu gewährleisten. Wenn der Benutzer Termine über die initial geladenen Einträge hinaus ansehen möchte, werden diese automatisch nachgeladen und angezeigt.%
+\myTextTodo{Pic:Whendate Modiliert}
+%
+%
+%
+%
+%
+\subsubsection{Zeitangabe}
+Dadurch, dass die App eine grafische Oberfläche hat, besteht die Möglichkeit, die Zeitspanne von Terminen anzuzeigen. Obwohl diese Option nicht von When unterstützt wird - bei Terminen wie \glqq..., 17:00-18:00 ...\grqq{} wird immer nur die erste Zeitangabe berücksichtigt -, wird diese Funktion in die App integriert, da angenommen wird, dass sie eine nützliche grafische Information darstellt.%
+\myTextTodo{Bild von Zeitspanne: none-daily-17bis18}
+%
+%
+%
+%
+%
+\subsubsection{Variabeln \& Operationen}
+%Was
+When bietet eine Vielzahl von Variabeln und Operationen an, um daraus Termine zu erstellen. Dazu gehören klassischen Vergleichsoperatoren wie \glqq =,!=,>,<,>=,<=\grqq{} sowie Logikoperatoren wie \glqq|,\&,!\grqq{}. %
+%Was: Zeitbeschränkugn + Menge an Optionen-> Auswirkung
+Aufgrund der begrenzten Zeit und der Vielzahl an Optionen wurde sich zunächst auf die als am wichtigsten und elementarsten eingeschätzten Variablen und Operationen konzentriert. Die Wahl viel dabei auf die Operationen \glqq|,\&\grqq{} und die Variablen \glqq d,m,w,y\grqq{} für die Angabe eines Tages, eines Monats, eines Wochentages und eines Jahres.%
+%
+%
+%
+%
+%
+\subsubsection{Eingabe- \& Formatfehler}%
+%Was
+Während des Testens von When wurden einige Inkonsistenzen festgestellt. %
+%Konstant vs Variable
+Wenn ungültige Daten wie beispielsweise \glqq 2000 1 0 \grqq{} als Konstanten eingegeben werden, wird ein Fehler angezeigt. Jedoch tritt dieser Fehler nicht auf, wenn das gleiche Datum über Variablen und Operationen eingegeben wird, z.B. \glqq y=2000 \& m=1 \& d=0\grqq{}.\newline%
+%erstige Annahme
+Vorerst wurde angenommen, dass bei der Verwendung von Variablen keine Fehler auftreten, da auch bei ungültigen Eingaben ein gültiger Termin erzeugt werden kann. Zum Beispiel ist die Eingabe von \glqq d=0\grqq{} ungültig, aber der folgende Ausdruck führt dennoch zu einem gültigen Termin: \glqq d=0|y=2000\grqq{}.
+	%Jedoch
+	Jedoch hat sich herausgestellt, dass dies nicht immer der Fall ist, da Eingaben wie \glqq d=-1\grqq{} oder \glqq m=Marchz\grqq{} trotz Verwendung von Variablen zu Fehlermeldungen führen. %
+%Auswirkung
+Dieses Verhalten ist inkonsistent und scheint eher willkürlich zu sein. Es wäre besser, wenn Eingaben immer das gleiche Ergebnis liefern würden. Entweder sollten also alle genannten Beispiele zu Fehlern führen oder keines. Aus diesem Grund wurde sich im Sinne der Konsistenz leicht von der ursprünglichen Vorlage abgewendet. Es wurde entschieden, keines der oben genannten Daten als Fehler zu betrachten, da Variable Daten auch bei ungültigen Eingaben immer noch einen gültigen Termin erzeugen können.%
+%
+%
+%
+%
+%
+\myComment{
+%- jedoch unterscheiden wir zwischen eingabe fehlern oder format fehlern, bei format fehlern wird trotzdew die ganze zeile ignoriert, (bei input fehlern nur die equation). 
+%-bei format fehlern könnte man zwar noch einige teil equations interpretieren/verstehen, jedoch ist das chance sehr hoch dass diese durch den format fehler falsch interpretiert werden und so auf falsche daten landen. + würde fehlerkontrolle erwschwären. daher lieber garnicht anzeigen als falsch. ODER anderer grund?
+%-außerdem wird alles was wir als formatfehler interpretieren auch von when so gesehen / bzw wurde von when so definiert (bei diesen (format r fehlern ist when nicht willkührlich), daher werden diese fehler bei when im terminal angezeigt (müssen nicht in der app extra erwähnt werden / niemand wird sich wundern wenn etwas nicht angezeigt wird da when es im terminal erwähnt)
+%- wir zum akzeptieren zumbeispiel nicht nur yyyy mm dd sondern y+ m+ d+
+}

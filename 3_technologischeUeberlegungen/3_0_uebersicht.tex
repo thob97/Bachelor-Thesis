@@ -1,6 +1,38 @@
 %%% hidden subsection for a better structure in latex editor: "texifier"
-\myComment{\subsection*{Übersicht}} 
-Ganz Allgemein geht es in diesem Kapitel um die Frage “was die App überhaupt können soll”. \newline
-Dabei geht es im ersten Unterpunkt ... darum, wie versucht wird diese Frage zu beantworten.
-In den nächsten zwei Punkte ... und ... werden die Funktionen / Anforderungen aufgelistet, bewertet und erklärt. \newline
-\myTodo Zusammenfassung
+\myComment{\subsection*{Übersicht}}\myCheckmark
+%%%Einleitung: Was+Warum
+In diesem Abschnitt wird sich Gedanken über die Auswahl von Technologien gemacht, da bereits diese Auswahl Auswirkungen auf die auf die Funktionale und nicht Funktionalen Anforderungen haben können.\newline%
+%%%Übersicht: xWas
+\textbf{Übersicht:} %
+So wird zuerst behandelt wie die App erstellt werden soll. Anschließend wird sich für einen CLI-Terminkalender, für die Darstellungen der Erinnerungen und für das Dateiformat der Konfigurationsdatei entschieden. die Wahl der Software der Entwicklungsumgebung begründet und zuletzt werden für die Arbeit [nützliche] Packages ausgewählt.\newline%
+%%%%Ergebnis
+\textbf{Ergebnisse:} %
+	%Framework
+	Im ersten \secref{subsection:auswahlDesFrameworks} wurde sich überlegt ob sie Anwendung als App oder Webseite und über Native oder Cross Platform Frameworks erstellt werden soll. Die Wahl fiel dabei erstens auf eine App, da diese in der Regel intuitiver ausfallen können und beliebter sind und zweitens auf Cross Platform Frameworks, da damit Apps für iOS und Android erstellt werden können. Zuletzt wurden noch die beiden Frameworks Flutter und React Native miteinander verglichen. Die Wahl viel aufgrund von Beliebtheit, Performance und weil angenommen wird, dass damit effizient gearbeitet werden kann, auf Flutter.\newline%
+	%Terminkalender & Konfigurationsdatei
+	Die \nameref{section:tech:sub:cli_terminkalender} viel auf When und das \nameref{section:tech:sub:konfigurationsdateiformat} auf JSON, da durch dieser Wahl erhofft wird, dass sie dabei hilft während der Bearbeitungszeit ein evaluierbares Produkt zu erstellen.
+	%Erinnerungen
+	Weiter wurde für die \nameref{section:tech:sub:darstellung_der_erinnerungen} GitHub Issues gewählt, da diese ein passendes Format besitzen und dadurch auch die GitHub Webseite benutzt werden kann, um die Erinnerungen einzusehen.\newline%
+	%Entwicklungsumgebung
+	Im darauf folgendem \secref{subsection:entwicklungsumgebung} wurden sich für MacOS als Betriebssystem, Android Studio als IDE, GitLab zur Versionsverwaltung und Emulatoren und Handys zum Testen, entschieden. Außerdem wurde erwähnt, dass die Versionen dieser Softwares während der Arbeit nicht verändert werden, um mögliche Komplikationen dadurch zu verhindern.\newline%
+	%Pakete
+	Im letzen \secref{subsection:auswahlDerPakete} wurden die in der Arbeit genutzte Pakete nach ihrem Alter, Beliebtheit und den Verlauf ihrer Aktualisierungen ausgesucht. Die Wahl viel dabei auf json\_serializable, tests und flutter\_lints, weil diese die Codeverständlichkeit verbessern und nützliche Funktionen bieten. Des Weiteren wurde das Paket github ausgewählt, da es das einzige verfügbare Paket ist, das eine Schnittstelle zum Backend bietet, sowie für das Paket syncfusion\_flutter\_calendar welches eine Terminansicht anbietet, um so vorerst [Zeit zu sparen].
+
+
+
+
+
+
+%Todo - Remove
+\myComment{
+	%Old AllÜbersicht 	
+	\myNewSection
+	\myTextTodo{
+	\textbf{Abschnitte der Arbeit}\\
+	%Technologische Überlegungen -> wichtig da erfüllt Anforderungen + erst nach der Erhebung
+	Im darauf folgenden \secref{section:technologischeUeberlegungen} wird sich Gedanken über die Auswahl von Technologien gemacht. Das hat den Grund, da bereits die Auswahl von Technologien Auswirkungen auf Funktionale und nicht Funktionale Anforderungen haben können. Daher ist es auch wichtig, diesen Abschnitt erst nach der Anforderungserhebung zu behandeln.
+		%Beispiel
+		Man stelle sich vor es wird zuerst ein Framework welches bekannt für seine langsame Ausführung ist gewählt und erst zu einen späteren Zeitpunkt wird die Anforderung einer \dq schnelle Performance\dq erhoben. Durch diesem Konflikt müssten die Wahl des Framework neu überdacht werden, was wichtige Bearbeitungszeit verschwenden könnte.\newline%
+	}
+
+}
