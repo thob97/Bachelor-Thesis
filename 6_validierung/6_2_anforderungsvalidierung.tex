@@ -5,7 +5,7 @@ In diesem Abschnitt werden noch einmal alle Anforderungen aus \secref{section:an
 %Funktionalen
 Dabei werden die funktionalen Anforderungen darauf überprüft, ob sie vollständig oder teilweise umgesetzt wurden, oder lediglich in der Konzeptionsphase verblieben sind. %
 %Nicht funktionalen
-Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu bewerten, ob sie wie gewünscht umgesetzt wurden. Daher können bei diesen Anforderungen ausschließlich Vermutungen [getroffen/angestellt] werden. %
+Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu bewerten, ob sie wie gewünscht umgesetzt wurden. Daher könnten bei diesen Anforderungen lediglich Vermutungen angestellt werden. %
 	%Nutzertest
 	Es wäre wahrscheinlich besser gewesen, einen Nutzertest durchzuführen, um aussagekräftigere Schlüsse ziehen zu können. Insbesondere hätten die Nützlichkeit und Benutzerfreundlichkeit besser eingeschätzt werden können. Aber auch die Wartbarkeit und Leistung hätten mithilfe einer Änderungsfreundlichkeitsanalyse und Benchmarks besser beurteilt werden können. Leider blieb dafür jedoch keine Zeit mehr übrig.%
 \newline%
@@ -16,14 +16,14 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		Vollständig implementiert. Alle benötigten Datenbankfunktionen stehen zur Verfügung.%
 		%
 	\item \textbf{M (+C) Übersetzer für CLI-Terminkalender:} %
-		Teilweise implementiert. Wie in \ref{subsection:imp:parser} erwähnt versteht der Übersetzer derzeit nicht alle Operanden und setzt vorerst Klammersetzung voraus. Des Weiteren werden drei Terminaloptionen\footnote{when Terminal Optionen: monday\_first, ampm, auto\_pm\cite{cli_when}}, die \glqq when\grqq{} bietet und die Interpretation von Terminen verändert, noch nicht unterstützt.%
+		Teilweise implementiert. Wie in \ref{subsection:imp:parser} erwähnt versteht der Übersetzer derzeit nicht alle Operanden und setzt vorerst Klammersetzung voraus. Des Weiteren werden drei Terminaloptionen\footnote{Die besagten when Terminaloptionen sind: monday\_first, ampm, auto\_pm\cite{cli_when}.}, die \glqq when\grqq{} bietet und die Interpretation von Terminen verändert, noch nicht unterstützt.%
 		%
 	\item \textbf{M (+C) Kalender Darstellung:} %
 		Vollständig implementiert. Alle benötigten Kalenderansichten stehen zur Verfügung. %Weitere könnten jedoch noch hinzugefügt werden.%
 		%
 	\item \textbf{S Einträge erstellen, bearbeiten, löschen:} %
 		%Was
-		Teilweise Implementiert. Erinnerungseinträge können erstellt, bearbeitet und abgeschlossen werden.\newline
+		Vollständig implementiert. Erinnerungseinträge können erstellt, bearbeitet und abgeschlossen werden.\newline
 		%Was nicht
 		Es wurde sich jedoch gegen das Löschen entschieden, da die Abschließen-Funktion bereits eine ähnliche Funktionalität bietet und daher angenommen wird, dass die Darstellung der Löschaktion die App nur unübersichtlicher machen würde.
 		%
@@ -91,7 +91,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 				Umgesetzt. Es besteht die Möglichkeit, die Anwendung, das Repository und gegebenenfalls den CLI-Terminkalender zu konfigurieren.%
 				%
 			\item sind langwierig oder benötigen viel Zeit.\newline%
-				Teilweise Umgesetzt. Der Zeitaufwand für das Erstellen und Organisieren von Terminen auf dem Terminal ist nutzerabhängig. Einige Nutzer benötigen möglicherweise viel Zeit, da sie ihre Termine sorgfältig organisieren und komplexe Syntax für neue Termine verwenden, während andere Nutzer dafür nur den minimalen Aufwand aufbringen. Es wird jedoch vermutet, dass die Erstellung und Organisation von Terminen auf dem Terminal eher eine zeitaufwändige Aufgabe ist.%
+				Überwiegend Umgesetzt. Der Zeitaufwand für das Erstellen und Organisieren von Terminen auf dem Terminal ist nutzerabhängig. Einige Nutzer benötigen möglicherweise viel Zeit, da sie ihre Termine sorgfältig organisieren und komplexe Syntax für neue Termine verwenden, während andere Nutzer dafür nur den minimalen Aufwand aufbringen. Es wird jedoch vermutet, dass die Erstellung und Organisation von Terminen auf dem Terminal eher eine zeitaufwändige Aufgabe ist.%
 				%
 		\end{enumerate}
 		%
@@ -101,7 +101,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		\begin{enumerate}[label*={\arabic*}]
 		 	%RESSOURCEN
 			\item sind Ressourcen schonend und benötigen nicht viel Leistung.\newline%
-				Teilweise Umgesetzt. Weder das Einsehen von Terminen und Benachrichtigungen noch das Erstellen von Erinnerungen sind leistungsaufwändige Aufgaben. Weiteres siehe: 5. C Performance.
+				Überwiegend Umgesetzt. Weder das Einsehen von Terminen und Benachrichtigungen noch das Erstellen von Erinnerungen sind leistungsaufwändige Aufgaben. Weiteres siehe: 5. C Leistung.
 				%
 			%EINGABE
 			\item erfordern keine schnelle, präzise oder vielfältige Eingaben.\newline%
@@ -138,7 +138,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		%
 	\item \textit{S Wartbarkeit, Erweiterbarkeit, Verständlichkeit:}\newline%
 		%Was
-		Wie im \secref{section:implementierung} erwähnt, sind ausreichend Rückfalltests und Dokumentation für die grundlegenden Komponenten vorhanden. Weiter steht eine Mocked-Datenbank zur Verfügung, mit der die Funktionalität unabhängig von der GitHub-API getestet werden kann. Darüber hinaus wurde versucht, möglichst so modular zu programmieren und an geeigneten Stellen wurden Entwurfsmuster verwendet. All dies sollte sich positiv auf die Wartbarkeit, Erweiterbarkeit und Verständlichkeit auswirken.%
+		Teilweise umgesetzt. Wie im \secref{section:implementierung} erwähnt, sind ausreichend Rückfalltests und Dokumentation für die grundlegenden Komponenten vorhanden. Weiter steht eine Mocked-Datenbank zur Verfügung, mit der die Funktionalität unabhängig von der GitHub-API getestet werden kann. Darüber hinaus wurde versucht, möglichst so modular zu programmieren und an geeigneten Stellen wurden Entwurfsmuster verwendet. All dies sollte sich positiv auf die Wartbarkeit, Erweiterbarkeit und Verständlichkeit auswirken.%
 		%Was nicht
 		Jedoch konnte dieser Qualitätsstandard nicht auf den gesamten Programmcode angewendet werden. Denn zum Ende der Bearbeitungszeit wurde der der Schwerpunkt eher darauf gelegt, alle erforderlichen Funktionen zu in die Benutzeroberfläche zu integrieren, um so ein möglichst validierbares Produkt zu erhalten. Dadurch litt jedoch die Modularität und Dokumentation des Programmcodes etwas.%
 		%
@@ -146,7 +146,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		Umgesetzt. Es wird mit großer Sicherheit vermutet, dass die Anwendung sich so verhält, wie zuvor spezifiziert wurde. Dies liegt daran, dass es, wie im \secref{section:qualitaetssicherung} erwähnt, für die Grundkomponenten der Anwendung reichlich Rückfalltests gibt und die grafische Oberfläche ausgiebig manuell getestet wurde.%
 		%
 	\item \textit{C Leistung:}\newline%
-		Teilweise umgesetzt: %
+		Überwiegend umgesetzt: %
 		%Flüssigkeit/CPu
 		So lief die App während des Tests flüssig und es konnte keine hohe CPU-Auslastung festgestellt werden. %
 		%Größe + Neztwerkauslastung & Ladezeit (Proxy, Nachlade Kalender)

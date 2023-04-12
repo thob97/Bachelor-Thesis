@@ -1,82 +1,81 @@
-\subsubsection{Erkentnisse/Auswertung}\myTodo\label{subsection:design:erkenntnisse}%
+\subsubsection{Erkenntnisse}\label{subsection:design:erkenntnisse}%
 %Was
-In diesem Abschnitt werden die Erkenntnisse und Muster genannt, welche während der Einarbeitung in die Apple Richtlinien erkenntlich wurden.\newline%
+In diesem Abschnitt werden Erkenntnisse und Muster beschrieben, die während der Ausarbeitung der Richtlinien ersichtlich wurden.\newline%
 %Warum
-Denn diese Erkenntnisse wären allgemeiner als die Richtlinien und könnten dementsprechend auf die ganze App und für Steller für welche keine Regeln existieren angewendet werden.\newline%
-\myTextTodo{+ als begründung für die konkreten design entscheidungen im nächsten abschintt. viele der Genannten Erkenntnisse sind stark verschränkt miteinander.}
-
-Das Design und die App sollten [laut] den Richtlinien:
-
+Diese Erkenntnisse haben einen allgemeineren Charakter als die Richtlinien und können dementsprechend auf die gesamte App und auch auf Bereiche angewendet werden, für die keine Regeln vorhanden sind.\newline%
+Dabei ist zu beachten, dass einige der Erkenntnisse eng miteinander verknüpft sind und deshalb einen fließenden Übergang zwischen ihnen herrscht.%
+%
+\newline
+\myNewSection
+Das Design und die App sollten gemäß den Richtlinien folgende Merkmale aufweisen:
 \begin{enumerate}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 	%%% kurzweilig sind oderwenig Zeit benötigen.
-	\item sofort Einsatzbereit sein\newline%
-		Denn es wird unter anderem empfohlen:% 
+	\item Sofort einsatzbereit sein.%
 	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item den Inhalt der App möglichst früh zu zeigen\cite{konventionen_patterns_loading},%
-		\item die Anmeldung möglichst lange zu Verzögern\cite{konventionen_patterns_managingAccounts},%
-		\item sowie initiale und unterbrechende Informationsanfragen, wie zum Beispiel nach Bewertungen- oder Zugangsrechten, nur wenn wirklich nötig [anzufordern/aufzufordern]\cite{konventionen_patterns_launching}%
+		\item[] Denn es wird unter anderem empfohlen:% 
+		\item den Inhalt der App möglichst früh zu zeigen\cite{konventionen_patterns_loading}%
+		\item die Notwendigkeit für eine Anmeldung möglichst lang zu Verzögern\cite{konventionen_patterns_managingAccounts}%
+		\item sowie initiale und unterbrechende Informationsanfragen, wie zum Beispiel nach Bewertungen oder Zugriffsrechten, nur wenn wirklich nötig anzufordern\cite{konventionen_patterns_launching}.%
 	\end{itemize}
 
 
 	%%% einfach und intuitiv seien sollen
-	\item dabei helfen Aufgaben zu vereinfachen\newline%
-		Denn es wird unter anderem empfohlen:% 
+	\item Aufgaben vereinfachen.%
 	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item Texte so klar wie möglich zu verfassen\cite{konventionen_foundations_writing},
-		\item wo möglich Informationen automatisch vom System zu entnehmen, anstatt den Nutzer nach diesen zu Fragen\cite{konventionen_patterns_enteringData, konventionen_platforms_ios},
-		\item sowie alternativen zu Texteingaben, wie zum Beispiel \glqq drag \& drop\grqq{} oder eine Liste von Optionen,  anzubieten\cite{konventionen_patterns_enteringData}
+		\item[] Denn es wird unter anderem empfohlen:% 
+		\item Texte so klar wie möglich zu verfassen\cite{konventionen_foundations_writing}
+		\item wo möglich, Informationen automatisch vom System zu entnehmen, anstatt den Nutzer danach zu fragen\cite{konventionen_patterns_enteringData, konventionen_platforms_ios}
+		\item sowie Alternativen zur Texteingabe, wie zum Beispiel \glqq drag \& drop\grqq{} oder eine Liste von Optionen, anzubieten\cite{konventionen_patterns_enteringData}.
 		%\item choices instead of text entries
 	\end{itemize}
 
 	%%% nur wenig Informationen darstellen oder benötigen
-	\item Informationen reduzieren\newline%
-		Denn es wird unter anderem empfohlen:% 
+	\item Informationen reduzieren.%
 	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item Texte so kurz wie möglich zu verfassen\cite{konventionen_foundations_writing},
-		\item die Anzahl an Steuerelemente zu limitieren\cite{konventionen_platforms_ios},
-		\item simplifizierte Designs für Icons zu nutzen\cite{konventionen_foundations_icons}
-		\item sowie wichtigen Informationen genügend Platz zu geben, indem zum Beispiel eher unwichtige Details ausgelassen werden\cite{konventionen_foundations_layout}
+		\item[] Denn es wird unter anderem empfohlen:% 
+		\item Texte so kurz wie möglich zu verfassen\cite{konventionen_foundations_writing}
+		\item die Anzahl an Steuerelementen zu begrenzen\cite{konventionen_platforms_ios}
+		\item simplifizierte Designs für Icons zu verwenden\cite{konventionen_foundations_icons}
+		\item sowie wichtigen Informationen genügend Platz zu geben, indem zum Beispiel eher unwichtige Details ausgelassen werden\cite{konventionen_foundations_layout}.
 	\end{itemize}	
 
 	%%% einfach und intuitiv seien sollen
-	\item stattdessen [Informationen beziehungsweise Bedeutung] indirekt vermitteln\newline%
-		Denn es wird unter anderem empfohlen:% 
+	\item Informationen indirekt vermitteln.%
 	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item Farbe zu nutzen, sodass Nutzer die zu [versuchen] mitteilende 	Information besser verstehen, aber auch, dass sich nicht gänzlich allein dafür auf Farbe verlassen werden soll\cite{konventionen_foundations_color}
-		\item Icons zu nutzen, da diese bei richtiger Verwendung, Nutzer sofort ein Konzept  verstehen lassen\cite{konventionen_foundations_icons} 
-		\item Textgröße, Font und Farbe zu nutzen um damit Wichtigkeit zu vermitteln\cite{konventionen_foundations_typography}
-		\item Platzierung von Objekten zu nutzen um Wichtigkeit zu vermitteln,
-		\item sowie zur Situation passende Sprache zu verwenden\cite{konventionen_foundations_writing}
+		\item[] Denn es wird unter anderem empfohlen:% 
+		\item Farbe zu nutzen, um Bedeutung zu vermitteln (beispielsweise indem grün für bestätigende Aktionen genutzt wird) \cite{konventionen_foundations_color}.
+		\item Icons zu nutzen, da diese bei richtiger Verwendung ein Konzept sofort verständlich machen können\cite{konventionen_foundations_icons} 
+		\item Textgröße, Schriftart und Farbe zu nutzen, um Wichtigkeit zu vermitteln\cite{konventionen_foundations_typography}.
+		\item Platzierung von Objekten zu nutzen, um Wichtigkeit zu vermitteln\cite{konventionen_layout}
+		\item sowie zur Situation passende Sprache zu verwenden\cite{konventionen_foundations_writing}.
 	\end{itemize}
 	
 	%%% mit der Annahme, dass es sich lohnt bestehende Richtlinien zu folgen
-	\item konsistent innerhalb der App und Platform sein\newline% 
-		Denn es wird unter anderem empfohlen:% 
+	\item Konsistent innerhalb der App und Plattform sein.% 
 	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item die Platform Farben zu nutzen und konsistent bei einmal definierten Farben zu bleiben\cite{konventionen_foundations_color}
-		\item die Platformdefinierten Textstyles zu nutzen\cite{konventionen_foundations_typography}
-		\item die Platformdefinierten Gesten zu nutzen\cite{konventionen_foundations_accessibility} 
-		\item sowie über alle Seiten eine konsistentes Icondesign zu verwenden\cite{konventionen_foundations_icons}
+		\item[] Denn es wird unter anderem empfohlen:% 
+		\item die Plattformfarben zu nutzen und bei einmal definierten Farben konsistent zu bleiben\cite{konventionen_foundations_color}
+		\item die Plattformdefinierten Textstile zu nutzen\cite{konventionen_foundations_typography}
+		\item die Plattformdefinierten Gesten zu nutzen\cite{konventionen_foundations_accessibility} 
+		\item sowie auf allen Seiten ein konsistentes Icondesign zu verwenden\cite{konventionen_foundations_icons}.
 	\end{itemize}
 	
 	
 	%%% einfach und intuitiv seien sollen
-	\item intuitiv sein\newline%
-		Denn es wird unter anderem empfohlen:% 
-	\begin{itemize}%[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-		\item alle zuvor erwähnten Regeln + 2 Quellen
-		\item ...
-		\item ...
-		\item ...
+	\item Intuitiv sein.%
+	\begin{itemize}
+		\item Denn alle vorherigen Punkte haben dies als Ziel.
 	\end{itemize}
+	
 
 \end{enumerate}
-
-
-%was
-[Interessant/Nennenswert] hierbei ist es, dass sich [einige/alle/...] diese Erkenntnisse mit den Vermutungen aus \secref{section:pcVsPhone} [übereinstimmen/ähneln/überschneiden]. %
-	%
-	so \^ ...
-	aber auch settings, eingabe vermutungen
-	%Wenig Konfig + Eingabe
-	So ratet Apple unteranderem einerseits von Texteingaben und einer hohen Anzahl an Einstellungen ab\cite{konventionen_enteringDate,konventionen_settings}. 
+%
+%
+%was: Erkentnisse überschneiden mit PcVsPhone Stärken
+Interessant hierbei ist, dass sich diese Erkenntnisse mit den Ergebnissen aus \secref{section:pcVsPhone} überschneiden. %
+	%Beispiel:
+	So passt beispielsweise die Erkenntnis "Sofort einsatzbereit sein" zur Stärke des Handys, gut für kurzweilige Aufgaben zu sein. Die Erkenntnisse "Aufgaben vereinfachen", "Informationen indirekt vermitteln" und "Intuitiv sein" passen hingegen zum Ergebnis, dass einfache und intuitive Aufgaben gut zum Handy passen.  "Informationen reduzieren" passt hingegen zum Ergebnis, dass auf Handys Aufgaben besser funktionieren, die wenig Informationen darstellen oder benötigen.\newline%
+	%Auf in Einzelnen Regeln
+	Weiter gibt es in den Richtlinien auch einzelne Regeln, bei denen es zu einer ähnlichen Überschneidung kommt. 
+		%Wenig Konfig + Eingabe	
+		So rät Apple beispielsweise sowohl von Texteingaben als auch von einer hohen Anzahl an Einstellungen ab\cite{konventionen_enteringDate,konventionen_settings}. Dies überschneidet sich mit den Ergebnissen, dass Handys keine schnelle, präzise und vielfältige Eingabe erfordern sollten und ohne viele Optionen und Konfigurationen auskommen sollten.

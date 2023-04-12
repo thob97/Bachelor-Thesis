@@ -1,4 +1,4 @@
-\subsection{Entwurfsmuster}: %
+\subsection{Entwurfsmuster}%
 %Was+Warum:
 Während der Implementation wurden sich bewusst für die Verwendung einiger Entwurfsmuster entschieden, da sie in den jeweiligen Situationen nützlich erscheinen. %
 %Übersicht:
@@ -8,7 +8,6 @@ Folgend werden die Entwurfsmuster aufgezählt und dessen Verwendungsgrund begrü
 %
 %
 %
-%Zusammenfassung: Für die Implementation der Verbindung zur Datenbank sowie dem Parser wurden Singelton und Strategie patterns genutzt, sowie eine Ablage-basiert Struktur verwendet um so den Programmcode anpassungsfähiger und übersichtlicher zu gestalten. Darüber hinaus wurde das Proxy Pattern verwendet um geladene Dateien zwischen zu speichern und so das ständige neu laden und berechnen von der Datenbank und dem Parser zu verhindern.
 %
 %
 %
@@ -44,7 +43,7 @@ Für die Datenbank wurde ebenfalls das Strategie Pattern verwendet. %
 	%Warum: Was nicht
 	Die Idee dahinter war nicht nur, die Datenbank gegen eine alternative auszutauschen - obwohl das auch möglich wäre, beispielsweise durch eine GitLab-API anstelle der verwendeten GitHub-API. %
 	%Warum: Stattdessen
-	Vielmehr ermöglicht das Strategie Pattern auch den einfachen temporären Austausch einer Mock-Datenbank\footnote{Eine Datenbank welche die Funktionen einer echten Simultiert}. Eine simulierte Datenbank kann sich nämlich als hilfreich beim Testen herausstellen, da sie unabhängig von einer API ist. Entsprechend wurde auch für diese Anwendung eine solche Mock-Datenbank implementiert. %
+	Vielmehr ermöglicht das Strategie Pattern auch den einfachen temporären Austausch einer Mock-Datenbank\footnote{Eine Datenbank, welche die Funktionen einer echten simuliert.}. Eine simulierte Datenbank kann sich nämlich als hilfreich beim Testen herausstellen, da sie unabhängig von einer API ist. Entsprechend wurde auch für diese Anwendung eine solche Mock-Datenbank implementiert. %
 %Warum
 %Außerdem half das Strategy Pattern auch dabei zu verstehen welche Funktionen sichtbar für den Nutzer sein müssen und bei welchen funktionen es sich um interne Funktionen der jeweiligen Datenbank implementation handelt. 
 %

@@ -3,7 +3,6 @@
 Wie bereits erwähnt, wurde für die Datenbankverbindung eine vorhandene API verwendet. Im Folgenden werden Schwierigkeiten und Besonderheiten bei der Verwendung dieser aufgeführt.
 %
 %
-%Zusammenfassung: Für die Authentizierung und das herrunterladen von Dateien mussten besondere vorkehrungen unternommen werden, da die Endpunkte der Api diese Funktionen nicht zufriedenstellend erfüllen. Bei der Darstellung der Todos bzw Issues wurde versucht eine für die WebView und das CLI passendes Format zu wählen.
 %
 %
 %
@@ -53,7 +52,7 @@ Die GitHub-Webansicht unterstützt Dateien eingebettet darzustellen, anstatt sie
 %Warum: (Zeitersparnis)
 Dies hat den Vorteil, dass es dem Nutzer Aufwand spart, da sie die Datei direkt in der Webansicht betrachten können, ohne sie zuvor herunterladen zu müssen.%
 %Auswirkung:
-Daher sollen auch die mit der App erstellten Issues von dieser Funktion profitieren. Um herauszufinden, wie die WebView Dateien einbetten kann, wurden zahlreiche Tests durchgeführt und die Dokumentation zurate gezogen\cite{imp_github_syntaxing}. Dabei stellte sich heraus, dass einige der in der Dokumentation erwähnten Funktionen für Issues nicht funktionieren, wie zum Beispiel \glqq Relative Link\grqq{}, die in Markdown-Dateien\footnote{Eine reine Textdatei welche auf GitHub syntax unterstützt um den Text zu formatieren} verwendet werden können, aber nicht in Issues.
+Daher sollen auch die mit der App erstellten Issues von dieser Funktion profitieren. Um herauszufinden, wie die WebView Dateien einbetten kann, wurden zahlreiche Tests durchgeführt und die Dokumentation zurate gezogen\cite{imp_github_syntaxing}. Dabei stellte sich heraus, dass einige der in der Dokumentation erwähnten Funktionen für Issues nicht funktionieren, wie zum Beispiel \glqq Relative Link\grqq{}, die in Markdown-Dateien\footnote{Eine reine Textdatei, die auf GitHub Syntaxunterstützung bietet, um den Text zu formatieren.} verwendet werden können, aber nicht in Issues.
 Bei den Tests konnte erfolgreich die Einbindung von Bildern in die WebView reproduziert werden, jedoch war es nicht möglich, Videos einzubetten. Es scheint, dass Videos nur dann in die WebView eingebettet werden können, wenn sie über eine interne GitHub-URL der Form \glqq https://user-images.githubusercontent.com/...\grqq{} verfügbar sind. Diese URLs können jedoch anscheinend nur generiert werden, wenn die Dateien über die WebView hinzugefügt wurden. Daher ist es derzeit nicht möglich, eingebettete Videos in der WebView mit der App zu erstellen.%
 \newline
 \myNewSection

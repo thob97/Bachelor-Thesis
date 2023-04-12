@@ -1,18 +1,45 @@
 %%% hidden subsection for a better structure in latex editor: "texifier"
-\myComment{\subsection*{Übersicht}} 
+\myComment{\subsection*{Übersicht}}%
 %Einleitung
+	Da nun die Anforderungen und das Design der Anwendung bekannt sind sowie die Technologie, mit der sie erstellt werden soll, kann sich der vorliegende Abschnitt mit der Implementierung befassen.
+	%Begrenzung: Was&WasNicht
+	Dabei wird nicht die gesamte Implementierung dargestellt, da dies den Umfang dieser Arbeit sprengen würde. Stattdessen werden die wichtigsten Komponenten der Anwendung sowie die während der Implementierung getroffenen Entscheidungen und Erkenntnisse behandelt.%
 %Übersicht
+\newline%
+\textbf{Übersicht:}\newline%
+Zunächst werden einige Eigenheiten und Besonderheiten während der Implementation des Parsers und der Verbindung zur Datenbank genannt. Anschließend wird erläutert, wie die Qualität der Anwendung und des Programmcodes sichergestellt wurde. Zum Schluss werden einige gezielt genutzte Entwurfsmuster genannt und ihre Verwendung begründet.%
 %Zusammenfassung
-
-
-
-
-\myTextTodo{
-%Implementierung - Was + Warum wenig Implementierung wiedergegeben
-\textbf{Abschnitte der Arbeit}\\
-An dieser Stelle sollten die wichtigsten Erkenntnisse erhoben worden sein. Nun gehen wir über zum \secref{section:implementierung}. Hier wird betrachtet wie die Software aufgebaut sein soll. Also geht es auch hier unter anderem um das \dq innere Design\dq.\newline%
-Die Implementierung, ein Großteil der eigentlichen Arbeit von diesem Kapitel, wird nicht wiedergegeben. Jede einzelne Entscheidung und Erkenntnis der Implementierung zu erwähnen und begründen würde nicht nur den Rahmen sprengen, sonder auch sehr ermüdend für den Leser werden. Daher werden nur die wichtigsten Entscheidungen, Schwierigkeiten und Erkenntnisse erwähnt.\newline%
-}
+\newline%
+\textbf{Erkenntnisse:}\newline%
+	%Parser
+	Für den Parser wurde generell versucht, sich möglichst immer an die Vorgaben der Dokumentation zu halten, damit Nutzer ihre bereits bestehenden Kalenderdateien nicht anpassen müssen. Dabei gab es jedoch zwei Fälle, in denen von der Dokumentation abgewichen wurde. % 
+		%Zeitangabe
+		Zum einen bei der Zeitangabe, da angenommen wurde, dass die Anwendung von dieser Änderung profitieren würde. So bietet die Anwendung zusätzlich zur Interpretation eines Startzeitpunkts auch die Funktion, den Endzeitpunkt zu verstehen und anzuzeigen. %
+		%Fehler
+		Zum anderen wurden Syntax und Fehleingaben der Kalenderdatei anders interpretiert, da sie beim When-Programm inkonsistent zu sein scheinen. %
+		%Variabeln&Operationen
+		Zuletzt wurde sich aufgrund der begrenzten Zeit vorerst darauf beschränkt, nur die wichtigsten Operationen und Variablen des CLI-Terminkalenders zu unterstützen.%
+	\newline%
+	%Datenbank
+	Bei der Verbindung zur Datenbank mussten besondere Vorkehrungen für die Authentifizierung und das Herunterladen von Dateien getroffen werden, da die Endpunkte der API diese Funktionen nicht zufriedenstellend erfüllen. Zudem wurde bei der Darstellung der Erinnerungen in der Datenbank versucht, ein Format zu wählen, das sowohl für die WebView als auch das CLI geeignet ist.%
+	\newline%
+	%Qualität
+	Um die Stabilität der Anwendung sicherzustellen, wurden automatische Rückfalltests für den Parser und die Datenbankverbindung durchgeführt, während die grafische Oberfläche manuell getestet wurde %
+	Zur Verbesserung der Lesbarkeit des Quellcodes wurden Modularisierung, Zugriffsmodifikatoren und eine eigene Kommentarstruktur angewendet.%
+	\newline
+	%Entwurfsmuster
+	Für die Implementierung der Datenbankverbindung und des Parsers wurden die Singleton- und Strategie-Patterns sowie eine ablagebasierte Struktur verwendet, um den Programmcode anpassungsfähiger und übersichtlicher zu gestalten. Darüber hinaus wurde das Proxy-Pattern eingesetzt, um geladene Dateien zwischenzuspeichern und somit das ständige Neuladen und Neuberechnen durch Datenbank und Parser zu verhindern.%
+%
+%
+%
+%
+%---Old-Rephrased---
+%\myTextTodo{
+%%Implementierung - Was + Warum wenig Implementierung wiedergegeben
+%\textbf{Abschnitte der Arbeit}\\
+%An dieser Stelle sollten die wichtigsten Erkenntnisse erhoben worden sein. Nun gehen wir über zum \secref{section:implementierung}. Hier wird betrachtet wie die Software aufgebaut sein soll. Also geht es auch hier unter anderem um das \dq innere Design\dq.\newline%
+%Die Implementierung, ein Großteil der eigentlichen Arbeit von diesem Kapitel, wird nicht wiedergegeben. Jede einzelne Entscheidung und Erkenntnis der Implementierung zu erwähnen und begründen würde nicht nur den Rahmen sprengen, sonder auch sehr ermüdend für den Leser werden. Daher werden nur die wichtigsten Entscheidungen, Schwierigkeiten und Erkenntnisse erwähnt.\newline%
+%}
 %
 %\myTextTodo{
 %Aufzählung, Alternativen, Entscheidungen, \\

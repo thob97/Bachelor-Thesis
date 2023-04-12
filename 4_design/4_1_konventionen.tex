@@ -7,53 +7,53 @@
 
 
 %Trimmed
-\myComment{
-
-	\myNewSection
-	%Einleitung
-	Wie in \secref{section:pcVsPhone} erwähnt, soll für das Design der Anwendung [Konventione/Richtlinienen] befolgt werden. 
-	
-	\myNewSection
-	% Abgrenzung -> Was nicht (nicht alle Regeln, nur wichtige / interessante) (in Einleitung?)
-	Dabei soll es in diesem Abschnitt nicht darum gehen alle Regeln der Konvention zu nennen, sondern einige wichtige welche sich in dem Design der Anwendung wiederfindet und diese begründen...? \myTodo
-	
-	\myNewSection
-	%Auswahl von Konvention
-		%Was: Mehrere Konventionen
-		Es stehen mehrere verschiedene [Richtlinien] für Apps zur verfügung. So zum Beispiel eine für iOS von Apple und eine für Android von Google \cite{konventionen_guidelinesApple, konventionen_guidelinesGoogle}. %
-		%Was+Warum: Entscheiden
-		Jedoch wird sich für eine einzelne [Richtlinie] entschieden, da unterschiedliche [Richtlinien] verschiedene Regeln nennen können und sich so gegebenenfalls sogar widersprechen könnten. %
-			%Beispiel
-			So bietet Google zum Beispiel eine eigene Seite und Regeln für \glqq Floating action buttons\grqq{} während diese in den Apple [Guidelines] nie erwähnt werden und daher wahrscheinlich auch nicht erwünscht sind. %
-		%Was+Warum: Auswahl Apple -> eigene Präferenz(leichter+intuitiver)
-		Aus eigener Präferenz, da die Apps dieser Platform noch etwas intuitiver und leichter zu bedienen scheinen, wurde sich für die [Richtlinien] von Apple entschieden.%
-		
-	\myNewSection
-	%Richtlinien: Inhalt + Was wurde betrachtet + Was nicht
-		%Was: Woraus besteht die Richtlinie
-		Die [Richtlinie] von Apple bietet fünf Abschnitte welche unteranderem von einzelnen Komponenten handeln, wie zum Beispiel Textfelder und Knöpfe, aber auch von Grundlagen und Mustern, welche allgemeine Regeln für die Erstellung von Apps liefern. Zusammen besteht die [Konvention] aus rund 148 Einträge. %
-		%Was: davon interessant
-		Davon schienen vorerst etwas mehr als die Hälfte als [passend/nützlich/interessant] für die Arbeit. Bei [genauerer/intensiverer] Betrachtung stellten sich 34 dieser Einträge als [wirklich passend] heraus, da sie Funktionen und Anforderungen behandeln, welche in die Arbeit einfließen sollen. %
-		%Was: davon uninteressant
-		Die meisten restlichen Einträge handeln von Funktionen welche nicht in die Anwendung eingebaut werden sollen, wie zum Beispiel eine Tastaturbedienung oder NFC-Funktionalität\cite{konventionen_keyboard, konventionen_nfc}. Einige andere Einträge welche eigentlich nützliche Funktionen für diese Arbeit nennen, wie zum Beispiel ein Nachtmodus oder Siri Unterstützung, wurden [aus Zeitmangel/ wegen der begrenzten Arbeitszeit] vorerst [übersprungen]\cite{konventionen_darkmode,konventionen_siri}.%
-		
-	\myNewSection
-	%Erkenntnisse
-		%Einleitung
-		Durch das Durchlesen der vielen Regeln und Richtlinien konnte sich ein Muster erkennen lassen, was die [Auswirkung/Ziele] dieser Regeln und Richtlinien deutet. %
-			%Konsistenz
-			So ist ein oft erwähntes [Theme] die Konsistenz. In der App benutzte Design entscheidungen sollten konsistent in der ganzen App beibehalten werden und wo möglich sollten [system/apple] [definierte/vorgegebene] [Einstellungen] übernommen werden. So werden zum Beispiel die Übernahme von Gesten\cite{konventionen_accessibility}, Schrift\cite{konventionen_typography} und Farben\cite{konventionen_color} empfohlen.
-			%Little info
-			Ein weiteres oft erwähntes [Theme] ist es die Darstellung von wenig Informationen. Weniger Informationen \glqq hilft dabei Leuten sich bei ihrer Aufgabe zu fokusieren\grqq{}\cite{konventionen_platformIOS}, daher sollten unter anderem \glqq möglichst wenig Wörter genutzt werden\grqq{}\cite{konventionen_writing} und \glqq wichtige Information auch so Dargestellt werden\grqq{}\cite{konventionen_layout}.
-			%simple&intuitive
-			Das Hauptziel der Regeln und auch der beiden zuvor genannten [Themes] scheint es aber zu sein, die App intuitiv und simpel [zu machen]. So lässt sich dieses [Theme] in den Regeln am meisten wiederfinden. Unteranderem wird die effektivste App Erfahrung als intuitiv beschrieben\cite{konventionen_offeringHelp}, das nutzen von Gesten wird empfohlen\cite{konventionen_accessibility} und Größe, Farbe und Font von Text und Icons sollen benutzt werden um dessen Bedeutung zu vermitteln\cite{konventionen_icons, konventionen_typography}. 
-		%->pcVsPhone
-		[Interessant/Nennenswert] hierbei ist es, dass diese drei [Themen] sich mit den Erkenntnissen und Vermutungen aus \secref{section:pcVsPhone} übereinstimmen. So wurde zuvor zum Beispiel die [Simpelheit und Intuitivität] als eine Stärke des Handys benannt und die Darstellung von wenig Informationen als eine Anforderung für Aufgaben auf dem Handy.
-		%Weiteres:
-		Des Weiteren gibt es auch viele Regeln welche weitere dieser Vermutungen und Erkenntnisse weiter [bekräftigen/unterstützen].
-			%Wenig Konfig + Eingabe
-			So ratet Apple unteranderem einerseits von Texteingaben und einer hohen Anzahl an Einstellungen ab\cite{konventionen_enteringDate,konventionen_settings}. 
-			%kurzer einstiegsaufwand
-			Während sie andererseits mit Regeln wie \glqq Ask for initial setup information only when necessary\grqq{}\cite{konventionen_launching}, \glqq Show content as soon as possible\grqq{}\cite{konventionen_loading} und \glqq Delay sign-in for as long as possible\grqq{}\cite{konventionen_managing-accounts} der Einstiegsaufwand und damit auch die Kürze von Aufgaben auf dem Handys verringern.
-
-}
+%\myComment{
+%
+%	\myNewSection
+%	%Einleitung
+%	Wie in \secref{section:pcVsPhone} erwähnt, soll für das Design der Anwendung [Konventione/Richtlinienen] befolgt werden. 
+%	
+%	\myNewSection
+%	% Abgrenzung -> Was nicht (nicht alle Regeln, nur wichtige / interessante) (in Einleitung?)
+%	Dabei soll es in diesem Abschnitt nicht darum gehen alle Regeln der Konvention zu nennen, sondern einige wichtige welche sich in dem Design der Anwendung wiederfindet und diese begründen...? \myTodo
+%	
+%	\myNewSection
+%	%Auswahl von Konvention
+%		%Was: Mehrere Konventionen
+%		Es stehen mehrere verschiedene [Richtlinien] für Apps zur verfügung. So zum Beispiel eine für iOS von Apple und eine für Android von Google \cite{konventionen_guidelinesApple, konventionen_guidelinesGoogle}. %
+%		%Was+Warum: Entscheiden
+%		Jedoch wird sich für eine einzelne [Richtlinie] entschieden, da unterschiedliche [Richtlinien] verschiedene Regeln nennen können und sich so gegebenenfalls sogar widersprechen könnten. %
+%			%Beispiel
+%			So bietet Google zum Beispiel eine eigene Seite und Regeln für \glqq Floating action buttons\grqq{} während diese in den Apple [Guidelines] nie erwähnt werden und daher wahrscheinlich auch nicht erwünscht sind. %
+%		%Was+Warum: Auswahl Apple -> eigene Präferenz(leichter+intuitiver)
+%		Aus eigener Präferenz, da die Apps dieser Platform noch etwas intuitiver und leichter zu bedienen scheinen, wurde sich für die [Richtlinien] von Apple entschieden.%
+%		
+%	\myNewSection
+%	%Richtlinien: Inhalt + Was wurde betrachtet + Was nicht
+%		%Was: Woraus besteht die Richtlinie
+%		Die [Richtlinie] von Apple bietet fünf Abschnitte welche unteranderem von einzelnen Komponenten handeln, wie zum Beispiel Textfelder und Knöpfe, aber auch von Grundlagen und Mustern, welche allgemeine Regeln für die Erstellung von Apps liefern. Zusammen besteht die [Konvention] aus rund 148 Einträge. %
+%		%Was: davon interessant
+%		Davon schienen vorerst etwas mehr als die Hälfte als [passend/nützlich/interessant] für die Arbeit. Bei [genauerer/intensiverer] Betrachtung stellten sich 34 dieser Einträge als [wirklich passend] heraus, da sie Funktionen und Anforderungen behandeln, welche in die Arbeit einfließen sollen. %
+%		%Was: davon uninteressant
+%		Die meisten restlichen Einträge handeln von Funktionen welche nicht in die Anwendung eingebaut werden sollen, wie zum Beispiel eine Tastaturbedienung oder NFC-Funktionalität\cite{konventionen_keyboard, konventionen_nfc}. Einige andere Einträge welche eigentlich nützliche Funktionen für diese Arbeit nennen, wie zum Beispiel ein Nachtmodus oder Siri Unterstützung, wurden [aus Zeitmangel/ wegen der begrenzten Arbeitszeit] vorerst [übersprungen]\cite{konventionen_darkmode,konventionen_siri}.%
+%		
+%	\myNewSection
+%	%Erkenntnisse
+%		%Einleitung
+%		Durch das Durchlesen der vielen Regeln und Richtlinien konnte sich ein Muster erkennen lassen, was die [Auswirkung/Ziele] dieser Regeln und Richtlinien deutet. %
+%			%Konsistenz
+%			So ist ein oft erwähntes [Theme] die Konsistenz. In der App benutzte Design entscheidungen sollten konsistent in der ganzen App beibehalten werden und wo möglich sollten [system/apple] [definierte/vorgegebene] [Einstellungen] übernommen werden. So werden zum Beispiel die Übernahme von Gesten\cite{konventionen_accessibility}, Schrift\cite{konventionen_typography} und Farben\cite{konventionen_color} empfohlen.
+%			%Little info
+%			Ein weiteres oft erwähntes [Theme] ist es die Darstellung von wenig Informationen. Weniger Informationen \glqq hilft dabei Leuten sich bei ihrer Aufgabe zu fokusieren\grqq{}\cite{konventionen_platformIOS}, daher sollten unter anderem \glqq möglichst wenig Wörter genutzt werden\grqq{}\cite{konventionen_writing} und \glqq wichtige Information auch so Dargestellt werden\grqq{}\cite{konventionen_layout}.
+%			%simple&intuitive
+%			Das Hauptziel der Regeln und auch der beiden zuvor genannten [Themes] scheint es aber zu sein, die App intuitiv und simpel [zu machen]. So lässt sich dieses [Theme] in den Regeln am meisten wiederfinden. Unteranderem wird die effektivste App Erfahrung als intuitiv beschrieben\cite{konventionen_offeringHelp}, das nutzen von Gesten wird empfohlen\cite{konventionen_accessibility} und Größe, Farbe und Font von Text und Icons sollen benutzt werden um dessen Bedeutung zu vermitteln\cite{konventionen_icons, konventionen_typography}. 
+%		%->pcVsPhone
+%		[Interessant/Nennenswert] hierbei ist es, dass diese drei [Themen] sich mit den Erkenntnissen und Vermutungen aus \secref{section:pcVsPhone} übereinstimmen. So wurde zuvor zum Beispiel die [Simpelheit und Intuitivität] als eine Stärke des Handys benannt und die Darstellung von wenig Informationen als eine Anforderung für Aufgaben auf dem Handy.
+%		%Weiteres:
+%		Des Weiteren gibt es auch viele Regeln welche weitere dieser Vermutungen und Erkenntnisse weiter [bekräftigen/unterstützen].
+%			%Wenig Konfig + Eingabe
+%			So ratet Apple unteranderem einerseits von Texteingaben und einer hohen Anzahl an Einstellungen ab\cite{konventionen_enteringDate,konventionen_settings}. 
+%			%kurzer einstiegsaufwand
+%			Während sie andererseits mit Regeln wie \glqq Ask for initial setup information only when necessary\grqq{}\cite{konventionen_launching}, \glqq Show content as soon as possible\grqq{}\cite{konventionen_loading} und \glqq Delay sign-in for as long as possible\grqq{}\cite{konventionen_managing-accounts} der Einstiegsaufwand und damit auch die Kürze von Aufgaben auf dem Handys verringern.
+%
+%}

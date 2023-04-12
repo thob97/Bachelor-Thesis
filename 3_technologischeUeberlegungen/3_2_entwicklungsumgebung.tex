@@ -1,54 +1,54 @@
-\subsection{Entwicklungsumgebung}\label{subsection:entwicklungsumgebung}\myCheckmark%
+\subsection{Entwicklungsumgebung}\label{subsection:entwicklungsumgebung}%
 %Was: Einleitung
-In diesem Abschnitt werden die benutzten Software und dessen Versionen genannt. %
+In diesem Abschnitt werden die verwendeten Software und deren Versionen aufgelistet. %
 %Warum: Einfluss
-Denn die Wahl von Software und dessen Versionen kann bereits einen Einfluss auf das Endprodukt ausüben. So wäre es zum Beispiel durch die Wahl von Windows nicht möglich Applikationen für iOS zu entwickelt.\newline%
+Die Auswahl der Software und ihrer Versionen kann bereits einen Einfluss auf das Endprodukt haben. So wäre es beispielsweise durch die Wahl von Windows nicht möglich, Anwendungen für iOS zu entwickeln.\newline%
 	%Warum: Nachbilden + Kompatibilität
-	Außerdem wird durch die Nennung der Software das Nachbilden der Applikation garantiert. Mit verschiedener Software oder anderen Versionen ist es aus Erfahrung durchaus Vorstellbar, dass es zu Komplikationen kommen kann. So wurde zum Beispiel während der Ausarbeitung Android Studio nach einem Update nicht mehr funktionsfähig. %
+	Darüber hinaus wird durch die Nennung der Software sichergestellt, dass die Anwendung reproduzierbar ist. Durch die Verwendung unterschiedlicher Software oder anderer Versionen können erfahrungsgemäß Komplikationen auftreten. Zum Beispiel funktionierte Android Studio nach einem Update während der Arbeit nicht mehr ordnungsgemäß. %
 		%->Neuste Versionen
-		Deswegen wurden zu diesem Zeitpunkt in der Arbeit alle Softwares auf die neuste Version aktualisiert und danach bis zum Ende der Arbeit auch auf diesen Versionen belassen. %Einerseits sollten damit möglichst alle neuen Funktionen und Bugfixes [benutzbar werden]. Aber viel wichtiger noch sollten weitere Komplikationen in der Zukunft damit verhindert werden. \newline%
+		Daher wurden alle verwendeten Software zu diesem Zeitpunkt auf die neueste Version aktualisiert und bis zum Ende der Arbeit auf dieser Version beibehalten. %Einerseits sollten damit möglichst alle neuen Funktionen und Bugfixes [benutzbar werden]. Aber viel wichtiger noch sollten weitere Komplikationen in der Zukunft damit verhindert werden. \newline%
 
 \begin{enumerate}
 	%Was+Warum: Betriebssystem -> iOS Apps
-	\item Betriebsystem: Für das Betriebssystem standen Windows und MacOS zur verfügung. Es wurde MacOs entschieden, da auf diesem Betriebsystem für iOS sowie Android Apps entwickelt werden können. Version: macOS Ventura 13.2.1%
+	\item Betriebsystem: Für das Betriebssystem standen Windows und MacOS zur Verfügung. Es wurde sich für MacOS entschieden, da auf diesem Betriebssystem die Entwicklung von iOS- und Android-Apps möglich ist. Version: macOS Ventura 13.2.1%
 
 	%Was+Warum: IDE
-	\item IDE: Flutter empfiehlt unteranderem Visual Studio Code, Android Studio oder Emacs als Editor zu nutzen\cite{tech_ideSuggestion}. Da Android Studio genau wie Flutter beide von Google entwickelt wurden, wird erwartet, dass der Editor besonders gut auf das Framework abgestimmt ist. Deshalb und weil Android Studio für die App-Entwicklung ausgelegt ist, wurde er schlussendlich als Editor ausgewählt. Version: 2022.1.1%
+	\item IDE: Flutter empfiehlt unter anderem Visual Studio Code, Android Studio oder Emacs als Editor\cite{tech_ideSuggestion}. Da sowohl Flutter als auch Android Studio von Google entwickelt wurden, wird erwartet, dass der Editor besonders gut auf das Framework abgestimmt ist. Aus diesem Grund und weil Android Studio speziell für die App-Entwicklung ausgelegt ist, wurde er schlussendlich ausgewählt. Version: 2022.1.1%
 
 	%Was: Flutter
 	\item Framework: Flutter. Mehr dazu in \secref{subsection:auswahlDesFrameworks}. Version: 3.7.3%
 
 	%Was: Versionsverwaltung
 	\item Versionsverwaltung: 
-		Für die Versionsverwaltung wurde sich für GitLab entschieden. %
+		Für die Versionsverwaltung wurde GitLab gewählt, %
 		%Warum: Erfahrung und hosting
-		Einerseits da im Studium damit bereits Erfahrung gesammelt wurde und andererseits weil die Universität ihre eigene Version dazu bereitstellt.\newline%
+		da im Studium damit bereits Erfahrung gesammelt wurde.\newline%
 		%Was+Warum: Einstellungen -> Verständlich + weiterentwickelndes
-		Um ein möglichst Verständliches und einfach zu weiterentwickelndes Projekt zu erstellen, wurden außerdem einige Einstellung in GitLab getroffen. %
+		Um ein verständliches und leicht weiterentwickelbares Projekt zu erstellen, wurden einige Einstellungen in GitLab getroffen. %
 			%konventional commits
-			So werden einerseits einheitliche und ausschlaggebende Commit-Nachrichten benutzt, damit diese bei späterer Betrachtung verständlich sind. Dabei wurde sich an das bereits existierende Regelwerk \glqq Conventional Commits\grqq{}\cite{tech_conventionalCommits} gehalten. %
+			So werden beispielsweise einheitliche und aussagekräftige Commit-Nachrichten verwendet, sodass sie auch für Dritte die Nachricht nachvollziehen können. Dabei wurde sich an das bereits existierende Regelwerk \glqq Conventional Commits\grqq{}\cite{tech_conventionalCommits} gehalten. %
 			%ci/cd pipelines
-			Des Weiteren wurde eine CI/CD pipeline erstellt um Tests automatisch zu überprüfen. Dadurch werden Entwickler automatisch auf mögliche Fehler ihrer Änderungen aufmerksam gemacht. %
+			Darüber hinaus wurde eine CI/CD-Pipeline erstellt, um Tests automatisch durchzuführen. Auf diese Weise werden Entwickler automatisch auf mögliche Fehler ihrer Änderungen aufmerksam gemacht. %
 			%Version
 			Version: git 2.37.1 (Apple Git-137.1)
 
 	%Was+Warum:Emulatoren
 	\item Emulatoren: %
 		%Warum:Testen
-		Zum testen der App werden Emulatoren benutzt. Um dabei sicherzustellen, dass die Anwendung auf Android und iOS läuft sowie auf den neusten und älteren Betriebssystemversionen, wurde jeweils ein iPhone und ein Android Emulator mit der neusten und älteste verfügbaren Version zum testen benutzt. %
+		Zum Testen der App werden Emulatoren verwendet. Um sicherzustellen, dass die Anwendung auf Android und iOS sowie auf den neuesten und älteren Betriebssystemversionen läuft, werden sowohl ein iPhone- als auch ein Android-Emulator mit der jeweils neuesten und ältesten verfügbaren Version verwendet. %
 		%Was+Warum: Reales Handy -> Performance
-		Des Weiteren wurde auch noch ein echtes Handy zum Testen verwendet, da vermutet wird, dass unter realen Bedienungen das testen der Performance aussagekräftiger ist. Dabei wurde mit dem iPhone SE1 gezielt ein relativ altes Handy gewählt. %
+		Zusätzlich wurde ein echtes Handy für Tests verwendet, da vermutet wird, dass unter realen Bedingungen die Performance-Tests aussagekräftiger sind. Hierbei wurde das iPhone SE1 gezielt ausgewählt, da es sich um ein relativ altes Handy handelt. %
 			%Warum: Alter
-			Dadurch lässt sich nämlich gut prüfen, ob die Anwendung auch von älterer und schwächerer Hardware unterstützt wird. % 
+			Dadurch sollte sich prüfen lassen, ob die Anwendung auch von älterer und schwächerer Hardware unterstützt wird. % 
 			%Warum: größe
-			Außerdem ist das Handy im Gegensatz zu neuen Handys relativ klein mit einer Bildschirmdiagonalen von vier Zoll. Wodurch sich prüfen lässt, ob das Design der App auch auf kleineren Bildschirmen funktioniert. %
+			Außerdem hat das Handy im Gegensatz zu neueren Geräten eine relativ kleine Bildschirmdiagonale von vier Zoll. Dadurch lässt sich prüfen, ob das App-Design auch auf kleineren Bildschirmen funktioniert. %
 		%Versionen
 		Versionen: IPhone 14 iOS 16.2 \& 13.7, Pixel 6 Android 13.0 \& 5.0, iPhone SE1 iOS 15.7.3%
 		
 	\item CLI-Terminalkalender: When. Mehr dazu im \secref{subsections:cli_termincalendar}. Version 1.1.45
 		
 	%Was+Warum: Weiteres
-	\item Weiteres: Die folgende Software wird standardmäßig durch einige der zuvor genanten Technologien benötigt. Dementsprechend wird außer der Nennung der Version nicht näher auf sie eingegangen: Xcode 14.2, Android SDK Platform-Tools: 34.0.0, DevTools: 2.20.1, Dart 2.19.2%
+	\item Weiteres: Die folgende Software wird von einigen der zuvor genannten Technologien standardmäßig benötigt. Daher wird hier lediglich die Version aufgeführt, ohne näher darauf einzugehen: Xcode 14.2, Android SDK Platform-Tools: 34.0.0, DevTools: 2.20.1, Dart 2.19.2%
 \end{enumerate}
 
 %OS-Umgebung -> Iphone + Android entwickelbar
