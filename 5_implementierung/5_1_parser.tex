@@ -23,7 +23,8 @@ Anschließend wird das Datum rekursiv durchgegangen, bis ein einzelner Ausdruck 
 Nun verfügt der Parser über ein WhenDate-Objekt. Dieses kann jedoch immer noch variabel sein. Um Termine im Kalender anzuzeigen, benötigt es jedoch konkrete Daten. Dazu wird von einem gewählten Startdatum bis zu einem Enddatum überprüft, welche konkreten Daten das variable WhenDate-Objekt annehmen kann. Diese Funktion wird auch nützlich sein, um Termine dynamisch im Kalender nachzuladen. So werden zunächst nur wenige Monate im Voraus und in der Vergangenheit berechnet, um so eine möglichst schnelle Ladezeit zu gewährleisten. Wenn der Benutzer Termine über die initial geladenen Einträge hinaus ansehen möchte, werden diese automatisch nachgeladen und angezeigt.\newline%
 %Kalender dynamisch laden
 Diese Funktion ist auch nützlich, um Termine dynamisch im Kalender nachzuladen und wird dementsprechend in der Kalenderimplementierung genutzt. So werden zunächst nur wenige Monate im Voraus und in der Vergangenheit berechnet, um eine möglichst schnelle Ladezeit zu gewährleisten. Wenn der Benutzer Termine über die initial geladenen Einträge hinaus ansehen möchte, werden diese automatisch nachgeladen und angezeigt.%
-\myTextTodo{Pic:Whendate Modiliert}
+\newline%
+Für eine modellierte Beispieldarstellung siehe Abbildung \ref{pic:when_termin}.
 %
 %
 %
@@ -31,7 +32,8 @@ Diese Funktion ist auch nützlich, um Termine dynamisch im Kalender nachzuladen 
 %
 \subsubsection{Zeitangabe}
 Dadurch, dass die App eine grafische Oberfläche hat, besteht die Möglichkeit, die Zeitspanne von Terminen anzuzeigen. Obwohl diese Option nicht von When unterstützt wird - bei Terminen wie \glqq..., 17:00-18:00 ...\grqq{} wird immer nur die erste Zeitangabe berücksichtigt -, wird diese Funktion in die App integriert, da angenommen wird, dass sie eine nützliche grafische Information darstellt.%
-\myTextTodo{Bild von Zeitspanne: none-daily-17bis18}
+\newline%
+Für eine Beispieldarstellung siehe Abbildung \ref{pic:zeitspanne}.
 %
 %
 %

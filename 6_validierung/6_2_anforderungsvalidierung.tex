@@ -16,16 +16,16 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		Vollständig implementiert. Alle benötigten Datenbankfunktionen stehen zur Verfügung.%
 		%
 	\item \textbf{M (+C) Übersetzer für CLI-Terminkalender:} %
-		Teilweise implementiert. Wie in \ref{subsection:imp:parser} erwähnt versteht der Übersetzer derzeit nicht alle Operanden und setzt vorerst Klammersetzung voraus. Des Weiteren werden drei Terminaloptionen\footnote{Die besagten when Terminaloptionen sind: monday\_first, ampm, auto\_pm\cite{cli_when}.}, die \glqq when\grqq{} bietet und die Interpretation von Terminen verändert, noch nicht unterstützt.%
+		Teilweise implementiert. Wie in \secref{subsection:imp:parser} erwähnt versteht der Übersetzer derzeit nicht alle Operanden und setzt vorerst Klammersetzung voraus. Des Weiteren werden drei Terminaloptionen\footnote{Die besagten when Terminaloptionen sind: monday\_first, ampm, auto\_pm\cite{cli_when}.}, die \glqq when\grqq{} bietet und die Interpretation von Terminen verändert, noch nicht unterstützt.%
 		%
 	\item \textbf{M (+C) Kalender Darstellung:} %
 		Vollständig implementiert. Alle benötigten Kalenderansichten stehen zur Verfügung. %Weitere könnten jedoch noch hinzugefügt werden.%
 		%
 	\item \textbf{S Einträge erstellen, bearbeiten, löschen:} %
 		%Was
-		Vollständig implementiert. Erinnerungseinträge können erstellt, bearbeitet und abgeschlossen werden.\newline
+		Teilweise implementiert. Erinnerungseinträge können erstellt, bearbeitet und abgeschlossen werden. Jedoch können noch keine Dateien wie Bilder, Audios oder Videos hinzugefügt werden.\newline
 		%Was nicht
-		Es wurde sich jedoch gegen das Löschen entschieden, da die Abschließen-Funktion bereits eine ähnliche Funktionalität bietet und daher angenommen wird, dass die Darstellung der Löschaktion die App nur unübersichtlicher machen würde.
+		Außerdem wurde sich gegen das Löschen entschieden, da die Abschließen-Funktion bereits eine ähnliche Funktionalität bietet und daher angenommen wird, dass die Darstellung der Löschaktion die App nur unübersichtlicher machen würde.
 		%
 	\item \textbf{S Einschränkungen:} %
 		%Was
@@ -38,7 +38,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		%
 	\item \textbf{S Konfiguration auf dem Pc:}
 		%Was
-		Vollständig implementiert. Für die Anwendung existiert eine Konfigurationsdatei welche über den Pc angepasst werden kann. %
+		Vollständig implementiert. Für die Anwendung existiert eine Konfigurationsdatei welche über den PC angepasst werden kann. %
 		%Was nicht
 		Jedoch könnte diese noch weiter verbessert werden, indem das Dateiformat auf das Textformat umgewandelt wird und gegebenenfalls weitere Optionen hinzugefügt werden.%
 		% 
@@ -67,7 +67,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 \myNewSection
 \textbf{Nicht funktionale Anforderungen:}
 \begin{enumerate}
-	\item \textit{M Stärken von Pcs und Handys:}\newline%
+	\item \textbf{M Stärken von PCs und Handys:}\newline%
 		%Was:
 		Umgesetzt. Da die Anwendung nach den Stärken des PCs und Handys aus \secref{section:pcVsPhone} erstellt wurde. %
 			%Hauptaufgaben
@@ -91,7 +91,7 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 				Umgesetzt. Es besteht die Möglichkeit, die Anwendung, das Repository und gegebenenfalls den CLI-Terminkalender zu konfigurieren.%
 				%
 			\item sind langwierig oder benötigen viel Zeit.\newline%
-				Überwiegend Umgesetzt. Der Zeitaufwand für das Erstellen und Organisieren von Terminen auf dem Terminal ist nutzerabhängig. Einige Nutzer benötigen möglicherweise viel Zeit, da sie ihre Termine sorgfältig organisieren und komplexe Syntax für neue Termine verwenden, während andere Nutzer dafür nur den minimalen Aufwand aufbringen. Es wird jedoch vermutet, dass die Erstellung und Organisation von Terminen auf dem Terminal eher eine zeitaufwändige Aufgabe ist.%
+				Überwiegend umgesetzt. Der Zeitaufwand für das Erstellen und Organisieren von Terminen auf dem Terminal ist nutzerabhängig. Einige Nutzer benötigen möglicherweise viel Zeit, da sie ihre Termine sorgfältig organisieren und komplexe Syntax für neue Termine verwenden, während andere Nutzer dafür nur den minimalen Aufwand aufbringen. Es wird jedoch vermutet, dass die Erstellung und Organisation von Terminen auf dem Terminal eher eine zeitaufwändige Aufgabe ist.%
 				%
 		\end{enumerate}
 		%
@@ -100,8 +100,8 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		Die Aufgaben des Handys:%
 		\begin{enumerate}[label*={\arabic*}]
 		 	%RESSOURCEN
-			\item sind Ressourcen schonend und benötigen nicht viel Leistung.\newline%
-				Überwiegend Umgesetzt. Weder das Einsehen von Terminen und Benachrichtigungen noch das Erstellen von Erinnerungen sind leistungsaufwändige Aufgaben. Weiteres siehe: 5. C Leistung.
+			\item sind ressourcenschonend und benötigen nicht viel Leistung.\newline%
+				Überwiegend umgesetzt. Weder das Einsehen von Terminen und Benachrichtigungen noch das Erstellen von Erinnerungen sind leistungsaufwändige Aufgaben. Weiteres siehe: 5. C Leistung.
 				%
 			%EINGABE
 			\item erfordern keine schnelle, präzise oder vielfältige Eingaben.\newline%
@@ -125,27 +125,27 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 				%%%
 			%INTUITIV
 			\item sind einfach und intuitiv.\newline%
-				Überwiegend Umgesetzt. Siehe: 2. M Benutzbarkeit. 
+				Überwiegend umgesetzt. Siehe: 2. M Benutzbarkeit. 
 				%
 		\end{enumerate}
 	
-	\item \textit{M Benutzbarkeit:}\newline%
+	\item \textbf{M Benutzbarkeit:}\newline%
 		%Was
-		Überwiegend Umgesetzt. Es wird angenommen, dass die App einfach, intuitiv und effektiv zu nutzen ist, da sich beim Design an die Regeln und Erkenntnisse der von Apple gegebenen Richtlinien gehalten wurde.% und andererseits  sich bei den Anforderungen an die Stärken des Handys und Pc gehalten wurde.%
+		Überwiegend umgesetzt. Es wird angenommen, dass die App einfach, intuitiv und effektiv zu nutzen ist, da sich beim Design an die Regeln und Erkenntnisse der von Apple gegebenen Richtlinien gehalten wurde.% und andererseits  sich bei den Anforderungen an die Stärken des Handys und Pc gehalten wurde.%
 		%Was nicht
 		\newline%
 		Jedoch gibt es beim Design noch einige wenige Entscheidungen, wie zum Beispiel die Navigationsleisten, welche noch ähnlicher zur iOS-Plattform aussehen könnten und daher verbesserungswürdig sind.%
 		%
-	\item \textit{S Wartbarkeit, Erweiterbarkeit, Verständlichkeit:}\newline%
+	\item \textbf{S Wartbarkeit, Erweiterbarkeit, Verständlichkeit:}\newline%
 		%Was
 		Teilweise umgesetzt. Wie im \secref{section:implementierung} erwähnt, sind ausreichend Rückfalltests und Dokumentation für die grundlegenden Komponenten vorhanden. Weiter steht eine Mocked-Datenbank zur Verfügung, mit der die Funktionalität unabhängig von der GitHub-API getestet werden kann. Darüber hinaus wurde versucht, möglichst so modular zu programmieren und an geeigneten Stellen wurden Entwurfsmuster verwendet. All dies sollte sich positiv auf die Wartbarkeit, Erweiterbarkeit und Verständlichkeit auswirken.%
 		%Was nicht
 		Jedoch konnte dieser Qualitätsstandard nicht auf den gesamten Programmcode angewendet werden. Denn zum Ende der Bearbeitungszeit wurde der der Schwerpunkt eher darauf gelegt, alle erforderlichen Funktionen zu in die Benutzeroberfläche zu integrieren, um so ein möglichst validierbares Produkt zu erhalten. Dadurch litt jedoch die Modularität und Dokumentation des Programmcodes etwas.%
 		%
-	\item \textit{S Qualität \& Korrektheit:}\newline%
+	\item \textbf{S Qualität \& Korrektheit:}\newline%
 		Umgesetzt. Es wird mit großer Sicherheit vermutet, dass die Anwendung sich so verhält, wie zuvor spezifiziert wurde. Dies liegt daran, dass es, wie im \secref{section:qualitaetssicherung} erwähnt, für die Grundkomponenten der Anwendung reichlich Rückfalltests gibt und die grafische Oberfläche ausgiebig manuell getestet wurde.%
 		%
-	\item \textit{C Leistung:}\newline%
+	\item \textbf{C Leistung:}\newline%
 		Überwiegend umgesetzt: %
 		%Flüssigkeit/CPu
 		So lief die App während des Tests flüssig und es konnte keine hohe CPU-Auslastung festgestellt werden. %
@@ -154,8 +154,8 @@ Bei vielen der nicht funktionalen Anforderungen ist es hingegen schwieriger zu b
 		%Jedoch: CLI Parser Dateigröße
 		Die Ladezeit der Terminkalenderseite hängt jedoch von der Bearbeitungszeit des Parsers ab. Dieser ist wiederum abhängig vom Inhalt der CLI-Terminkalenderdatei und folglich auch vom Nutzer. Aus diesem Grund sollte der Parser zunächst einem Last-, Stress- und Leistungstest unterzogen werden, bevor die Ladezeit endgültig eingeschätzt werden kann. Es wird jedoch [erwartet/geschätzt], dass der Rechenaufwand des Parsers vernachlässigbar ist.%
 		%
-	\item \textit{C Reichweite:}\newline%
-		Teilweise Umgesetzt: %
+	\item \textbf{C Reichweite:}\newline%
+		Teilweise umgesetzt: %
 		%OS Version + Performance
 		Die App sollte einerseits auf recht alten Handys nutzbar sein, da sie verhältnismäßig alte Betriebssystemversionen wie iOS 11.0 (von 2017) und Android 5.0 (von 2014) unterstützt. Außerdem benötigt sie, wie zuvor erwähnt, relativ wenig Leistung. %
 		%Flutter/Vorerst nur Android

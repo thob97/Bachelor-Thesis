@@ -1,8 +1,99 @@
 % !TeX encoding = UTF-8
-\section{Fazit \& Ausblick}\label{section:fazit}
+\section{Fazit}\label{section:fazit}
 
-\input{7_fazitUndAusblick/stichpunkte7.tex} %todo: remove after this sections completion
 
-\input{7_fazitUndAusblick/7_0_uebersicht.tex}
-\input{7_fazitUndAusblick/7_1_fazit.tex}
-\input{7_fazitUndAusblick/7_2_ausblick.tex}
+%Zusammenfassung
+	%Einleitung
+	\textit{Ziele:} In dieser Arbeit wurde versucht, eine passende App für CLI-Terminkalender zu erstellen. \glqq Passend\grqq{} bedeutet in diesem Sinne, dass die Stärken von PC und Handy berücksichtigt werden und somit in die zu erstellende Anwendung einfließen.
+	%PcVsHandy
+	\newline%
+	\myNewSection
+	\textit{Methoden:} Dazu wurde zunächst versucht herauszufinden, was die Stärken von Handys und PCs überhaupt sind, indem die wesentlichen Unterschiede zwischen ihnen verglichen wurden.
+	%Anforderungen
+	Anschließend wurden mithilfe von Erhebungstechniken die Anforderungen an die zu erstellende App ermittelt und festgehalten.
+	%Technologische Überlegungen
+	Auf Basis dieser Anforderungen wurden Gedanken zur Auswahl der passenden Technologien gemacht. 
+	%Design
+	Danach wurde das Design der Anwendung erstellt und überdacht, da dies ein wichtiger Punkt für die Anforderungen sowie eine mögliche Stärken von Handys ist.
+	%Implementierung
+	Da nun die Anforderungen und das Design der Anwendung bekannt sind sowie die Technologie, mit der sie erstellt werden soll, wurde sich anschließend mit der Implementierung befassen.
+	%Evaluation
+	Zum Schluss wurde die Anwendung mit einer Anforderungsverifizierung evaluiert, um festzustellen, ob das Erstellte auch das erfüllt, was sich zuvor vorgenommen wurde.
+%Ergebnisse
+\newline%
+\myNewSection
+\textit{Ergebnisse}:
+%Was
+Die wohl wichtigsten Ergebnisse dieser Arbeit sind die entstandene Anwendung und die Erkenntnisse über die Stärken von Handys und PCs. 
+	\newline
+	%Was: Stärken
+	Die Stärken sind dabei besonders bedeutend, da sie bei der Erstellung der Anwendung, die versucht, die Lücke zwischen Terminal und Smartphone zu überbrücken, genutzt wurden, um so das Ziel zu erreichen.
+		%Handy
+		Dabei kam es zu den Ergebnissen, dass Handys die Stärken haben, für jene Aufgaben gut zu funktionieren, die ressourcenschonend sind und nicht viel Leistung benötigen, keine schnelle, präzise und vielfältige Eingabe erfordern, nur wenige Informationen darstellen oder benötigen, ohne viele Optionen und Konfigurationen auskommen, kurzweilig sind oder wenig Zeit benötigen, lohnenswert sind, unterwegs zu lösen, sowie einfach und intuitiv sein sollen. 
+		\newline%
+		%Pc
+		Während dessen besitzen PCs die Stärke für jene Aufgaben gut zu sein, die viel Leistung benötigen, schnelle, präzise oder vielfältige Eingaben erfordern, viele Informationen gleichzeitig darstellen oder benötigen, viele Optionen und Konfigurationen anbieten oder benötigen sowie langwierig sind oder viel Zeit benötigen.
+		\newline%
+		%Designs
+		Zudem viel während des Designs der Anwendung fiel dabei auf, dass viele der Regeln in den Designrichtlinien mit den Stärken des Handys übereinstimmen. Beispielsweise wird empfohlen, dass die App und ihr Design folgende Merkmale aufweisen sollten: \glqq sofort einsatzbereit sein\grqq{},\glqq Aufgaben vereinfachen\grqq{},\glqq Informationen reduzieren\grqq{},\glqq Informationen indirekt vermitteln\grqq{},\glqq konsistent innerhalb der App und Plattform sein\grqq{} und \glqq intuitiv sein\grqq{}.
+	\newline
+	%Implementierung
+	Die Stärken von PCs und Handys sowie des Designs flossen in die Anforderungen und damit in die Anwendung ein. So entstand laut der Evaluation eine Anwendung, die in der Lage ist, die Stärken von PCs und Handys umzusetzen, indem sie unter anderem Funktionen wie CLI-Terminkalender grafisch darzustellen, Erinnerungen zu erzeugen, diese mit dem PC zu teilen, Benachrichtigungen für Termine anzuzeigen und konfigurierbar über den PC zu sein, anbietet.
+%Schlussfolgerungen
+\newline%
+\myNewSection
+\textit{Schlussfolgerungen:} 
+Dadurch, dass die Stärken des Handys und PCs systematisch durch systematische Vergleiche erarbeitet und mithilfe einige Statistiken und Studien bekräftigt wurden, werden diese als aussagekräftig bewertet. Insbesondere, weil sie während des Designs durch Richtlinien und Regeln weiter bekräftigen ließen.
+	Da weiter die Anforderungen der Anwendung auf diesen Stärken basieren und die Anwendung erfolgreich implementiert wurde, wird angenommen, dass das Ziel, eine Kalender-App zu entwickeln, die versucht, die Lücke zwischen Terminal und Smartphone zu überbrücken, erreicht wurde. Weiter wird sogar vermutet, dass es sich bei dieser App um eine nützliche Anwendung handeln könnte, da sie die Stärken von Handys und PCs nutzt und somit eine Anwendung für eine sonst schwer vorstellbare Kategorie, die CLI-Programme, auf einem Smartphone ermöglicht.  Um jedoch aussagekräftigere Ergebnisse über die Nützlichkeit der App zu erzielen, sollten weitere Evaluationen durchgeführt werden.
+%Schwierigkeiten
+\newline%
+\myNewSection
+\textit{Schwierigkeiten:}
+%Was
+Während der Arbeit traten einige Schwierigkeiten auf.
+	%tests
+	Einerseits wurde der Aufwand für das Testen mithilfe von Rückfalltests für den Parser und die Datenbank unterschätzt. So mussten relativ häufig nach Änderungen an Funktionen viele Tests angepasst werden mussten.
+	%umfrage
+	Andererseits war das Ergebnis der Nutzerumfrage, obwohl bereits erwartet wurde, dass dabei nicht allzu viele Informationen gewonnen werden können, dennoch enttäuschend. Der Nutzen stand in keinem Verhältnis zum Aufwand, der bei der Auswahl der Standorte und der Fragenstruktur betrieben wurde. Nachdem sich herausgestellt hatte, dass nur wenige Nutzer teilnahmen und dabei keine nützlichen Informationen erhoben werden konnten, wurde beschlossen, diese Erhebungstechnik nicht weiter zu verfolgen, um so weitere Zeit und Ressourcen zu sparen.
+	%Parser
+	Außerdem stellte sich heraus, dass obwohl absichtlich ein als \glqq simpel\grqq{} betonter Parser ausgewählt wurde, die Implementierung des gewählten Parsers aufgrund seiner Komplexität doch unerwartet aufwändig war.
+\newline%
+\myNewSection
+\textit{Erfolge:}
+%Was
+Während der Arbeit gab es auch einige Erfolge.
+	%Stärken PcVsPhone
+	Zum einen stellte sich beim Design der Anwendung heraus, dass viele der zuvor gezogenen Schlussfolgerungen über die Stärken von Handys mit den Erkenntnissen aus den Richtlinien und Regeln überschneideten. Somit konnten die Annahmen der Stärken des Handys und PCs weiter bestärkt werden.
+	%tests
+	Zum anderen erwiesen sich die Rückfalltests zwar anfangs als sehr zeitaufwendig, doch sie waren letztendlich äußerst hilfreich. Insbesondere die Tests für die Datenbankverbindung trugen dazu bei, das Verständnis zu ihr zu verbessern und letztendlich viel Zeit zu sparen.
+	%Entwurfsmuster
+	Schließlich erwiesen sich auch die Entwurfsmuster als äußerst hilfreich, insbesondere das Zusammenspiel des Strategie-Entwurfsmusters mit einer simulierten Datenbank und vielen Rückfalltests für die echten Datenbankverbindung. Bis zur Fertigstellung aller Funktionen der Anwendung wurde ausschließlich die simulierte Datenbank für Tests verwendet, um mögliche API-Fehler auszuschließen. Als alles implementiert war, konnte die simulierte Datenbank durch die echte ersetzt werden, indem nur eine Codezeile geändert wurde, da das Strategie-Design-Pattern verwendet wurde. Die Anwendung funktionierte direkt mit der echten Datenbank und es traten keine Defekte auf, da anscheinend alle Fehler zuvor mithilfe der umfangreichen Rückfalltests beseitigt wurden.
+\newline%
+\myNewSection
+\textit{Ausblick}:
+	%Generell
+			%Generell (rest auf app bezogen)
+		Falls sich die Anwendung als nützlich beweist, könnte dies bedeuten, dass es für Anwendungen durchaus lohnenswert sein kann, diese unter Berücksichtigung der Stärken sowohl von Handys als auch von PCs zu entwickeln. Möglicherweise könnte dies zeigen, dass Anwendungen nicht unbedingt als eigenständige Einheiten genutzt werden müssen, sondern voneinander abhängig sein und dennoch oder gerade deshalb nützlich sein können.
+	\newline%
+	%App
+		%evaluation
+		Um jedoch die Nützlichkeit sowie einige der nicht funktionalen Anforderungen abschließend bewerten zu können, benötigt es weiterer Evaluation. Insbesondere ein Nutzertest könnte hierbei nützliche Erkenntnisse liefern.
+	\newline%
+	%Was: Vorerst beenden
+	Bevor ein Nutzertest durchgeführt wird, empfiehlt es sich jedoch, die Anwendung zunächst zu vervollständigen, um durch den Test auch aussagekräftigere Schlüsse ziehen zu können.	
+		%refactor
+		So sollte die Anwendung zunächst \grqq refactored\glqq{} werden, da zum Ende hin versucht wurde, möglichst viele Funktionen noch zu implementieren, was zu einer Einschränkung der Qualität des Programmcodes führte.
+		%design
+		Des Weiteren bestehen noch zu kleine Designverbesserungen. So könnte beispielsweise die Appliste noch einheitlicher zur iOS-Plattform aussehen.
+		%funktionen
+		Außerdem existieren noch einige funktionale Anforderungen, die noch nicht umgesetzt wurden und entsprechend lohnenswert wären, zu implementieren.
+	\newline%
+	%Nun evaluierbar:
+	Ab diesem Punkt wäre ein Nutzertest vorstellbar. Es gibt jedoch immer noch weitere Anforderungen, die verbessert werden könnten.
+		%Parser
+		So wäre es zum Beispiel nützlich, die Reichweite der Anwendung zu erhöhen, indem weitere Parser hinzugefügt werden.
+		%crossplatform
+		Es wäre auch sinnvoll, die Anwendung für Android zu ermöglichen. Dafür müssten einige wenige Komponenten durch eine Abfrage gegen das Android-Komplement ausgetauscht werden. Danach wäre es ratsam, das Design passend für die Android-Anwendung anzupassen, da die jetzige Anwendung im iOS-Design gestaltet ist und somit für Android die Vorteile eines einheitlichen Plattform-Designs entfallen würden.
+%
+%
+%

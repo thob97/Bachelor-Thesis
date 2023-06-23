@@ -14,7 +14,9 @@ Folgend werden die Entwurfsmuster aufgezählt und dessen Verwendungsgrund begrü
 %
 %
 \subsubsection{Fassade}
-Durch das Umschließen der API mit einem Fassadenobjekt wird die Schnittstelle für den Nutzer der Datenbankverbindung vereinfacht und irrelevante Informationen werden verborgen. Dadurch konnten beispielsweise die erforderlichen Zwischenschritte zum Herunterladen einer Datei von GitHub verborgen werden.
+Durch das Umschließen der API mit einem Fassadenobjekt wird die Schnittstelle für den Nutzer der Datenbankverbindung vereinfacht und irrelevante Informationen werden verborgen. Dadurch konnten beispielsweise die erforderlichen Zwischenschritte zum Herunterladen einer Datei von GitHub verborgen werden. %
+\newline%
+Für eine modellierte Beispieldarstellung siehe Abbildung \ref{pic:fassade_database_connection}.
 %
 %
 %
@@ -29,7 +31,8 @@ Während der Implementierung wurde versucht, nicht auf das Singleton-Pattern zur
 	Durch Der globale Zugriff auf das Objekt erschwert die Nachvollziehbarkeit, welche Komponenten Zugriff auf das Objekt benötigen, und führt so unter anderem zu einer Verkomplizierung der Fehlerbehebung. %
 %Auswirkung:
 Trotzdem wurde für die Datenbank das Singleton-Pattern verwendet, da die Datenbank sonst zwischen vielen Komponenten übergeben werden müsste und die Struktur des Programmcodes darunter leiden würde.\newline%
-Es folgt die konkrete Situation welche während der Implementierung aufgetreten, als Beispiel. Siehe Abbildung \myTextTodo{Pic Singelton 123} für die grafische Darstellung des Beispiels. Im Grunde benötigen nur drei Seiten Zugriff auf die Datenbank. Allerdings erstellt die Navigation in Flutter ein Seitenobjekt und benötigt daher ebenfalls Zugriff auf die Datenbank. Es gibt zwei Möglichkeiten: Entweder man gibt die Datenbank bis zum Navigationsknopf weiter oder man definiert die Navigationsfunktion bereits auf der Seite und gibt sie bis zum Knopf weiter. Beide Optionen würden jedoch dazu führen, dass viele Zwischenklassen die Datenbank oder Funktion als Parameter übergeben müssten, obwohl sie diese gar nicht benötigen. Das Singleton-Entwurfsmuster löst dieses Problem.
+Es folgt die konkrete Situation welche während der Implementierung aufgetreten ist, als Beispiel. Siehe Abbildung \ref{pic:global_database}, \ref{fig:weitergegebene_datasabe}, \ref{fig:hochgeschobene_nav_funktion} für die grafische Darstellung des Beispiels. Im Grunde benötigen nur drei Seiten Zugriff auf die Datenbank. Allerdings erstellt die Navigation in Flutter ein Seitenobjekt und benötigt daher ebenfalls Zugriff auf die Datenbank. Es gibt zwei Möglichkeiten: Entweder man gibt die Datenbank bis zum Navigationsknopf weiter oder man definiert die Navigationsfunktion bereits auf der Seite und gibt sie bis zum Knopf weiter. Beide Optionen würden jedoch dazu führen, dass viele Zwischenklassen die Datenbank oder Funktion als Parameter übergeben müssten, obwohl sie diese gar nicht benötigen. Das Singleton-Entwurfsmuster löst dieses Problem.
+%
 %
 %
 %
@@ -44,6 +47,8 @@ Für die Datenbank wurde ebenfalls das Strategie Pattern verwendet. %
 	Die Idee dahinter war nicht nur, die Datenbank gegen eine alternative auszutauschen - obwohl das auch möglich wäre, beispielsweise durch eine GitLab-API anstelle der verwendeten GitHub-API. %
 	%Warum: Stattdessen
 	Vielmehr ermöglicht das Strategie Pattern auch den einfachen temporären Austausch einer Mock-Datenbank\footnote{Eine Datenbank, welche die Funktionen einer echten simuliert.}. Eine simulierte Datenbank kann sich nämlich als hilfreich beim Testen herausstellen, da sie unabhängig von einer API ist. Entsprechend wurde auch für diese Anwendung eine solche Mock-Datenbank implementiert. %
+	\newline%
+Für eine modellierte Beispieldarstellung siehe Abbildung \ref{fig:strategie_parser} und \ref{fig:strategie_database}.
 %Warum
 %Außerdem half das Strategy Pattern auch dabei zu verstehen welche Funktionen sichtbar für den Nutzer sein müssen und bei welchen funktionen es sich um interne Funktionen der jeweiligen Datenbank implementation handelt. 
 %
@@ -56,12 +61,13 @@ Für die Datenbank wurde ebenfalls das Strategie Pattern verwendet. %
 Es wird angenommen, dass die Kalender- und Konfigurationsdateien sowie die Issues von GitHub während der Benutzung der App selten extern geändert werden. Deshalb ist es ausreichend, die Daten einmalig in der App zu laden und sie nur bei Bedarf, d.h. bei einer gezielten Anfrage nach neuen Dateien, erneut vom Server abzurufen. Derzeit lädt die App jedoch bei jeder Navigation auf eine Seite die Daten erneut von der Datenbank.\newline%
 %Was
 Dementsprechend wird für den Parser sowie der Datenbank das Remote Proxy Pattern verwendet. Dabei umschließe ein Proxy-Objekt das eigentliche Datenbank- bzw. Parser-Objekt und speichert die Ergebnisse in einem Cache. Wenn dieselben Daten erneut angefragt werden, werden sie aus dem Cache zurückgegeben. Bei einer gezielten Anfrage auf neue Dateien wird hingegen der Cache geleert und neue Dateien von der Datenbank geladen.
+Für eine modellierte Beispieldarstellung siehe Abbildung \ref{pic:proxy}.
 %
 %
 %
 %
 %
-\subsubsection{Datenflussnetze \& Ablagebasiert}
+\subsubsection{Datenflussnetz \& Ablagebasiert}
 %Was: Datenflussnetze
 Zu Beginn wurde aus Einfachheit für den Parser eine Struktur ähnlich einem Datenflussnetz erstellt. %
 	%Was: unflexibel
@@ -75,8 +81,7 @@ Deshalb wurde die Struktur des Parsers zu einer ablagebasierten Struktur geände
 	%Warum:
 	Dadurch wird der Parser einerseits übersichtlicher und andererseits flexibler und änderungsfreundlicher, da die einzelnen Funktionen nicht direkt miteinander kommunizieren. %
 %Was: Abbildungen
-Die Abbildungen \myTodo und \myTodo zeigen die Schritte des WhenParsers bei der Eingabe einer Datei bis zum erlangten Kalendareintrag in der zuvor genutzten datenflussnetzähnlichen Struktur und in der verbesserten ablagebasierten Struktur.
-%
+Die Abbildungen \ref{pic:datenfluss}, \ref{fig:ablage_basiert1}, \ref{fig:ablage_basiert2} zeigen die Schritte des WhenParsers bei der Eingabe einer Datei bis zum erlangten Kalendareintrag in der zuvor genutzten datenflussnetz ähnlichen Struktur und in der verbesserten ablagebasierten Struktur.
 %
 %
 %

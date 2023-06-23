@@ -10,19 +10,19 @@ Wie bereits erwähnt, wurde für die Datenbankverbindung eine vorhandene API ver
 %
 \subsubsection{Authentikation \& Berechtigungen}%
 %
-Die Authentizierung über einen Benutzernamen und ein Passwort wird von der Api nicht unterstützt\cite{imp_github_userPasswordAuthentication}. Deshalb wird die authentifizierung mit tokens benutzt. %
+Die Authentizierung über einen Benutzernamen und ein Passwort wird von der Api nicht unterstützt\cite{imp_github_userPasswordAuthentication}. Deshalb wird die Authentifizierung mit Tokens benutzt. %
 Dies stellte aber kein Problem dar, da die Verwendung von Tokens ohnehin bevorzugt wird. Denn dadurch kann der Nutzer sicher sein, dass die Anwendung mit den gegebenen Zugriffsrechten nichts Schädliches ausführen kann.%
 %
 \newline%
 Zwei der verwendeten Funktionen der API erfordern besondere Zugriffsrechte. Das Erstellen eines Repositorys erfordert die \glqq repo\grqq{} Berechtigung\cite{imp_github_createRepo}, während das Erstellen und Aktualisieren von Dateien die \glqq workflow\grqq{} Berechtigung erfordert\cite{imp_github_createFile}. Um den Benutzer über diese Informationen zu informieren, muss das Token auf diese Berechtigungen getestet werden. Jedoch unterstützt die API diese Funktion nicht mehr\cite{imp_github_tokensScopeDiscontinued}. Stattdessen bietet GitHub jedoch die Möglichkeit, sich die Berechtigungen über die Antwort einer URL anzeigen zu lassen\cite{imp_github_tokensScopeCurl}. Um dies in der Anwendung zu nutzen, wird die URL mit curl aufgerufen und die Antwort nach den passenden Berechtigungen geparst.%
 \newline%
-In In der Dokumentation konnte zwar nichts dazu gefunden werden, jedoch hat sich beim Testen herausgestellt, dass diese Methode, um die Berechtigungen zu erlangen, nur von den \glqq classic tokens\grqq{} unterstützt wird. Für die neueren \glqq beta tokens\grqq{} sendet der Server keine Antwort zurück. Daher werden derzeit \glqq beta tokens\grqq{} in der App nicht unterstützt.%
+In der Dokumentation konnte zwar nichts dazu gefunden werden, jedoch hat sich beim Testen herausgestellt, dass diese Methode, um die Berechtigungen zu erlangen, nur von den \glqq classic Tokens\grqq{} unterstützt wird. Für die neueren \glqq beta Tokens\grqq{} sendet der Server keine Antwort zurück. Daher werden derzeit \glqq beta Tokens\grqq{} in der App nicht unterstützt.%
 %%
 %%
 %%
 %%
 %%
-\subsubsection{Dateien herrunterladen}%
+\subsubsection{Dateien herunterladen}%
 %Was: Endpoint
 Die API bietet einen Endpunkt an, mit dem Dateien direkt aus einem Repository heruntergeladen werden können\cite{imp_github_1mb100mbDownloadFile}. %
 	%Warum
@@ -37,13 +37,13 @@ Dementsprechend wird der Endpunkt nicht mehr direkt genutzt. Stattdessen werden 
 %%
 %%
 %%
-\subsubsection{Issues}%
+\subsubsection{GitHub Issues}%
 %Was: Issues -> App, CLI, Webview
 Wie zuvor erwähnt, sollen Erinnerungen über GitHub Issues ermöglicht werden. Dadurch ist es möglich, die Listen über die App, das CLI oder die Webview anzuzeigen und zu bearbeiten.%
 %Was:Unsupported
 Leider ist es nicht möglich, über die API Dateien zu Issues hinzuzufügen\cite{imp_github_issueFilesUnsupported}. %
 	%Auswirkung: herrausfinden
-	Um herauszufinden, wie Dateien dennoch zu Issues hinzugefügt werden können, wurde versucht herrauszufinden wie Daten über die Webansicht zu issues hinzugefügt werden. Es stellte sich heraus, dass die Dateien nicht direkt in den Issues gespeichert werden, sondern lediglich durch einen Link referenziert werden. %
+	Um herauszufinden, wie Dateien dennoch zu Issues hinzugefügt werden können, wurde versucht herrauszufinden wie Daten über die Webansicht zu Issues hinzugefügt werden. Es stellte sich heraus, dass die Dateien nicht direkt in den Issues gespeichert werden, sondern lediglich durch einen Link referenziert werden. %
 	%Auswirkung: Funktion erstellen
 	Mit dieser Information konnte eine passende Funktion erstellt werden: Zunächst wird die GitHub API genutzt, um ein Issue zu erstellen. Anschließend wird die Datei, die dem Issue hinzugefügt werden soll, auf das entsprechende Repository hochgeladen. Schließlich wird ein Link zur Datei dem Issue hinzugefügt, wodurch die Datei im Webview als solche angezeigt wird. %
 \newline%
@@ -63,8 +63,8 @@ Ein Issue besteht immer aus einem Titel und einer Beschreibung. Die Beschreibung
 \newline%
 Die Dateien müssen für die WebView im Format \glqq [ ]\{url\}\grqq{} gekennzeichnet werden. Innerhalb der \glqq[ ]\grqq{} wird der Dateipfad angegeben, um eine weitere Referenz auf die Datei für die CLI bereitzustellen. %
 Um eine klare Struktur im Repository zu gewährleisten, werden die Dateien der Issues dabei in Ordnern der Form \glqq issue\{issueNummer\}\grqq{} gespeichert.%
-%Beispiel
-\myTextTodo{pic beispiel issue WebView vs CLI vs App}
+\newline%
+Für eine Beispieldarstellung aller drei Ansichten siehe Abbildung \ref{pic_webview}, \ref{pic_reminder_cli}, \ref{pic:reminder_handy}.
 %%
 %%
 %%
