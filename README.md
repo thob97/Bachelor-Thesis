@@ -14,3 +14,11 @@ Während PCs gut für jene Aufgaben sind, die viel Leistung benötigen, schnelle
 Es wird angenommen, dass das Ziel dadurch erfüllt werden konnte. Weiter wird sogar vermutet, dass es sich bei dieser App um eine nützli- che Anwendung handeln könnte.
 Ausblick: Falls sich die Anwendung als nützlich beweist, könnte dies bedeuten, dass es für Anwendungen durchaus lohnenswert sein kann, diese unter Berück- sichtigung der Stärken sowohl von Handys als auch von PCs zu entwickeln. Mög- licherweise könnte dies zeigen, dass Anwendungen nicht unbedingt als eigen- ständige Einheiten genutzt werden müssen, sondern voneinander abhängig sein und dennoch oder gerade deshalb nützlich sein können.
 Um jedoch die Nützlichkeit abschließend bewerten zu können, benötigt es weite- rer Evaluation. Auch konnte die Anwendung noch nicht vollständig implemen- tiert werden. So fehlen noch einige wenige Funktionen, Design Anpassungen und ausprägungen von nicht funktionalen Anforderungen.
+
+
+## Related
+* [CLI Calendar App](https://github.com/thob97/CLI-Calendar-App.git)
+
+
+## See also
+* [Uni Overview](https://github.com/thob97/uni_overview.git)
